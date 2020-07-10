@@ -380,7 +380,7 @@ int main(int argc, char** argv) {
         if (fabs(tree->mPVDZ)>0.2) continue;
         if (fabs(tree->ePVDXY)>0.045) continue;
         if (fabs(tree->ePVDZ)>0.2) continue;
-        if (dau1.Pt()<9.5 or dau2.Pt()<9.5) continue;
+        if (dau1.Pt()<12.5 or dau2.Pt()<8.5) continue; // related to triggers
         if (dau1.Pt()<23.5 and dau2.Pt()<23.5) continue;
         if (fabs(dau1.Eta())>2.5 or fabs(dau2.Eta())>2.4) continue;
         if (!tree->mPFIDMedium) continue;

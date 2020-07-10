@@ -415,6 +415,55 @@ int main(int argc, char** argv) {
        threshold_deepcsv_M=0.4184;
     }
 
+    float tes_dm0=tes_dm0_2018;
+    float tes_dm1=tes_dm1_2018;
+    float tes_dm10=tes_dm10_2018;
+    float tes_dm11=tes_dm11_2018;
+    float tes_dm0_emb=tes_dm0_emb_2018;
+    float tes_dm1_emb=tes_dm1_emb_2018;
+    float tes_dm10_emb=tes_dm10_emb_2018;
+    float tes_dm11_emb=tes_dm11_emb_2018;
+    float tes_dm0_fakeele=tes_dm0_fakeele_2018;
+    float tes_dm1_fakeele=tes_dm1_fakeele_2018;
+    float tes_B_fakeele_emb=tes_B_fakeele_emb_2018;
+    float tes_E_fakeele_emb=tes_E_fakeele_emb_2018;
+    float tes_dm0_fakemu=tes_dm0_fakemu_2018;
+    float tes_dm1_fakemu=tes_dm1_fakemu_2018;
+
+    if (year==2017){
+       tes_dm0=tes_dm0_2017;
+       tes_dm1=tes_dm1_2017;
+       tes_dm10=tes_dm10_2017;
+       tes_dm11=tes_dm11_2017;
+       tes_dm0_emb=tes_dm0_emb_2017;
+       tes_dm1_emb=tes_dm1_emb_2017;
+       tes_dm10_emb=tes_dm10_emb_2017;
+       tes_dm11_emb=tes_dm11_emb_2017;
+       tes_dm0_fakeele=tes_dm0_fakeele_2017;
+       tes_dm1_fakeele=tes_dm1_fakeele_2017;
+       tes_B_fakeele_emb=tes_B_fakeele_emb_2017;
+       tes_E_fakeele_emb=tes_E_fakeele_emb_2017;
+       tes_dm0_fakemu=tes_dm0_fakemu_2017;
+       tes_dm1_fakemu=tes_dm1_fakemu_2017;
+    }
+    if (year==2016){
+       tes_dm0=tes_dm0_2016;
+       tes_dm1=tes_dm1_2016;
+       tes_dm10=tes_dm10_2016;
+       tes_dm11=tes_dm11_2016;
+       tes_dm0_emb=tes_dm0_emb_2016;
+       tes_dm1_emb=tes_dm1_emb_2016;
+       tes_dm10_emb=tes_dm10_emb_2016;
+       tes_dm11_emb=tes_dm11_emb_2016;
+       tes_dm0_fakeele=tes_dm0_fakeele_2016;
+       tes_dm1_fakeele=tes_dm1_fakeele_2016;
+       tes_B_fakeele_emb=tes_B_fakeele_emb_2016;
+       tes_E_fakeele_emb=tes_E_fakeele_emb_2016;
+       tes_dm0_fakemu=tes_dm0_fakemu_2016;
+       tes_dm1_fakemu=tes_dm1_fakemu_2016;
+    }
+
+
     int bestEntry=-1;
     ULong64_t evt_now=0;
     ULong64_t evt_before=-1;
@@ -434,18 +483,53 @@ int main(int argc, char** argv) {
         dau1.SetPtEtaPhiM(tree->t1Pt,tree->t1Eta,tree->t1Phi,tree->t1Mass);
         dau2.SetPtEtaPhiM(tree->t2Pt,tree->t2Eta,tree->t2Phi,tree->t2Mass);
 
-        if (dau1.DeltaR(dau2)<0.3) continue;
+        if (isMC){
+           if (tree->t1ZTTGenMatching==5 && tree->t1DecayMode==0) dau1=dau1*tes_dm0;
+           else if (tree->t1ZTTGenMatching==5 && tree->t1DecayMode==1) dau1=dau1*tes_dm1;
+           else if (tree->t1ZTTGenMatching==5 && tree->t1DecayMode==10) dau1=dau1*tes_dm10;
+           else if (tree->t1ZTTGenMatching==5 && tree->t1DecayMode==11) dau1=dau1*tes_dm11;
+           else if ((tree->t1ZTTGenMatching==1 or tree->t1ZTTGenMatching==3) && tree->t1DecayMode==0) dau1=dau1*tes_dm0_fakeele;
+           else if ((tree->t1ZTTGenMatching==1 or tree->t1ZTTGenMatching==3) && tree->t1DecayMode==1) dau1=dau1*tes_dm1_fakeele;
+           else if ((tree->t1ZTTGenMatching==2 or tree->t1ZTTGenMatching==4) && tree->t1DecayMode==0) dau1=dau1*tes_dm0_fakemu;
+           else if ((tree->t1ZTTGenMatching==2 or tree->t1ZTTGenMatching==4) && tree->t1DecayMode==1) dau1=dau1*tes_dm1_fakemu;
+
+           if (tree->t2ZTTGenMatching==5 && tree->t2DecayMode==0) dau2=dau2*tes_dm0;
+           else if (tree->t2ZTTGenMatching==5 && tree->t2DecayMode==1) dau2=dau2*tes_dm1;
+           else if (tree->t2ZTTGenMatching==5 && tree->t2DecayMode==10) dau2=dau2*tes_dm10;
+           else if (tree->t2ZTTGenMatching==5 && tree->t2DecayMode==11) dau2=dau2*tes_dm11;
+           else if ((tree->t2ZTTGenMatching==1 or tree->t2ZTTGenMatching==3) && tree->t2DecayMode==0) dau2=dau2*tes_dm0_fakeele;
+           else if ((tree->t2ZTTGenMatching==1 or tree->t2ZTTGenMatching==3) && tree->t2DecayMode==1) dau2=dau2*tes_dm1_fakeele;
+           else if ((tree->t2ZTTGenMatching==2 or tree->t2ZTTGenMatching==4) && tree->t2DecayMode==0) dau2=dau2*tes_dm0_fakemu;
+           else if ((tree->t2ZTTGenMatching==2 or tree->t2ZTTGenMatching==4) && tree->t2DecayMode==1) dau2=dau2*tes_dm1_fakemu;
+        }
+        else if (isEmbedded){
+           if(tree->t1ZTTGenMatching==5 && tree->t1DecayMode==0) dau1=dau1*tes_dm0_emb;
+           else if (tree->t1ZTTGenMatching==5 && tree->t1DecayMode==1) dau1=dau1*tes_dm1_emb;
+           else if (tree->t1ZTTGenMatching==5 && tree->t1DecayMode==10) dau1=dau1*tes_dm10_emb;
+           else if (tree->t1ZTTGenMatching==5 && tree->t1DecayMode==11) dau1=dau1*tes_dm11_emb;
+           else if ((tree->t1ZTTGenMatching==1 or tree->t1ZTTGenMatching==3) && fabs(tree->t1Eta)>1.5) dau1=dau1*tes_E_fakeele_emb;
+           else if ((tree->t1ZTTGenMatching==1 or tree->t1ZTTGenMatching==3) && fabs(tree->t1Eta)<1.5) dau1=dau1*tes_B_fakeele_emb;
+
+           if(tree->t2ZTTGenMatching==5 && tree->t2DecayMode==0) dau2=dau2*tes_dm0_emb;
+           else if (tree->t2ZTTGenMatching==5 && tree->t2DecayMode==1) dau2=dau2*tes_dm1_emb;
+           else if (tree->t2ZTTGenMatching==5 && tree->t2DecayMode==10) dau2=dau2*tes_dm10_emb;
+           else if (tree->t2ZTTGenMatching==5 && tree->t2DecayMode==11) dau2=dau2*tes_dm11_emb;
+           else if ((tree->t2ZTTGenMatching==1 or tree->t2ZTTGenMatching==3) && fabs(tree->t2Eta)>1.5) dau2=dau2*tes_E_fakeele_emb;
+           else if ((tree->t2ZTTGenMatching==1 or tree->t2ZTTGenMatching==3) && fabs(tree->t2Eta)<1.5) dau2=dau2*tes_B_fakeele_emb;
+        }
+
+        if (dau1.DeltaR(dau2)<0.4) continue;
         if (fabs(tree->t1PVDZ)>0.2) continue;
         if (fabs(tree->t2PVDZ)>0.2) continue;
 	if (dau1.Pt()<39.0 or dau2.Pt()<39.0) continue;
         if (fabs(dau1.Eta())>2.1 or fabs(dau2.Eta())>2.1) continue;
         if (!tree->t1VVVLooseDeepTau2017v2p1VSjet) continue;
         if (!tree->t1VLooseDeepTau2017v2p1VSmu) continue;
-        if (!tree->t1VVVLooseDeepTau2017v2p1VSe) continue;
+        if (!tree->t1VLooseDeepTau2017v2p1VSe) continue;
         if (tree->t1DecayMode==5 or tree->t1DecayMode==6) continue;
         if (!tree->t2VVVLooseDeepTau2017v2p1VSjet) continue;
         if (!tree->t2VLooseDeepTau2017v2p1VSmu) continue;
-        if (!tree->t2VVVLooseDeepTau2017v2p1VSe) continue;
+        if (!tree->t2VLooseDeepTau2017v2p1VSe) continue;
         if (tree->t2DecayMode==5 or tree->t2DecayMode==6) continue;
 	if (tree->eVetoZTTp001dxyzR0>0) continue;
 	if (tree->muVetoZTTp001dxyzR0>0) continue;
