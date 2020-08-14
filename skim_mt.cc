@@ -130,7 +130,6 @@ int main(int argc, char** argv) {
     Run_Tree->Branch("byVVTightDeepVSe_2", &byVVTightDeepVSe_2, "byVVTightDeepVSe_2/F");
 
     Run_Tree->Branch("numGenJets", &numGenJets, "numGenJets/F");
-    Run_Tree->Branch("jetPt_2", &jetPt_2, "jetPt_2/F");
 
     Run_Tree->Branch("Flag_ecalBadCalibReducedMINIAODFilter", &Flag_ecalBadCalibReducedMINIAODFilter, "Flag_ecalBadCalibReducedMINIAODFilter/F");
     Run_Tree->Branch("Flag_goodVertices", &Flag_goodVertices, "Flag_goodVertices/F");
@@ -146,7 +145,6 @@ int main(int argc, char** argv) {
     Run_Tree->Branch("Flag_BadChargedCandidateFilter", &Flag_BadChargedCandidateFilter, "Flag_BadChargedCandidateFilter/F");
 
     Run_Tree->Branch("met", &met, "met/F");
-    Run_Tree->Branch("metSig", &metSig, "metSig/F");
     Run_Tree->Branch("metcov00", &metcov00, "metcov00/F");
     Run_Tree->Branch("metcov10", &metcov10, "metcov10/F");
     Run_Tree->Branch("metcov11", &metcov11, "metcov11/F");
@@ -346,8 +344,6 @@ int main(int argc, char** argv) {
     Run_Tree->Branch("jcsv_1", &jcsv_1, "jcsv_1/F");
     Run_Tree->Branch("jcsv_2", &jcsv_2, "jcsv_2/F");
 
-    Run_Tree->Branch("bweight", &bweight, "bweight/F");
-
     Run_Tree->Branch("bpt_deepcsv_1", &bpt_deepcsv_1, "bpt_deepcsv_1/F");
     Run_Tree->Branch("bflavour_deepcsv_1", &bflavour_deepcsv_1, "bflavour_deepcsv_1/F");
     Run_Tree->Branch("beta_deepcsv_1", &beta_deepcsv_1, "beta_deepcsv_1/F");
@@ -505,19 +501,6 @@ int main(int argc, char** argv) {
 	if (tree->eVetoZTTp001dxyzR0>0) continue;
 	if (tree->muVetoZTTp001dxyzR0>1) continue;
 	if (tree->dimuonVeto>0) continue;
-	int n_deepcsv_L=0;
-        int n_deepcsv_M=0;
-        int n_deepflavour_L=0;
-        int n_deepflavour_M=0;
-	if (tree->deepcsvb1_btagscore>=threshold_deepcsv_L) n_deepcsv_L=n_deepcsv_L+1;
-        if (tree->deepcsvb2_btagscore>=threshold_deepcsv_L) n_deepcsv_L=n_deepcsv_L+1;
-        if (tree->deepcsvb1_btagscore>=threshold_deepcsv_M) n_deepcsv_M=n_deepcsv_M+1;
-        if (tree->deepcsvb2_btagscore>=threshold_deepcsv_M) n_deepcsv_M=n_deepcsv_M+1;
-        if (tree->deepflavourb1_btagscore>=threshold_deepflavour_L) n_deepflavour_L=n_deepflavour_L+1;
-        if (tree->deepflavourb2_btagscore>=threshold_deepflavour_L) n_deepflavour_L=n_deepflavour_L+1; 
-        if (tree->deepflavourb1_btagscore>=threshold_deepflavour_M) n_deepflavour_M=n_deepflavour_M+1;
-        if (tree->deepflavourb2_btagscore>=threshold_deepflavour_M) n_deepflavour_M=n_deepflavour_M+1;
-	if (n_deepcsv_L<2 and n_deepcsv_M<1 and n_deepflavour_L<2 and n_deepflavour_M<1) continue; //at least 2 L btags or 1 M btag
 
         evt_now=tree->evt;
         if (evt_now!=evt_before){

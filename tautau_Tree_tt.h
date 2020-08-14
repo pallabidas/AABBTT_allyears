@@ -200,9 +200,6 @@ void fillTree(TTree *Run_Tree, HTauTauTree_tt *tree, int entry_tree, int recoil,
     lumi = tree->lumi;
     evt =tree->evt;
     genweight = tree->GenWeight;
-    bweight=tree->bweight_2018;
-    if (year==2016) bweight=tree->bweight_2016;
-    if (year==2017) bweight=tree->bweight_2017;
 
     passDoubleTau35=tree->doubleTau35Pass;
     passDoubleTauCmb35=tree->doubleTauCmbIso35RegPass;
@@ -321,7 +318,6 @@ void fillTree(TTree *Run_Tree, HTauTauTree_tt *tree, int entry_tree, int recoil,
     Flag_globalTightHalo2016Filter = tree->Flag_globalTightHalo2016Filter;
     Flag_goodVertices = tree->Flag_goodVertices;
 
-    metSig=tree->metSig;
     metcov00=tree->metcov00;
     metcov01=tree->metcov01;
     metcov10=tree->metcov10;

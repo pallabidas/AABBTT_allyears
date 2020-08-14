@@ -192,9 +192,6 @@ void fillTree(TTree *Run_Tree, HTauTauTree_et *tree, int entry_tree, int recoil,
     lumi = tree->lumi;
     evt =tree->evt;
     genweight = tree->GenWeight;
-    bweight=tree->bweight_2018;
-    if (year==2016) bweight=tree->bweight_2016;
-    if (year==2017) bweight=tree->bweight_2017;
 
     lheweight_muR0p5_muF0p5=tree->lheweight_muR0p5_muF0p5;
     lheweight_muR0p5_muF1=tree->lheweight_muR0p5_muF1;
@@ -299,14 +296,12 @@ void fillTree(TTree *Run_Tree, HTauTauTree_et *tree, int entry_tree, int recoil,
     Flag_globalTightHalo2016Filter = tree->Flag_globalTightHalo2016Filter;
     Flag_goodVertices = tree->Flag_goodVertices;
 
-    metSig=tree->metSig;
     metcov00=tree->metcov00;
     metcov01=tree->metcov01;
     metcov10=tree->metcov10;
     metcov11=tree->metcov11;
 
     numGenJets=tree->numGenJets;
-    jetPt_2=tree->tJetPt;
 
     gen_Higgs_pt=tree->genpT;
     gen_Higgs_mass=tree->genM;
