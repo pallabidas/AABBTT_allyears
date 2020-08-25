@@ -21,8 +21,8 @@ if __name__ == "__main__":
        place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
        datatype="data"
        name=[
-"data_SingleMuon_Run2018C-17Sep2018","SingleMuA","0","2018",
-"data_SingleMuon_Run2018C-17Sep2018","SingleMuB","0","2018",
+"data_SingleMuon_Run2018A-17Sep2018","SingleMuA","0","2018",
+"data_SingleMuon_Run2018B-17Sep2018","SingleMuB","0","2018",
 "data_SingleMuon_Run2018C-17Sep2018","SingleMuC","0","2018",
 "data_SingleMuon_Run2018D-PromptReco","SingleMuD","0","2018"
 ]
@@ -30,8 +30,8 @@ if __name__ == "__main__":
        place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
        datatype="data"
        name=[
-"data_EGamma_Run2018C-17Sep2018","SingleEleA","0","2018",
-"data_EGamma_Run2018C-17Sep2018","SingleEleB","0","2018",
+"data_EGamma_Run2018A-17Sep2018","SingleEleA","0","2018",
+"data_EGamma_Run2018B-17Sep2018","SingleEleB","0","2018",
 "data_EGamma_Run2018C-17Sep2018","SingleEleC","0","2018",
 "data_EGamma_Run2018D-PromptReco","SingleEleD","0","2018"
 ]
@@ -39,8 +39,8 @@ if __name__ == "__main__":
        place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
        datatype="data"
        name=[
-"data_MuonEG_Run2018C-17Sep2018","MuonEleA","0","2018",
-"data_MuonEG_Run2018C-17Sep2018","MuonEleB","0","2018",
+"data_MuonEG_Run2018A-17Sep2018","MuonEleA","0","2018",
+"data_MuonEG_Run2018B-17Sep2018","MuonEleB","0","2018",
 "data_MuonEG_Run2018C-17Sep2018","MuonEleC","0","2018",
 "data_MuonEG_Run2018D-PromptReco","MuonEleD","0","2018"
 ]
@@ -48,8 +48,8 @@ if __name__ == "__main__":
        place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
        datatype="data"
        name=[
-"data_Tau_Run2018C-17Sep2018","DoubleTauA","0","2018",
-"data_Tau_Run2018C-17Sep2018","DoubleTauB","0","2018",
+"data_Tau_Run2018A-17Sep2018","DoubleTauA","0","2018",
+"data_Tau_Run2018B-17Sep2018","DoubleTauB","0","2018",
 "data_Tau_Run2018C-17Sep2018","DoubleTauC","0","2018",
 "data_Tau_Run2018D-PromptReco","DoubleTauD","0","2018"
 ]
@@ -110,7 +110,7 @@ if __name__ == "__main__":
 "DY3JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v1","DY3_v1","Z","2018",
 "DY3JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v2","DY3_v2","Z","2018",
 "DY4JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v1","DY4_v1","Z","2018",
-"DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v1","DY1_v1","Z","2018",
+"DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v1","DY_v1","Z","2018",
 "GluGluHToTauTau_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15-v2","GGHTT","Z","2018",
 "ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8_-102X_upgrade2018_realistic_v15-v1","ST_t_antitop","0","2018",
 "ST_t-channel_top_5f_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15-v1","ST_t_top","0","2018",
@@ -364,7 +364,7 @@ if __name__ == "__main__":
     # 2016 Embedded 
     ##################################################
 
-    if args.sample=="embedded" and args.sample=="embedded" and args.channel=="em":
+    if args.sample=="embedded" and args.year=="2016" and args.channel=="em":
       place="/hdfs/store/user/aloeliger/SMHTT_2016_embedded_7_Jul_2020/"
       datatype="embedded"
       name=[
@@ -377,7 +377,7 @@ if __name__ == "__main__":
 "embedded_EmbeddingRun2016H_ElMuFinalState","embeddedH","0","2016"
 ]
 
-    if args.sample=="embedded" and args.sample=="embedded" and args.channel=="et":
+    if args.sample=="embedded" and args.year=="2016" and args.channel=="et":
       place="/hdfs/store/user/aloeliger/SMHTT_2016_embedded_7_Jul_2020/"
       datatype="embedded"
       name=[
@@ -390,7 +390,7 @@ if __name__ == "__main__":
 "embedded_EmbeddingRun2016H_ElTauFinalState","embeddedH","0","2016"
 ]
 
-    if args.sample=="embedded" and args.sample=="embedded" and args.channel=="mt":
+    if args.sample=="embedded" and args.year=="2016" and args.channel=="mt":
       place="/hdfs/store/user/aloeliger/SMHTT_2016_embedded_7_Jul_2020/"
       datatype="embedded"
       name=[
@@ -403,7 +403,7 @@ if __name__ == "__main__":
 "embedded_EmbeddingRun2016H_MuTauFinalState","embeddedH","0","2016"
 ]
 
-    if args.sample=="embedded" and args.sample=="embedded" and args.channel=="tt":
+    if args.sample=="embedded" and args.year=="2016" and args.channel=="tt":
       place="/hdfs/store/user/aloeliger/SMHTT_2016_embedded_7_Jul_2020/"
       datatype="embedded"
       name=[
@@ -462,8 +462,8 @@ if __name__ == "__main__":
 "HZJ_HToWW_M125_13TeV_powheg_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","ZHWW","0","2016",
 "VBFHToTauTau_M125_13TeV_powheg_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","VBFHTT","Z","2016",
 "VBFHToWWTo2L2Nu_M125_13TeV_powheg_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","VBFHWW","Z","2016",
-"WminusHToTauTau_M125_13TeV_powheg_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","WplusHTT","0","2016",
-"WplusHToTauTau_M125_13TeV_powheg_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","WminusHTT","0","2016",
+"WminusHToTauTau_M125_13TeV_powheg_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","WminusHTT","0","2016",
+"WplusHToTauTau_M125_13TeV_powheg_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","WplusHTT","0","2016",
 "ZHToTauTau_M125_13TeV_powheg_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","ZHTT","0","2016",
 "ggZH_HToTauTau_ZToLL_M125_13TeV_powheg_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v1","GGZHLLTT","0","2016",
 "ggZH_HToTauTau_ZToNuNu_M125_13TeV_powheg_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v1","GGZHNNTT","0","2016",
