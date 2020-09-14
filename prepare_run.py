@@ -142,6 +142,8 @@ if __name__ == "__main__":
 "ggZH_HToTauTau_ZToLL_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15-v1","GGZHLLTT","0","2018",
 "ggZH_HToTauTau_ZToNuNu_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15-v1","GGZHNNTT","0","2018",
 "ggZH_HToTauTau_ZToQQ_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15-v1","GGZHQQTT","0","2018",
+"SUSYGluGluToHToAA_AToBB_AToTauTau_M-40_FilterTauTauTrigger_TuneCP5_13TeV_madgraph_pythia8","ggH_bbtt40","Z","2018",
+"SUSYVBFToHToAA_AToBB_AToTauTau_M-40_FilterTauTauTrigger_TuneCP5_13TeV_madgraph_pythia8","vbf_bbtt40","Z","2018"
 ]
 
     #####################################################################
@@ -471,7 +473,7 @@ if __name__ == "__main__":
 "ttHToNonbb_M125_TuneCUETP8M2_ttHtranche3_13TeV-powheg-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","ttHnonbb","0","2016"
 ]
 
-    datadir="/nfs_scratch/caillol/haabbtt_"+args.channel+args.year+"_14aug/"
+    datadir="/nfs_scratch/caillol/haabbtt_"+args.channel+args.year+"_7sep/"
     all_File = open("do_submit_"+datatype+"_"+args.channel+args.year+".sh" , 'w')
     line=""
     line+="mkdir -p "+datadir+ "\n"

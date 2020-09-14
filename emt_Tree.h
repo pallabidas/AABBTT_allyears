@@ -187,9 +187,6 @@ void fillTree(TTree *Run_Tree, HTauTauTree_emt *tree, int entry_tree, int recoil
     lumi = tree->lumi;
     evt =tree->evt;
     aMCatNLO_weight = tree->GenWeight;
-    bweight=tree->bweight_2018;
-   if (year==2016) bweight=tree->bweight_2016;
-   if (year==2017) bweight=tree->bweight_2017;
 
     Rivet_VEta=tree->Rivet_VEta;
     Rivet_VPt=tree->Rivet_VPt;
