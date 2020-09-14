@@ -61,6 +61,10 @@ int main(int argc, char** argv) {
     Run_Tree->Branch("lumi", &lumi, "lumi/I");
     Run_Tree->Branch("evt", &evt, "evt/I");
 
+    Run_Tree->Branch("prefiring_weight", &prefiring_weight, "prefiring_weight/F");
+    Run_Tree->Branch("prefiring_weight_up", &prefiring_weight_up, "prefiring_weight_up/F");
+    Run_Tree->Branch("prefiring_weight_down", &prefiring_weight_down, "prefiring_weight_down/F");
+
     Run_Tree->Branch("genpX", &genpX, "genpX/F");
     Run_Tree->Branch("genpY", &genpY, "genpY/F");
     Run_Tree->Branch("genM", &genM, "genM/F");
