@@ -54,6 +54,42 @@ if __name__ == "__main__":
 "data_Tau_Run2018D-PromptReco","DoubleTauD","0","2018"
 ]
 
+    if args.year=="2018" and args.sample=="data" and (args.channel=="emm" or args.channel=="mmt" or args.channel=="mtt"):
+       place="/hdfs/store/user/caillol/LTT_2018_7sep_data/"
+       datatype="data"
+       name=[
+"data_SingleMuon_Run2018A-17Sep2018","SingleMuA","0","2018",
+"data_SingleMuon_Run2018B-17Sep2018","SingleMuB","0","2018",
+"data_SingleMuon_Run2018C-17Sep2018","SingleMuC","0","2018",
+"data_SingleMuon_Run2018D-PromptReco","SingleMuD","0","2018"
+]
+
+    if args.year=="2018" and args.sample=="data" and (args.channel=="eet" or args.channel=="eem" or args.channel=="ett"):
+       place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
+       datatype="data"
+       name=[
+"data_EGamma_Run2018A-17Sep2018","SingleEleA","0","2018",
+"data_EGamma_Run2018B-17Sep2018","SingleEleB","0","2018",
+"data_EGamma_Run2018C-17Sep2018","SingleEleC","0","2018",
+"data_EGamma_Run2018D-PromptReco","SingleEleD","0","2018"
+]
+
+    if args.year=="2018" and args.sample=="data" and (args.channel=="emt"):
+       place="/hdfs/store/user/caillol/LTT_2018_7sep_data/"
+       datatype="data"
+       name=[
+"data_SingleMuon_Run2018A-17Sep2018","SingleMuA","0","2018",
+"data_SingleMuon_Run2018B-17Sep2018","SingleMuB","0","2018",
+"data_SingleMuon_Run2018C-17Sep2018","SingleMuC","0","2018",
+"data_SingleMuon_Run2018D-PromptReco","SingleMuD","0","2018",
+"data_EGamma_Run2018A-17Sep2018","SingleEleA","0","2018",
+"data_EGamma_Run2018B-17Sep2018","SingleEleB","0","2018",
+"data_EGamma_Run2018C-17Sep2018","SingleEleC","0","2018",
+"data_EGamma_Run2018D-PromptReco","SingleEleD","0","2018"
+]
+
+
+
     ##############################################################
     # 2018 Embedded
     ##############################################################
@@ -99,7 +135,45 @@ if __name__ == "__main__":
 
 ###########################  2018 MC  ############################
 
-    if args.year=="2018" and args.sample=="mc":
+    if args.year=="2018" and args.sample=="mc" and (args.channel=="em" or args.channel=="et" or args.channel=="mt" or args.channel=="tt"):
+       place="/hdfs/store/user/caillol/LTT_2018_7sep/"
+       datatype="mc"
+       name=[
+"GluGluHToWWTo2L2Nu_M125_13TeV_powheg2_JHUGenV714_pythia8_-102X_upgrade2018_realistic_v15-v1","GGHWW","0","2018",
+"GluGluToContinToZZTo2e2mu_13TeV_MCFM701_pythia8_-102X_upgrade2018_realistic_v15-v3","GGZZ2e2mu","0","2018",
+"GluGluToContinToZZTo2e2tau_13TeV_MCFM701_pythia8_-102X_upgrade2018_realistic_v15-v3","GGZZ2e2tau","0","2018",
+"GluGluToContinToZZTo2mu2tau_13TeV_MCFM701_pythia8_-102X_upgrade2018_realistic_v15-v4","GGZZ2mu2tau","0","2018",
+"GluGluToContinToZZTo4e_13TeV_MCFM701_pythia8_-102X_upgrade2018_realistic_v15-v1","GGZZ4e_v1","0","2018",
+"GluGluToContinToZZTo4e_13TeV_MCFM701_pythia8_-102X_upgrade2018_realistic_v15-v2","GGZZ4e_v2","0","2018",
+"GluGluToContinToZZTo4e_13TeV_MCFM701_pythia8_-102X_upgrade2018_realistic_v15_ext1-v1","GGZZ4e_v3","0","2018",
+"GluGluToContinToZZTo4mu_13TeV_MCFM701_pythia8_-102X_upgrade2018_realistic_v15-v1","GGZZ4mu_v1","0","2018",
+"GluGluToContinToZZTo4mu_13TeV_MCFM701_pythia8_-102X_upgrade2018_realistic_v15-v2","GGZZ4mu_v2","0","2018",
+"GluGluToContinToZZTo4mu_13TeV_MCFM701_pythia8_-102X_upgrade2018_realistic_v15_ext1-v1","GGZZ4mu_v3","0","2018",
+"GluGluToContinToZZTo4tau_13TeV_MCFM701_pythia8_-102X_upgrade2018_realistic_v15-v1","GGZZ4tau_v1","0","2018",
+"GluGluToContinToZZTo4tau_13TeV_MCFM701_pythia8_-102X_upgrade2018_realistic_v15-v2","GGZZ4tau_v2","0","2018",
+"GluGluZH_HToWW_M125_13TeV_powheg_pythia8_TuneCP5_PSweights_-102X_upgrade2018_realistic_v15-v1","GGZHWW","0","2018",
+"HWminusJ_HToWW_M125_13TeV_powheg_jhugen724_pythia8_TuneCP5_-102X_upgrade2018_realistic_v15-v1","WminusHWW","0","2018",
+"HWplusJ_HToWW_M125_13TeV_powheg_jhugen724_pythia8_TuneCP5_-102X_upgrade2018_realistic_v15-v1","WplusHWW","0","2018",
+"HZJ_HToWW_M125_13TeV_powheg_jhugen714_pythia8_TuneCP5_-102X_upgrade2018_realistic_v15-v1","ZHWW","0","2018",
+"VBFHToWWTo2L2Nu_M125_13TeV_powheg2_JHUGenV714_pythia8_-102X_upgrade2018_realistic_v15-v1","VBFHWW","0","2018",
+"WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8_-102X_upgrade2018_realistic_v15_ext1-v2","WWW","0","2018",
+"WWZ_TuneCP5_13TeV-amcatnlo-pythia8_-102X_upgrade2018_realistic_v15_ext1-v2","WWZ","0","2018",
+"WZTo3LNu_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15_ext1-v2","WZ3LNu","0","2018",
+"WZZ_TuneCP5_13TeV-amcatnlo-pythia8_-102X_upgrade2018_realistic_v15_ext1-v2","WZZ","0","2018",
+"WminusHToTauTau_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15-v2","WminusHTT","0","2018",
+"WplusHToTauTau_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15-v2","WplusHTT","0","2018",
+"ZHToTauTau_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15-v2","ZHTT","0","2018",
+"ZZTo4L_TuneCP5_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15_ext1-v2","ZZ4L_v1","0","2018",
+"ZZTo4L_TuneCP5_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15_ext2-v2","ZZ4L_v2","0","2018",
+"ZZZ_TuneCP5_13TeV-amcatnlo-pythia8_-102X_upgrade2018_realistic_v15_ext1-v2","ZZZ","0","2018",
+"ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15-v2","ttHnonbb","0","2018",
+"ttHToTauTau_M125_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15-v1","ttHTT","0","2018",
+"ttWJets_TuneCP5_13TeV_madgraphMLM_pythia8_-102X_upgrade2018_realistic_v15_ext1-v2","ttW","0","2018",
+"ttZJets_TuneCP5_13TeV_madgraphMLM_pythia8_-102X_upgrade2018_realistic_v15_ext1-v2","ttZ","0","2018"
+]
+
+
+    if args.year=="2018" and args.sample=="mc" and (args.channel=="em" or args.channel=="et" or args.channel=="mt" or args.channel=="tt"):
        place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
        datatype="mc"
        name=[
@@ -244,7 +318,7 @@ if __name__ == "__main__":
     #####################################################################
     # 2017 MC 
     #####################################################################
-    if args.sample=="mc" and args.year=="2017":
+    if args.sample=="mc" and args.year=="2017" and (args.channel=="em" or args.channel=="et" or args.channel=="mt" or args.channel=="tt"):
       place="/hdfs/store/user/caillol/SMHTT_2017_27jul_mc/"
       datatype="mc"
       name=[
@@ -421,7 +495,7 @@ if __name__ == "__main__":
     #######################################################################
     # 2016 MC
     #######################################################################
-    if args.sample=="mc" and args.year=="2016":
+    if args.sample=="mc" and args.year=="2016" and (args.channel=="em" or args.channel=="et" or args.channel=="mt" or args.channel=="tt"):
       place="/hdfs/store/user/aloeliger/SMHTT_2016_7_Jul_2020/"
       datatype="mc"
       name=[
