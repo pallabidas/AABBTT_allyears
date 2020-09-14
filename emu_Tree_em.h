@@ -17,6 +17,7 @@
 
 using namespace std;
 
+float prefiring_weight,prefiring_weight_up, prefiring_weight_down;
 float lheweight_muR0p5_muF0p5,lheweight_muR0p5_muF1,lheweight_muR0p5_muF2,lheweight_muR1_muF0p5,lheweight_muR1_muF2,lheweight_muR2_muF0p5,lheweight_muR2_muF1,lheweight_muR2_muF2,PythiaWeight_fsr_muR0p25,PythiaWeight_fsr_muR0p5,PythiaWeight_fsr_muR2,PythiaWeight_fsr_muR4,PythiaWeight_isr_muR0p25,PythiaWeight_isr_muR0p5,PythiaWeight_isr_muR2,PythiaWeight_isr_muR4;
 float gentau1_eta, gentau1_pt, gentau2_eta, gentau2_pt;
 float gen_met_pt, gen_met_phi, gen_tauh_pt, gen_tauh_eta, gen_tauh_phi, gen_mu_pt, gen_mu_eta, gen_mu_phi, HTTgenfinalstate;
@@ -81,6 +82,10 @@ MEtSys metSys("SMH_et_2016/HTT-utilities/RecoilCorrections/data/PFMEtSys_2017.ro
 
 void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil, bool ismc, bool isembedded, int year){
     tree->GetEntry(entry_tree);
+
+    prefiring_weight=tree->prefiring_weight;
+    prefiring_weight_up=tree->prefiring_weight_up;
+    prefiring_weight_down=tree->prefiring_weight_down;
 
     HTTgenfinalstate=tree->HTTgenfinalstate;
     gen_met_pt=tree->genMetPt;
