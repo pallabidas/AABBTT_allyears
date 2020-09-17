@@ -129,7 +129,7 @@ void fillTree(TTree *Run_Tree, HTauTauTree_mmmt *tree, int entry_tree, int recoi
     passMu22=tree->singleIsoMu22Pass;
     passTkMu22=tree->singleIsoTkMu22Pass;
 
-    lheweight_muR0p5_muF0p5=tree->lheweight_muR0p5_muF0p5;
+    /*lheweight_muR0p5_muF0p5=tree->lheweight_muR0p5_muF0p5;
     lheweight_muR0p5_muF1=tree->lheweight_muR0p5_muF1;
     lheweight_muR0p5_muF2=tree->lheweight_muR0p5_muF2;
     lheweight_muR1_muF0p5=tree->lheweight_muR1_muF0p5;
@@ -144,7 +144,7 @@ void fillTree(TTree *Run_Tree, HTauTauTree_mmmt *tree, int entry_tree, int recoi
     PythiaWeight_isr_muR0p25=tree->PythiaWeight_isr_muR0p25;
     PythiaWeight_isr_muR0p5=tree->PythiaWeight_isr_muR0p5;
     PythiaWeight_isr_muR2=tree->PythiaWeight_isr_muR2;
-    PythiaWeight_isr_muR4=tree->PythiaWeight_isr_muR4;
+    PythiaWeight_isr_muR4=tree->PythiaWeight_isr_muR4;*/
 
     prefiring_weight=tree->prefiring_weight;
     prefiring_weight_up=tree->prefiring_weight_up;
@@ -184,9 +184,9 @@ void fillTree(TTree *Run_Tree, HTauTauTree_mmmt *tree, int entry_tree, int recoi
     lumi = tree->lumi;
     evt =tree->evt;
     aMCatNLO_weight = tree->GenWeight;
-    bweight=tree->bweight_2018;
+    /*bweight=tree->bweight_2018;
     if (year==2016) bweight=tree->bweight_2016;
-    if (year==2017) bweight=tree->bweight_2017;
+    if (year==2017) bweight=tree->bweight_2017;*/
 
     Flag_BadChargedCandidateFilter = tree->Flag_BadChargedCandidateFilter;
     Flag_BadPFMuonFilter = tree->Flag_BadPFMuonFilter;
