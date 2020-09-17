@@ -65,7 +65,7 @@ if __name__ == "__main__":
 ]
 
     if args.year=="2018" and args.sample=="data" and (args.channel=="eet" or args.channel=="eem" or args.channel=="ett"):
-       place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
+       place="/hdfs/store/user/caillol/LTT_2018_7sep_data/"
        datatype="data"
        name=[
 "data_EGamma_Run2018A-17Sep2018","SingleEleA","0","2018",
@@ -135,7 +135,7 @@ if __name__ == "__main__":
 
 ###########################  2018 MC  ############################
 
-    if args.year=="2018" and args.sample=="mc" and (args.channel=="em" or args.channel=="et" or args.channel=="mt" or args.channel=="tt"):
+    if args.year=="2018" and args.sample=="mc" and (args.channel=="eem" or args.channel=="eet" or args.channel=="emt" or args.channel=="emm" or args.channel=="mmt" or args.channel=="mtt" or args.channel=="ett"):
        place="/hdfs/store/user/caillol/LTT_2018_7sep/"
        datatype="mc"
        name=[
