@@ -79,7 +79,7 @@ float met_px, met_py,genpX,genpY,vispX,vispY,metSig,genpT,genM;
 float pt_top1, pt_top2, genweight;
 float decayModeFinding_2, againstElectronTightMVA6_2, againstElectronVTightMVA6_2, againstElectronVLooseMVA6_2, againstElectronMediumMVA6_2, againstElectronLooseMVA6_2, againstMuonLoose3_2, againstMuonTight3_2;
 float Flag_BadChargedCandidateFilter, Flag_BadPFMuonFilter, Flag_EcalDeadCellTriggerPrimitiveFilter, Flag_HBHENoiseFilter, Flag_HBHENoiseIsoFilter, Flag_badCloneMuon, Flag_badGlobalMuon, Flag_eeBadScFilter, Flag_globalTightHalo2016Filter, Flag_goodVertices, Flag_globalSuperTightHalo2016Filter, Flag_badMuons, Flag_duplicateMuons, Flag_ecalBadCalibFilter, Flag_ecalBadCalibReducedMINIAODFilter;
-float matchEmbFilter_Mu20Tau27_1,matchEmbFilter_Mu24_1,matchEmbFilter_Mu27_1,matchEmbFilter_Mu20Tau27_2,matchEmbFilter_Mu20HPSTau27_2;
+float matchEmbFilter_Mu20Tau27_1,matchEmbFilter_Mu24_1,matchEmbFilter_Mu27_1,matchEmbFilter_Mu20Tau27_2,matchEmbFilter_Mu20HPSTau27_2, matchEmbFilter_Mu20Tau27_2017_1;
 float matchEmbFilter_Mu19Tau20_1,matchEmbFilter_Mu19Tau20_2;
 float genpt_1, genpt_2, geneta_1, geneta_2;
 
@@ -228,6 +228,7 @@ void fillTree(TTree *Run_Tree, HTauTauTree_mt *tree, int entry_tree, int recoil,
     genpt_2=tree->tGenPt;
 
     matchEmbFilter_Mu20Tau27_1=tree->mMatchEmbeddedFilterMu20Tau27_2018;
+    matchEmbFilter_Mu20Tau27_2017_1=tree->mMatchEmbeddedFilterMu20Tau27_2017;
     matchEmbFilter_Mu24_1=tree->mMatchEmbeddedFilterMu24;
     matchEmbFilter_Mu27_1=tree->mMatchEmbeddedFilterMu27;
     matchEmbFilter_Mu20Tau27_2=tree->tMatchEmbeddedFilterMu20Tau27;
