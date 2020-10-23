@@ -1,6 +1,9 @@
 #ifndef THTH_TREE_H
 #define	THTH_TREE_H
 
+#include "RooWorkspace.h"
+#include "RooRealVar.h"
+#include "RooFunctor.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -16,6 +19,7 @@
 #include "MEtSys.h"
 
 using namespace std;
+float zptmass_weight_nom,e_trk_ratio,e_idiso_ic_ratio,m_idiso_ic_ratio,m_trk_ratio,e_trk_embed_ratio,e_idiso_ic_embed_ratio,m_idiso_ic_embed_ratio,m_trg_8_ic_data,e_trg_23_ic_data,m_trg_23_ic_data,e_trg_12_ic_data,e_trg_12_ic_mc,m_trg_23_ic_mc,e_trg_23_ic_mc,m_trg_8_ic_mc,e_trg_12_ic_embed,m_trg_23_ic_embed,e_trg_23_ic_embed,m_trg_8_ic_embed,m_sel_trg_ic_ratio,m_sel_id_ic_ratio_1,m_sel_id_ic_ratio_2;
 
 float prefiring_weight,prefiring_weight_up, prefiring_weight_down;
 float lheweight_muR0p5_muF0p5,lheweight_muR0p5_muF1,lheweight_muR0p5_muF2,lheweight_muR1_muF0p5,lheweight_muR1_muF2,lheweight_muR2_muF0p5,lheweight_muR2_muF1,lheweight_muR2_muF2,PythiaWeight_fsr_muR0p25,PythiaWeight_fsr_muR0p5,PythiaWeight_fsr_muR2,PythiaWeight_fsr_muR4,PythiaWeight_isr_muR0p25,PythiaWeight_isr_muR0p5,PythiaWeight_isr_muR2,PythiaWeight_isr_muR4;
@@ -79,6 +83,15 @@ float genpt_1, genpt_2, geneta_1, geneta_2, pt_1_ScaleUp, pt_1_ScaleDown;
 
 RecoilCorrector recoilPFMetCorrector("SMH_et_2016/HTT-utilities/RecoilCorrections/data/TypeI-PFMet_Run2018.root");
 MEtSys metSys("SMH_et_2016/HTT-utilities/RecoilCorrections/data/PFMEtSys_2017.root");
+
+TFile fwmc2016("htt_scalefactors_legacy_2016.root");
+RooWorkspace *wmc2016 = (RooWorkspace*)fwmc2016.Get("w");
+
+TFile fwmc2017("htt_scalefactors_legacy_2017.root");
+RooWorkspace *wmc2017 = (RooWorkspace*)fwmc2017.Get("w");
+
+TFile fwmc2018("htt_scalefactors_legacy_2018.root");
+RooWorkspace *wmc2018 = (RooWorkspace*)fwmc2018.Get("w");
 
 void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil, bool ismc, bool isembedded, int year){
     tree->GetEntry(entry_tree);
@@ -169,7 +182,6 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
     vispY=tree->vispY;
     genpT=tree->genpT;
     genM=tree->genM;
-
 
     Flag_ecalBadCalibReducedMINIAODFilter = tree->Flag_ecalBadCalibReducedMINIAODFilter;
     Flag_BadChargedCandidateFilter = tree->Flag_BadChargedCandidateFilter;
@@ -535,6 +547,61 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
   extraelec_veto=(tree->eVetoZTTp001dxyzR0>0);
   extramuon_veto=(tree->muVetoZTTp001dxyzR0>1);
   dilepton_veto=(tree->dimuonVeto>0);
+
+    RooWorkspace *wmc=wmc2018;
+    if (year==2017) wmc=wmc2017;
+    if (year==2016) wmc=wmc2016;
+    if (ismc){
+       wmc->var("z_gen_mass")->setVal(genM);
+       wmc->var("z_gen_pt")->setVal(genpT);
+       zptmass_weight_nom=wmc->function("zptmass_weight_nom")->getVal();
+       wmc->var("m_pt")->setVal(pt_2);
+       wmc->var("m_eta")->setVal(eta_2);
+       wmc->var("m_iso")->setVal(iso_2);
+       wmc->var("e_pt")->setVal(pt_1);
+       wmc->var("e_eta")->setVal(eta_1);
+       wmc->var("e_iso")->setVal(iso_1);
+       m_trk_ratio=wmc->function("m_trk_ratio")->getVal();
+       e_trk_ratio=wmc->function("e_trk_ratio")->getVal();
+       e_idiso_ic_ratio=wmc->function("e_idiso_ic_ratio")->getVal();
+       m_idiso_ic_ratio=wmc->function("m_idiso_ic_ratio")->getVal();
+       m_trg_8_ic_data=wmc->function("m_trg_8_ic_data")->getVal();
+       e_trg_23_ic_data=wmc->function("e_trg_23_ic_data")->getVal();
+       m_trg_23_ic_data=wmc->function("m_trg_23_ic_data")->getVal();
+       e_trg_12_ic_data=wmc->function("e_trg_12_ic_data")->getVal();
+       m_trg_8_ic_mc=wmc->function("m_trg_8_ic_mc")->getVal();
+       e_trg_23_ic_mc=wmc->function("e_trg_23_ic_mc")->getVal();
+       m_trg_23_ic_mc=wmc->function("m_trg_23_ic_mc")->getVal();
+       e_trg_12_ic_mc=wmc->function("e_trg_12_ic_mc")->getVal();
+    }
+    if (isembedded){
+       wmc->var("m_pt")->setVal(pt_2);
+       wmc->var("m_eta")->setVal(eta_2);
+       wmc->var("m_iso")->setVal(iso_2);
+       wmc->var("e_pt")->setVal(pt_1);
+       wmc->var("e_eta")->setVal(eta_1);
+       wmc->var("e_iso")->setVal(iso_1);
+       m_trg_8_ic_data=wmc->function("m_trg_8_ic_data")->getVal();
+       e_trg_23_ic_data=wmc->function("e_trg_23_ic_data")->getVal();
+       m_trg_23_ic_data=wmc->function("m_trg_23_ic_data")->getVal();
+       e_trg_12_ic_data=wmc->function("e_trg_12_ic_data")->getVal();
+       m_trg_8_ic_embed=wmc->function("m_trg_8_ic_embed")->getVal();
+       e_trg_23_ic_embed=wmc->function("e_trg_23_ic_embed")->getVal();
+       m_trg_23_ic_embed=wmc->function("m_trg_23_ic_embed")->getVal();
+       e_trg_12_ic_embed=wmc->function("e_trg_12_ic_embed")->getVal();
+
+       wmc->var("gt1_pt")->setVal(1.69*genpt_1);
+       wmc->var("gt2_pt")->setVal(1.69*genpt_2);
+       wmc->var("gt1_eta")->setVal(geneta_1);
+       wmc->var("gt2_eta")->setVal(geneta_2);
+       m_sel_trg_ic_ratio=wmc->function("m_sel_trg_ic_ratio")->getVal();
+       wmc->var("gt_pt")->setVal(1.69*genpt_1);
+       wmc->var("gt_eta")->setVal(geneta_1);
+       m_sel_id_ic_ratio_1=wmc->function("m_sel_id_ic_ratio")->getVal();
+       wmc->var("gt_pt")->setVal(1.69*genpt_2);
+       wmc->var("gt_eta")->setVal(geneta_2);
+       m_sel_id_ic_ratio_2=wmc->function("m_sel_id_ic_ratio")->getVal();
+    }
 
 
   Run_Tree->Fill();
