@@ -666,7 +666,7 @@ if __name__ == "__main__":
 ]
 
     datadir="/nfs_scratch/caillol/haabbtt_"+args.channel+args.year+"_7sep/"
-    all_File = open("do_submit_"+datatype+"_"+args.channel+args.year+".sh" , 'w')
+    all_File = open("do_submit_"+args.sample+"_"+args.channel+args.year+".sh" , 'w')
     line=""
     line+="mkdir -p "+datadir+ "\n"
     for j in range(0,len(name)/4):
