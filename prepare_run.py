@@ -21,10 +21,10 @@ if __name__ == "__main__":
        place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
        datatype="data"
        name=[
-"data_SingleMuon_Run2018A-17Sep2018","SingleMuA","0","2018",
-"data_SingleMuon_Run2018B-17Sep2018","SingleMuB","0","2018",
-"data_SingleMuon_Run2018C-17Sep2018","SingleMuC","0","2018",
-"data_SingleMuon_Run2018D-PromptReco","SingleMuD","0","2018"
+"data_SingleMuon_Run2018A-17Sep2018","DataA","0","2018",
+"data_SingleMuon_Run2018B-17Sep2018","DataB","0","2018",
+"data_SingleMuon_Run2018C-17Sep2018","DataC","0","2018",
+"data_SingleMuon_Run2018D-PromptReco","DataD","0","2018"
 ]
     if args.year=="2018" and args.sample=="data" and args.channel=="et":
        place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
@@ -39,29 +39,29 @@ if __name__ == "__main__":
        place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
        datatype="data"
        name=[
-"data_MuonEG_Run2018A-17Sep2018","MuonEleA","0","2018",
-"data_MuonEG_Run2018B-17Sep2018","MuonEleB","0","2018",
-"data_MuonEG_Run2018C-17Sep2018","MuonEleC","0","2018",
-"data_MuonEG_Run2018D-PromptReco","MuonEleD","0","2018"
+"data_MuonEG_Run2018A-17Sep2018","DataA","0","2018",
+"data_MuonEG_Run2018B-17Sep2018","DataB","0","2018",
+"data_MuonEG_Run2018C-17Sep2018","DataC","0","2018",
+"data_MuonEG_Run2018D-PromptReco","DataD","0","2018"
 ]
     if args.year=="2018" and args.sample=="data" and args.channel=="tt":
        place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
        datatype="data"
        name=[
-"data_Tau_Run2018A-17Sep2018","DoubleTauA","0","2018",
-"data_Tau_Run2018B-17Sep2018","DoubleTauB","0","2018",
-"data_Tau_Run2018C-17Sep2018","DoubleTauC","0","2018",
-"data_Tau_Run2018D-PromptReco","DoubleTauD","0","2018"
+"data_Tau_Run2018A-17Sep2018","DataA","0","2018",
+"data_Tau_Run2018B-17Sep2018","DataB","0","2018",
+"data_Tau_Run2018C-17Sep2018","DataC","0","2018",
+"data_Tau_Run2018D-PromptReco","DataD","0","2018"
 ]
 
     if args.year=="2018" and args.sample=="data" and (args.channel=="emm" or args.channel=="mmt" or args.channel=="mtt"):
        place="/hdfs/store/user/caillol/LTT_2018_7sep_data/"
        datatype="data"
        name=[
-"data_SingleMuon_Run2018A-17Sep2018","SingleMuA","0","2018",
-"data_SingleMuon_Run2018B-17Sep2018","SingleMuB","0","2018",
-"data_SingleMuon_Run2018C-17Sep2018","SingleMuC","0","2018",
-"data_SingleMuon_Run2018D-PromptReco","SingleMuD","0","2018"
+"data_SingleMuon_Run2018A-17Sep2018","DataA","0","2018",
+"data_SingleMuon_Run2018B-17Sep2018","DataB","0","2018",
+"data_SingleMuon_Run2018C-17Sep2018","DataC","0","2018",
+"data_SingleMuon_Run2018D-PromptReco","DataD","0","2018"
 ]
 
     if args.year=="2018" and args.sample=="data" and (args.channel=="eet" or args.channel=="eem" or args.channel=="ett"):
