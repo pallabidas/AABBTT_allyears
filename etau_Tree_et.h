@@ -742,7 +742,7 @@ zptmass_weight_nom,e_trk_ratio,e_idiso_ic_ratio,e_trg_ic_ratio,e_trg_24_ic_ratio
        zptmass_weight_nom=wmc->function("zptmass_weight_nom")->getVal();
 
        wmc->var("e_pt")->setVal(tau1.Pt());
-       wmc->var("e_eta")->setVal(fabs(tau1.Eta()));
+       wmc->var("e_eta")->setVal(tau1.Eta());
        wmc->var("e_iso")->setVal(iso_1);
        wmc->var("t_pt")->setVal(tau2.Pt());
        wmc->var("t_eta")->setVal(tau2.Eta());
@@ -760,7 +760,7 @@ zptmass_weight_nom,e_trk_ratio,e_idiso_ic_ratio,e_trg_ic_ratio,e_trg_24_ic_ratio
     }
     if (isembedded){
        wmc->var("e_pt")->setVal(tau1.Pt());
-       wmc->var("e_eta")->setVal(fabs(tau1.Eta()));
+       wmc->var("e_eta")->setVal(tau1.Eta());
        wmc->var("e_iso")->setVal(iso_1);
        wmc->var("t_pt")->setVal(tau2.Pt());
        if (year==2018) wmc->var("t_pt")->setVal(35.0);
@@ -784,15 +784,15 @@ zptmass_weight_nom,e_trk_ratio,e_idiso_ic_ratio,e_trg_ic_ratio,e_trg_24_ic_ratio
        e_idiso_ic_embed_ratio=wmc->function("e_idiso_ic_embed_ratio")->getVal();
        e_trg_ic_embed_ratio=wmc->function("e_trg_ic_embed_ratio")->getVal();
 
-       wmc->var("gt1_pt")->setVal(1.69*genpt_1);
-       wmc->var("gt2_pt")->setVal(1.47*tau2.Pt());
+       wmc->var("gt1_pt")->setVal(genpt_1);
+       wmc->var("gt2_pt")->setVal(tau2.Pt());
        wmc->var("gt1_eta")->setVal(geneta_1);
        wmc->var("gt2_eta")->setVal(tau2.Eta());
        m_sel_trg_ic_ratio=wmc->function("m_sel_trg_ic_ratio")->getVal();
-       wmc->var("gt_pt")->setVal(1.69*genpt_1);
+       wmc->var("gt_pt")->setVal(genpt_1);
        wmc->var("gt_eta")->setVal(geneta_1);
        m_sel_id_ic_ratio_1=wmc->function("m_sel_id_ic_ratio")->getVal();
-       wmc->var("gt_pt")->setVal(1.47*tau2.Pt());
+       wmc->var("gt_pt")->setVal(tau2.Pt());
        wmc->var("gt_eta")->setVal(tau2.Eta());
        m_sel_id_ic_ratio_2=wmc->function("m_sel_id_ic_ratio")->getVal();
     }
@@ -801,5 +801,6 @@ zptmass_weight_nom,e_trk_ratio,e_idiso_ic_ratio,e_trg_ic_ratio,e_trg_24_ic_ratio
 }
 
 #endif
+
 
 
