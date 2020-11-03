@@ -61,6 +61,33 @@ int main(int argc, char** argv) {
     Run_Tree->Branch("lumi", &lumi, "lumi/I");
     Run_Tree->Branch("evt", &evt, "evt/I");
 
+    Run_Tree->Branch("zptmass_weight_nom", &zptmass_weight_nom, "zptmass_weight_nom/F");
+    Run_Tree->Branch("e_trk_ratio", &e_trk_ratio, "e_trk_ratio/F");
+    Run_Tree->Branch("e_idiso_ic_ratio", &e_idiso_ic_ratio, "e_idiso_ic_ratio/F");
+    Run_Tree->Branch("e_trg_ic_ratio", &e_trg_ic_ratio, "e_trg_ic_ratio/F");
+    Run_Tree->Branch("e_trg_24_ic_ratio", &e_trg_24_ic_ratio, "e_trg_24_ic_ratio/F");
+    Run_Tree->Branch("e_trg_24_ic_embed_ratio", &e_trg_24_ic_embed_ratio, "e_trg_24_ic_embed_ratio/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_etau_embed_ratio", &t_trg_mediumDeepTau_etau_embed_ratio, "t_trg_mediumDeepTau_etau_embed_ratio/F");
+    Run_Tree->Branch("e_trg_ic_embed_ratio", &e_trg_ic_embed_ratio, "e_trg_ic_embed_ratio/F");
+    Run_Tree->Branch("et_emb_LooseChargedIsoPFTau30_kit_ratio", &et_emb_LooseChargedIsoPFTau30_kit_ratio, "et_emb_LooseChargedIsoPFTau30_kit_ratio/F");
+    Run_Tree->Branch("e_trg_ic_data", &e_trg_ic_data, "e_trg_ic_data/F");
+    Run_Tree->Branch("e_trg_24_ic_data", &e_trg_24_ic_data, "e_trg_24_ic_data/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_etau_data", &t_trg_mediumDeepTau_etau_data, "t_trg_mediumDeepTau_etau_data/F");
+    Run_Tree->Branch("e_trk_embed_ratio", &e_trk_embed_ratio, "e_trk_embed_ratio/F");
+    Run_Tree->Branch("e_idiso_ic_embed_ratio", &e_idiso_ic_embed_ratio, "e_idiso_ic_embed_ratio/F");
+    Run_Tree->Branch("m_sel_trg_ic_ratio", &m_sel_trg_ic_ratio, "m_sel_trg_ic_ratio/F");
+    Run_Tree->Branch("m_sel_id_ic_ratio_1", &m_sel_id_ic_ratio_1, "m_sel_id_ic_ratio_1/F");
+    Run_Tree->Branch("m_sel_id_ic_ratio_2", &m_sel_id_ic_ratio_2, "m_sel_id_ic_ratio_2/F");
+    Run_Tree->Branch("t_trg_pog_deeptau_medium_etau_ratio", &t_trg_pog_deeptau_medium_etau_ratio, "t_trg_pog_deeptau_medium_etau_ratio/F");
+    Run_Tree->Branch("t_trg_pog_deeptau_medium_etau_ratio_up", &t_trg_pog_deeptau_medium_etau_ratio_up, "t_trg_pog_deeptau_medium_etau_ratio_up/F");
+    Run_Tree->Branch("t_trg_pog_deeptau_medium_etau_ratio_down", &t_trg_pog_deeptau_medium_etau_ratio_down, "t_trg_pog_deeptau_medium_etau_ratio_down/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_etau_embed_ratio_up", &t_trg_mediumDeepTau_etau_embed_ratio_up, "t_trg_mediumDeepTau_etau_embed_ratio_up/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_etau_embed_ratio_down", &t_trg_mediumDeepTau_etau_embed_ratio_down, "t_trg_mediumDeepTau_etau_embed_ratio_down/F");
+
+    Run_Tree->Branch("prefiring_weight", &prefiring_weight, "prefiring_weight/F");
+    Run_Tree->Branch("prefiring_weight_up", &prefiring_weight_up, "prefiring_weight_up/F");
+    Run_Tree->Branch("prefiring_weight_down", &prefiring_weight_down, "prefiring_weight_down/F");
+
     Run_Tree->Branch("genpX", &genpX, "genpX/F");
     Run_Tree->Branch("genpY", &genpY, "genpY/F");
     Run_Tree->Branch("genM", &genM, "genM/F");

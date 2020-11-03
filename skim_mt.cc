@@ -61,9 +61,34 @@ int main(int argc, char** argv) {
     Run_Tree->Branch("lumi", &lumi, "lumi/I");
     Run_Tree->Branch("evt", &evt, "evt/I");
 
+    Run_Tree->Branch("zptmass_weight_nom", &zptmass_weight_nom, "zptmass_weight_nom/F");
+    Run_Tree->Branch("m_trk_ratio", &m_trk_ratio, "m_trk_ratio/F");
+    Run_Tree->Branch("m_trg_ic_ratio", &m_trg_ic_ratio, "m_trg_ic_ratio/F");
+    Run_Tree->Branch("t_trg_pog_deeptau_medium_mutau_ratio", &t_trg_pog_deeptau_medium_mutau_ratio, "t_trg_pog_deeptau_medium_mutau_ratio/F");
+    Run_Tree->Branch("t_trg_pog_deeptau_medium_mutau_ratio_up", &t_trg_pog_deeptau_medium_mutau_ratio_up, "t_trg_pog_deeptau_medium_mutau_ratio_up/F");
+    Run_Tree->Branch("t_trg_pog_deeptau_medium_mutau_ratio_down", &t_trg_pog_deeptau_medium_mutau_ratio_down, "t_trg_pog_deeptau_medium_mutau_ratio_down/F");
+    Run_Tree->Branch("m_trg_19_ic_ratio", &m_trg_19_ic_ratio, "m_trg_19_ic_ratio/F");
+    Run_Tree->Branch("m_trg_20_ic_ratio", &m_trg_20_ic_ratio, "m_trg_20_ic_ratio/F");
+    Run_Tree->Branch("m_sel_trg_ic_ratio", &m_sel_trg_ic_ratio, "m_sel_trg_ic_ratio/F");
+    Run_Tree->Branch("m_sel_id_ic_ratio_1", &m_sel_id_ic_ratio_1, "m_sel_id_ic_ratio_1/F");
+    Run_Tree->Branch("m_sel_id_ic_ratio_2", &m_sel_id_ic_ratio_2, "m_sel_id_ic_ratio_2/F");
+    Run_Tree->Branch("m_idiso_ic_embed_ratio", &m_idiso_ic_embed_ratio, "m_idiso_ic_embed_ratio/F");
+    Run_Tree->Branch("m_idiso_ic_ratio", &m_idiso_ic_ratio, "m_idiso_ic_ratio/F");
+    Run_Tree->Branch("m_trg_ic_embed_ratio", &m_trg_ic_embed_ratio, "m_trg_ic_embed_ratio/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_mutau_embed_ratio", &t_trg_mediumDeepTau_mutau_embed_ratio, "t_trg_mediumDeepTau_mutau_embed_ratio/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_mutau_embed_ratio_up", &t_trg_mediumDeepTau_mutau_embed_ratio_up, "t_trg_mediumDeepTau_mutau_embed_ratio_up/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_mutau_embed_ratio_down", &t_trg_mediumDeepTau_mutau_embed_ratio_down, "t_trg_mediumDeepTau_mutau_embed_ratio_down/F");
+    Run_Tree->Branch("m_trg_19_ic_embed_ratio", &m_trg_19_ic_embed_ratio, "m_trg_19_ic_embed_ratio/F");
+    Run_Tree->Branch("m_trg_20_ic_embed_ratio", &m_trg_20_ic_embed_ratio, "m_trg_20_ic_embed_ratio/F");
+
+    Run_Tree->Branch("prefiring_weight", &prefiring_weight, "prefiring_weight/F");
+    Run_Tree->Branch("prefiring_weight_up", &prefiring_weight_up, "prefiring_weight_up/F");
+    Run_Tree->Branch("prefiring_weight_down", &prefiring_weight_down, "prefiring_weight_down/F");
+
     Run_Tree->Branch("matchEmbFilter_Mu19Tau20_1", &matchEmbFilter_Mu19Tau20_1, "matchEmbFilter_Mu19Tau20_1/F");
     Run_Tree->Branch("matchEmbFilter_Mu19Tau20_2", &matchEmbFilter_Mu19Tau20_2, "matchEmbFilter_Mu19Tau20_2/F");
     Run_Tree->Branch("matchEmbFilter_Mu20Tau27_1", &matchEmbFilter_Mu20Tau27_1, "matchEmbFilter_Mu20Tau27_1/F");
+    Run_Tree->Branch("matchEmbFilter_Mu20Tau27_2017_1", &matchEmbFilter_Mu20Tau27_2017_1, "matchEmbFilter_Mu20Tau27_2017_1/F");
     Run_Tree->Branch("matchEmbFilter_Mu24_1", &matchEmbFilter_Mu24_1, "matchEmbFilter_Mu24_1/F");
     Run_Tree->Branch("matchEmbFilter_Mu27_1", &matchEmbFilter_Mu27_1, "matchEmbFilter_Mu27_1/F");
     Run_Tree->Branch("matchEmbFilter_Mu20Tau27_2", &matchEmbFilter_Mu20Tau27_2, "matchEmbFilter_Mu20Tau27_2/F");

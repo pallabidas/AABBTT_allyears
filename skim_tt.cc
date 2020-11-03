@@ -61,6 +61,27 @@ int main(int argc, char** argv) {
     Run_Tree->Branch("lumi", &lumi, "lumi/I");
     Run_Tree->Branch("evt", &evt, "evt/I");
 
+    Run_Tree->Branch("m_sel_trg_ic_ratio", &m_sel_trg_ic_ratio, "m_sel_trg_ic_ratio/F");
+    Run_Tree->Branch("m_sel_id_ic_ratio_1", &m_sel_id_ic_ratio_1, "m_sel_id_ic_ratio_1/F");
+    Run_Tree->Branch("m_sel_id_ic_ratio_2", &m_sel_id_ic_ratio_2, "m_sel_id_ic_ratio_2/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_ditau_embed_ratio_1", &t_trg_mediumDeepTau_ditau_embed_ratio_1, "t_trg_mediumDeepTau_ditau_embed_ratio_1/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_ditau_embed_ratio_2", &t_trg_mediumDeepTau_ditau_embed_ratio_2, "t_trg_mediumDeepTau_ditau_embed_ratio_2/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_ditau_embed_ratio_up_1", &t_trg_mediumDeepTau_ditau_embed_ratio_up_1, "t_trg_mediumDeepTau_ditau_embed_ratio_up_1/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_ditau_embed_ratio_up_2", &t_trg_mediumDeepTau_ditau_embed_ratio_up_2, "t_trg_mediumDeepTau_ditau_embed_ratio_up_2/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_ditau_embed_ratio_down_1", &t_trg_mediumDeepTau_ditau_embed_ratio_down_1, "t_trg_mediumDeepTau_ditau_embed_ratio_down_1/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_ditau_embed_ratio_down_2", &t_trg_mediumDeepTau_ditau_embed_ratio_down_2, "t_trg_mediumDeepTau_ditau_embed_ratio_down_2/F");
+    Run_Tree->Branch("zptmass_weight_nom", &zptmass_weight_nom, "zptmass_weight_nom/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_ditau_ratio_1", &t_trg_mediumDeepTau_ditau_ratio_1, "t_trg_mediumDeepTau_ditau_ratio_1/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_ditau_ratio_2", &t_trg_mediumDeepTau_ditau_ratio_2, "t_trg_mediumDeepTau_ditau_ratio_2/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_ditau_ratio_up_1", &t_trg_mediumDeepTau_ditau_ratio_up_1, "t_trg_mediumDeepTau_ditau_ratio_up_1/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_ditau_ratio_up_2", &t_trg_mediumDeepTau_ditau_ratio_up_2, "t_trg_mediumDeepTau_ditau_ratio_up_2/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_ditau_ratio_down_1", &t_trg_mediumDeepTau_ditau_ratio_down_1, "t_trg_mediumDeepTau_ditau_ratio_down_1/F");
+    Run_Tree->Branch("t_trg_mediumDeepTau_ditau_ratio_down_2", &t_trg_mediumDeepTau_ditau_ratio_down_2, "t_trg_mediumDeepTau_ditau_ratio_down_2/F");
+
+    Run_Tree->Branch("prefiring_weight", &prefiring_weight, "prefiring_weight/F");
+    Run_Tree->Branch("prefiring_weight_up", &prefiring_weight_up, "prefiring_weight_up/F");
+    Run_Tree->Branch("prefiring_weight_down", &prefiring_weight_down, "prefiring_weight_down/F");
+
     Run_Tree->Branch("matchEmbFilter_1", &matchEmbFilter_1, "matchEmbFilter_1/F");
     Run_Tree->Branch("matchEmbFilter_2", &matchEmbFilter_2, "matchEmbFilter_2/F");
 
