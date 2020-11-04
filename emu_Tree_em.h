@@ -130,6 +130,11 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
     matchMu23E12DZ_2=tree->mMatchesMu23e12DZPath;
     filterMu8E23DZ_2=tree->mMatchesMu8e23DZFilter;
     filterMu23E12DZ_2=tree->mMatchesMu23e12DZFilter;
+    
+    geneta_1=tree->eGenEta;
+    geneta_2=tree->mGenEta;
+    genpt_1=tree->eGenPt;
+    genpt_2=tree->mGenPt;
 
     lheweight_muR0p5_muF0p5=tree->lheweight_muR0p5_muF0p5;
     lheweight_muR0p5_muF1=tree->lheweight_muR0p5_muF1;
@@ -589,16 +594,21 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
        e_trg_23_ic_embed=wmc->function("e_trg_23_ic_embed")->getVal();
        m_trg_23_ic_embed=wmc->function("m_trg_23_ic_embed")->getVal();
        e_trg_12_ic_embed=wmc->function("e_trg_12_ic_embed")->getVal();
+       
+       m_trk_ratio=wmc->function("m_trk_ratio")->getVal();
+       m_idiso_ic_embed_ratio=wmc->function("m_idiso_ic_embed_ratio")->getVal();
+       e_trk_embed_ratio=wmc->function("e_trk_embed_ratio")->getVal();
+       e_idiso_ic_embed_ratio=wmc->function("e_idiso_ic_embed_ratio")->getVal();
 
-       wmc->var("gt1_pt")->setVal(1.69*genpt_1);
-       wmc->var("gt2_pt")->setVal(1.69*genpt_2);
+       wmc->var("gt1_pt")->setVal(genpt_1);
+       wmc->var("gt2_pt")->setVal(genpt_2);
        wmc->var("gt1_eta")->setVal(geneta_1);
        wmc->var("gt2_eta")->setVal(geneta_2);
        m_sel_trg_ic_ratio=wmc->function("m_sel_trg_ic_ratio")->getVal();
-       wmc->var("gt_pt")->setVal(1.69*genpt_1);
+       wmc->var("gt_pt")->setVal(genpt_1);
        wmc->var("gt_eta")->setVal(geneta_1);
        m_sel_id_ic_ratio_1=wmc->function("m_sel_id_ic_ratio")->getVal();
-       wmc->var("gt_pt")->setVal(1.69*genpt_2);
+       wmc->var("gt_pt")->setVal(genpt_2);
        wmc->var("gt_eta")->setVal(geneta_2);
        m_sel_id_ic_ratio_2=wmc->function("m_sel_id_ic_ratio")->getVal();
     }
@@ -608,5 +618,6 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
 }
 
 #endif
+
 
 

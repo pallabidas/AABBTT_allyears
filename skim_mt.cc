@@ -69,6 +69,8 @@ int main(int argc, char** argv) {
     Run_Tree->Branch("t_trg_pog_deeptau_medium_mutau_ratio_down", &t_trg_pog_deeptau_medium_mutau_ratio_down, "t_trg_pog_deeptau_medium_mutau_ratio_down/F");
     Run_Tree->Branch("m_trg_19_ic_ratio", &m_trg_19_ic_ratio, "m_trg_19_ic_ratio/F");
     Run_Tree->Branch("m_trg_20_ic_ratio", &m_trg_20_ic_ratio, "m_trg_20_ic_ratio/F");
+    Run_Tree->Branch("m_trg_20_ratio", &m_trg_20_ratio, "m_trg_20_ratio/F");
+    Run_Tree->Branch("m_trg_MuTau_Mu20Leg_desy_ratio", &m_trg_MuTau_Mu20Leg_desy_ratio, "m_trg_MuTau_Mu20Leg_desy_ratio/F");
     Run_Tree->Branch("m_sel_trg_ic_ratio", &m_sel_trg_ic_ratio, "m_sel_trg_ic_ratio/F");
     Run_Tree->Branch("m_sel_id_ic_ratio_1", &m_sel_id_ic_ratio_1, "m_sel_id_ic_ratio_1/F");
     Run_Tree->Branch("m_sel_id_ic_ratio_2", &m_sel_id_ic_ratio_2, "m_sel_id_ic_ratio_2/F");
@@ -561,4 +563,5 @@ int main(int argc, char** argv) {
     fout->Close();
     return 0;
 }
+
 

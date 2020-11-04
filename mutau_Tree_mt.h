@@ -20,7 +20,7 @@
 
 using namespace std;
 
-float zptmass_weight_nom,m_trk_ratio,m_trg_ic_ratio,t_trg_pog_deeptau_medium_mutau_ratio,t_trg_pog_deeptau_medium_mutau_ratio_up,t_trg_pog_deeptau_medium_mutau_ratio_down,m_trg_19_ic_ratio,m_sel_trg_ic_ratio,m_sel_id_ic_ratio_1,m_sel_id_ic_ratio_2,m_idiso_ic_ratio,m_idiso_ic_embed_ratio,m_trg_ic_embed_ratio,t_trg_mediumDeepTau_mutau_embed_ratio,t_trg_mediumDeepTau_mutau_embed_ratio_up,t_trg_mediumDeepTau_mutau_embed_ratio_down,m_trg_19_ic_embed_ratio,m_trg_20_ic_ratio,m_trg_20_ic_embed_ratio=1.0;
+float zptmass_weight_nom,m_trk_ratio,m_trg_ic_ratio,t_trg_pog_deeptau_medium_mutau_ratio,t_trg_pog_deeptau_medium_mutau_ratio_up,t_trg_pog_deeptau_medium_mutau_ratio_down,m_trg_19_ic_ratio,m_sel_trg_ic_ratio,m_sel_id_ic_ratio_1,m_sel_id_ic_ratio_2,m_idiso_ic_ratio,m_idiso_ic_embed_ratio,m_trg_ic_embed_ratio,t_trg_mediumDeepTau_mutau_embed_ratio,t_trg_mediumDeepTau_mutau_embed_ratio_up,t_trg_mediumDeepTau_mutau_embed_ratio_down,m_trg_19_ic_embed_ratio,m_trg_20_ic_ratio,m_trg_20_ratio,m_trg_MuTau_Mu20Leg_desy_ratio,m_trg_20_ic_embed_ratio=1.0;
 float prefiring_weight,prefiring_weight_up, prefiring_weight_down;
 float lheweight_muR0p5_muF0p5,lheweight_muR0p5_muF1,lheweight_muR0p5_muF2,lheweight_muR1_muF0p5,lheweight_muR1_muF2,lheweight_muR2_muF0p5,lheweight_muR2_muF1,lheweight_muR2_muF2,PythiaWeight_fsr_muR0p25,PythiaWeight_fsr_muR0p5,PythiaWeight_fsr_muR2,PythiaWeight_fsr_muR4,PythiaWeight_isr_muR0p25,PythiaWeight_isr_muR0p5,PythiaWeight_isr_muR2,PythiaWeight_isr_muR4;
 float gentau1_eta, gentau1_pt, gentau2_eta, gentau2_pt;
@@ -755,7 +755,7 @@ void fillTree(TTree *Run_Tree, HTauTauTree_mt *tree, int entry_tree, int recoil,
        zptmass_weight_nom=wmc->function("zptmass_weight_nom")->getVal();
 
        wmc->var("m_pt")->setVal(tau1.Pt());
-       wmc->var("m_eta")->setVal(fabs(tau1.Eta()));
+       wmc->var("m_eta")->setVal(tau1.Eta());
        wmc->var("m_iso")->setVal(iso_1);
        wmc->var("t_pt")->setVal(tau2.Pt());
        wmc->var("t_eta")->setVal(tau2.Eta());
@@ -769,10 +769,12 @@ void fillTree(TTree *Run_Tree, HTauTauTree_mt *tree, int entry_tree, int recoil,
        t_trg_pog_deeptau_medium_mutau_ratio_down=wmc->function("t_trg_pog_deeptau_medium_mutau_ratio_down")->getVal();
        if (year==2016) m_trg_19_ic_ratio=wmc->function("m_trg_19_ic_ratio")->getVal();
        if (year==2017 or year==2018) m_trg_20_ic_ratio=wmc->function("m_trg_20_ic_ratio")->getVal();
+       if (year==2018) m_trg_20_ratio=wmc->function("m_trg_20_ratio")->getVal();
+       if (year==2017) m_trg_MuTau_Mu20Leg_desy_ratio=wmc->function("m_trg_MuTau_Mu20Leg_desy_ratio")->getVal();
     }
     if (isembedded){
        wmc->var("m_pt")->setVal(tau1.Pt());
-       wmc->var("m_eta")->setVal(fabs(tau1.Eta()));
+       wmc->var("m_eta")->setVal(tau1.Eta());
        wmc->var("m_iso")->setVal(iso_1);
        wmc->var("t_pt")->setVal(tau2.Pt());
        wmc->var("t_eta")->setVal(tau2.Eta());
@@ -786,16 +788,21 @@ void fillTree(TTree *Run_Tree, HTauTauTree_mt *tree, int entry_tree, int recoil,
        t_trg_mediumDeepTau_mutau_embed_ratio_down=wmc->function("t_trg_mediumDeepTau_mutau_embed_ratio_down")->getVal();
        if (year==2016) m_trg_19_ic_embed_ratio=wmc->function("m_trg_19_ic_embed_ratio")->getVal();
        if (year==2017 or year==2018) m_trg_20_ic_embed_ratio=wmc->function("m_trg_20_ic_embed_ratio")->getVal();
+       if (year==2016){
+            t_trg_pog_deeptau_medium_mutau_ratio=wmc->function("t_trg_pog_deeptau_medium_mutau_ratio")->getVal();
+            t_trg_pog_deeptau_medium_mutau_ratio_up=wmc->function("t_trg_pog_deeptau_medium_mutau_ratio_up")->getVal();
+            t_trg_pog_deeptau_medium_mutau_ratio_down=wmc->function("t_trg_pog_deeptau_medium_mutau_ratio_down")->getVal();
+       }
 
-       wmc->var("gt1_pt")->setVal(1.69*genpt_1);
-       wmc->var("gt2_pt")->setVal(1.47*tau2.Pt());
+       wmc->var("gt1_pt")->setVal(genpt_1);
+       wmc->var("gt2_pt")->setVal(tau2.Pt());
        wmc->var("gt1_eta")->setVal(geneta_1);
        wmc->var("gt2_eta")->setVal(tau2.Eta());
        m_sel_trg_ic_ratio=wmc->function("m_sel_trg_ic_ratio")->getVal();
-       wmc->var("gt_pt")->setVal(1.69*genpt_1);
+       wmc->var("gt_pt")->setVal(genpt_1);
        wmc->var("gt_eta")->setVal(geneta_1);
        m_sel_id_ic_ratio_1=wmc->function("m_sel_id_ic_ratio")->getVal();
-       wmc->var("gt_pt")->setVal(1.47*tau2.Pt());
+       wmc->var("gt_pt")->setVal(tau2.Pt());
        wmc->var("gt_eta")->setVal(tau2.Eta());
        m_sel_id_ic_ratio_2=wmc->function("m_sel_id_ic_ratio")->getVal();
     }
@@ -804,5 +811,6 @@ void fillTree(TTree *Run_Tree, HTauTauTree_mt *tree, int entry_tree, int recoil,
 }
 
 #endif
+
 
 
