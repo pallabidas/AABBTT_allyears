@@ -130,6 +130,11 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
     matchMu23E12DZ_2=tree->mMatchesMu23e12DZPath;
     filterMu8E23DZ_2=tree->mMatchesMu8e23DZFilter;
     filterMu23E12DZ_2=tree->mMatchesMu23e12DZFilter;
+    
+    geneta_1=tree->eGenEta;
+    geneta_2=tree->mGenEta;
+    genpt_1=tree->eGenPt;
+    genpt_2=tree->mGenPt;
 
     lheweight_muR0p5_muF0p5=tree->lheweight_muR0p5_muF0p5;
     lheweight_muR0p5_muF1=tree->lheweight_muR0p5_muF1;

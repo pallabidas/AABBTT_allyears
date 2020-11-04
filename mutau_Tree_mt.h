@@ -769,7 +769,7 @@ void fillTree(TTree *Run_Tree, HTauTauTree_mt *tree, int entry_tree, int recoil,
        t_trg_pog_deeptau_medium_mutau_ratio_down=wmc->function("t_trg_pog_deeptau_medium_mutau_ratio_down")->getVal();
        if (year==2016) m_trg_19_ic_ratio=wmc->function("m_trg_19_ic_ratio")->getVal();
        if (year==2017 or year==2018) m_trg_20_ic_ratio=wmc->function("m_trg_20_ic_ratio")->getVal();
-           m_trg_20_ratio=wmc->function("m_trg_20_ratio")->getVal();
+       if (year==2018) m_trg_20_ratio=wmc->function("m_trg_20_ratio")->getVal();
        if (year==2017) m_trg_MuTau_Mu20Leg_desy_ratio=wmc->function("m_trg_MuTau_Mu20Leg_desy_ratio")->getVal();
     }
     if (isembedded){

@@ -767,7 +767,6 @@ zptmass_weight_nom,e_trk_ratio,e_idiso_ic_ratio,e_trg_ic_ratio,e_trg_24_ic_ratio
        wmc->var("t_eta")->setVal(tau2.Eta());
        wmc->var("t_phi")->setVal(tau2.Phi());
        wmc->var("t_dm")->setVal(l2_decayMode);
-       e_trk_embed_ratio=wmc->function("e_trk_embed_ratio")->getVal();
        if (year==2017) {
 	  e_trg_24_ic_data=wmc->function("e_trg_24_ic_data")->getVal();
           e_trg_ic_data=wmc->function("e_trg_ic_data")->getVal();
