@@ -352,6 +352,60 @@ int main(int argc, char** argv) {
     Run_Tree->Branch("bm_deepflavour_2", &bm_deepflavour_2, "bm_deepflavour_2/F");
     Run_Tree->Branch("bscore_deepflavour_2", &bscore_deepflavour_2, "bscore_deepflavour_2/F");
 
+    Run_Tree->Branch("bpt_deepflavour_JERDown_1", &bpt_deepflavour_JERDown_1, "bpt_deepflavour_JERDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JERUp_1", &bpt_deepflavour_JERUp_1, "bpt_deepflavour_JERUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteUp_1", &bpt_deepflavour_JetAbsoluteUp_1, "bpt_deepflavour_JetAbsoluteUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteDown_1", &bpt_deepflavour_JetAbsoluteDown_1, "bpt_deepflavour_JetAbsoluteDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteyearDown_1", &bpt_deepflavour_JetAbsoluteyearDown_1, "bpt_deepflavour_JetAbsoluteyearDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteyearUp_1", &bpt_deepflavour_JetAbsoluteyearUp_1, "bpt_deepflavour_JetAbsoluteyearUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1Down_1", &bpt_deepflavour_JetBBEC1Down_1, "bpt_deepflavour_JetBBEC1Down_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1Up_1", &bpt_deepflavour_JetBBEC1Up_1, "bpt_deepflavour_JetBBEC1Up_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1yearDown_1", &bpt_deepflavour_JetBBEC1yearDown_1, "bpt_deepflavour_JetBBEC1yearDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1yearUp_1", &bpt_deepflavour_JetBBEC1yearUp_1, "bpt_deepflavour_JetBBEC1yearUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2Down_1", &bpt_deepflavour_JetEC2Down_1, "bpt_deepflavour_JetEC2Down_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2Up_1", &bpt_deepflavour_JetEC2Up_1, "bpt_deepflavour_JetEC2Up_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2yearDown_1", &bpt_deepflavour_JetEC2yearDown_1, "bpt_deepflavour_JetEC2yearDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2yearUp_1", &bpt_deepflavour_JetEC2yearUp_1, "bpt_deepflavour_JetEC2yearUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetFlavorQCDDown_1", &bpt_deepflavour_JetFlavorQCDDown_1, "bpt_deepflavour_JetFlavorQCDDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetFlavorQCDUp_1", &bpt_deepflavour_JetFlavorQCDUp_1, "bpt_deepflavour_JetFlavorQCDUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFDown_1", &bpt_deepflavour_JetHFDown_1, "bpt_deepflavour_JetHFDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFUp_1", &bpt_deepflavour_JetHFUp_1, "bpt_deepflavour_JetHFUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFyearDown_1", &bpt_deepflavour_JetHFyearDown_1, "bpt_deepflavour_JetHFyearDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFyearUp_1", &bpt_deepflavour_JetHFyearUp_1, "bpt_deepflavour_JetHFyearUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeBalDown_1", &bpt_deepflavour_JetRelativeBalDown_1, "bpt_deepflavour_JetRelativeBalDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeBalUp_1", &bpt_deepflavour_JetRelativeBalUp_1, "bpt_deepflavour_JetRelativeBalUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeSampleDown_1", &bpt_deepflavour_JetRelativeSampleDown_1, "bpt_deepflavour_JetRelativeSampleDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeSampleUp_1", &bpt_deepflavour_JetRelativeSampleUp_1, "bpt_deepflavour_JetRelativeSampleUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetTotalUp_1", &bpt_deepflavour_JetTotalUp_1, "bpt_deepflavour_JetTotalUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetTotalDown_1", &bpt_deepflavour_JetTotalDown_1, "bpt_deepflavour_JetTotalDown_1/F");
+
+    Run_Tree->Branch("bpt_deepflavour_JERDown_2", &bpt_deepflavour_JERDown_2, "bpt_deepflavour_JERDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JERUp_2", &bpt_deepflavour_JERUp_2, "bpt_deepflavour_JERUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteUp_2", &bpt_deepflavour_JetAbsoluteUp_2, "bpt_deepflavour_JetAbsoluteUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteDown_2", &bpt_deepflavour_JetAbsoluteDown_2, "bpt_deepflavour_JetAbsoluteDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteyearDown_2", &bpt_deepflavour_JetAbsoluteyearDown_2, "bpt_deepflavour_JetAbsoluteyearDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteyearUp_2", &bpt_deepflavour_JetAbsoluteyearUp_2, "bpt_deepflavour_JetAbsoluteyearUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1Down_2", &bpt_deepflavour_JetBBEC1Down_2, "bpt_deepflavour_JetBBEC1Down_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1Up_2", &bpt_deepflavour_JetBBEC1Up_2, "bpt_deepflavour_JetBBEC1Up_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1yearDown_2", &bpt_deepflavour_JetBBEC1yearDown_2, "bpt_deepflavour_JetBBEC1yearDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1yearUp_2", &bpt_deepflavour_JetBBEC1yearUp_2, "bpt_deepflavour_JetBBEC1yearUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2Down_2", &bpt_deepflavour_JetEC2Down_2, "bpt_deepflavour_JetEC2Down_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2Up_2", &bpt_deepflavour_JetEC2Up_2, "bpt_deepflavour_JetEC2Up_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2yearDown_2", &bpt_deepflavour_JetEC2yearDown_2, "bpt_deepflavour_JetEC2yearDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2yearUp_2", &bpt_deepflavour_JetEC2yearUp_2, "bpt_deepflavour_JetEC2yearUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetFlavorQCDDown_2", &bpt_deepflavour_JetFlavorQCDDown_2, "bpt_deepflavour_JetFlavorQCDDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetFlavorQCDUp_2", &bpt_deepflavour_JetFlavorQCDUp_2, "bpt_deepflavour_JetFlavorQCDUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFDown_2", &bpt_deepflavour_JetHFDown_2, "bpt_deepflavour_JetHFDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFUp_2", &bpt_deepflavour_JetHFUp_2, "bpt_deepflavour_JetHFUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFyearDown_2", &bpt_deepflavour_JetHFyearDown_2, "bpt_deepflavour_JetHFyearDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFyearUp_2", &bpt_deepflavour_JetHFyearUp_2, "bpt_deepflavour_JetHFyearUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeBalDown_2", &bpt_deepflavour_JetRelativeBalDown_2, "bpt_deepflavour_JetRelativeBalDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeBalUp_2", &bpt_deepflavour_JetRelativeBalUp_2, "bpt_deepflavour_JetRelativeBalUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeSampleDown_2", &bpt_deepflavour_JetRelativeSampleDown_2, "bpt_deepflavour_JetRelativeSampleDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeSampleUp_2", &bpt_deepflavour_JetRelativeSampleUp_2, "bpt_deepflavour_JetRelativeSampleUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetTotalUp_2", &bpt_deepflavour_JetTotalUp_2, "bpt_deepflavour_JetTotalUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetTotalDown_2", &bpt_deepflavour_JetTotalDown_2, "bpt_deepflavour_JetTotalDown_2/F");
+
     Run_Tree->Branch("pt_top1", &pt_top1, "pt_top1/F");
     Run_Tree->Branch("pt_top2", &pt_top2, "pt_top2/F");
     Run_Tree->Branch("genweight", &genweight, "genweight/F");
@@ -400,12 +454,12 @@ int main(int argc, char** argv) {
         dau1.SetPtEtaPhiM(tree->ePt,tree->eEta,tree->ePhi,tree->eMass);
         dau2.SetPtEtaPhiM(tree->mPt,tree->mEta,tree->mPhi,tree->mMass);
 
-        if (dau1.DeltaR(dau2)<0.3) continue;
+        if (dau1.DeltaR(dau2)<0.1) continue;
         if (fabs(tree->mPVDXY)>0.045) continue;
         if (fabs(tree->mPVDZ)>0.2) continue;
         if (fabs(tree->ePVDXY)>0.045) continue;
         if (fabs(tree->ePVDZ)>0.2) continue;
-        if (dau1.Pt()<12.5 or dau2.Pt()<8.5) continue; // related to triggers
+        if (dau1.Pt()<12.5 or dau2.Pt()<9.5) continue; 
         if (dau1.Pt()<23.5 and dau2.Pt()<23.5) continue;
         if (fabs(dau1.Eta())>2.5 or fabs(dau2.Eta())>2.4) continue;
         if (!tree->mPFIDMedium) continue;

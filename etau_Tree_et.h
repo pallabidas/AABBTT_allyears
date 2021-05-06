@@ -19,6 +19,8 @@
 #include "MEtSys.h"
 
 using namespace std;
+float bpt_deepflavour_JERDown_1,bpt_deepflavour_JERUp_1,bpt_deepflavour_JetAbsoluteDown_1,bpt_deepflavour_JetAbsoluteUp_1,bpt_deepflavour_JetAbsoluteyearDown_1,bpt_deepflavour_JetAbsoluteyearUp_1,bpt_deepflavour_JetBBEC1Down_1,bpt_deepflavour_JetBBEC1Up_1,bpt_deepflavour_JetBBEC1yearDown_1,bpt_deepflavour_JetBBEC1yearUp_1,bpt_deepflavour_JetEC2Down_1,bpt_deepflavour_JetEC2Up_1,bpt_deepflavour_JetEC2yearDown_1,bpt_deepflavour_JetEC2yearUp_1,bpt_deepflavour_JetFlavorQCDDown_1,bpt_deepflavour_JetFlavorQCDUp_1,bpt_deepflavour_JetHFDown_1,bpt_deepflavour_JetHFUp_1,bpt_deepflavour_JetHFyearDown_1,bpt_deepflavour_JetHFyearUp_1,bpt_deepflavour_JetRelativeBalDown_1,bpt_deepflavour_JetRelativeBalUp_1,bpt_deepflavour_JetRelativeSampleDown_1,bpt_deepflavour_JetRelativeSampleUp_1,bpt_deepflavour_JetTotalDown_1,bpt_deepflavour_JetTotalUp_1;
+float bpt_deepflavour_JERDown_2,bpt_deepflavour_JERUp_2,bpt_deepflavour_JetAbsoluteDown_2,bpt_deepflavour_JetAbsoluteUp_2,bpt_deepflavour_JetAbsoluteyearDown_2,bpt_deepflavour_JetAbsoluteyearUp_2,bpt_deepflavour_JetBBEC1Down_2,bpt_deepflavour_JetBBEC1Up_2,bpt_deepflavour_JetBBEC1yearDown_2,bpt_deepflavour_JetBBEC1yearUp_2,bpt_deepflavour_JetEC2Down_2,bpt_deepflavour_JetEC2Up_2,bpt_deepflavour_JetEC2yearDown_2,bpt_deepflavour_JetEC2yearUp_2,bpt_deepflavour_JetFlavorQCDDown_2,bpt_deepflavour_JetFlavorQCDUp_2,bpt_deepflavour_JetHFDown_2,bpt_deepflavour_JetHFUp_2,bpt_deepflavour_JetHFyearDown_2,bpt_deepflavour_JetHFyearUp_2,bpt_deepflavour_JetRelativeBalDown_2,bpt_deepflavour_JetRelativeBalUp_2,bpt_deepflavour_JetRelativeSampleDown_2,bpt_deepflavour_JetRelativeSampleUp_2,bpt_deepflavour_JetTotalDown_2,bpt_deepflavour_JetTotalUp_2;
 float zptmass_weight_nom,e_trk_ratio,e_idiso_ic_ratio,e_trg_ic_ratio,e_trg_24_ic_ratio,e_trg_24_ic_embed_ratio,t_trg_mediumDeepTau_etau_embed_ratio,e_trg_ic_embed_ratio,et_emb_LooseChargedIsoPFTau30_kit_ratio,e_trg_ic_data,e_trg_24_ic_data,t_trg_mediumDeepTau_etau_data,e_trk_embed_ratio,e_idiso_ic_embed_ratio,m_sel_trg_ic_ratio,m_sel_id_ic_ratio_1,m_sel_id_ic_ratio_2,t_trg_pog_deeptau_medium_etau_ratio,t_trg_pog_deeptau_medium_etau_ratio_up,t_trg_pog_deeptau_medium_etau_ratio_down,t_trg_mediumDeepTau_etau_embed_ratio_up,t_trg_mediumDeepTau_etau_embed_ratio_down=1.0;
 float prefiring_weight,prefiring_weight_up, prefiring_weight_down;
 float lheweight_muR0p5_muF0p5,lheweight_muR0p5_muF1,lheweight_muR0p5_muF2,lheweight_muR1_muF0p5,lheweight_muR1_muF2,lheweight_muR2_muF0p5,lheweight_muR2_muF1,lheweight_muR2_muF2,PythiaWeight_fsr_muR0p25,PythiaWeight_fsr_muR0p5,PythiaWeight_fsr_muR2,PythiaWeight_fsr_muR4,PythiaWeight_isr_muR0p25,PythiaWeight_isr_muR0p5,PythiaWeight_isr_muR2,PythiaWeight_isr_muR4;
@@ -210,7 +212,7 @@ void fillTree(TTree *Run_Tree, HTauTauTree_et *tree, int entry_tree, int recoil,
     evt =tree->evt;
     genweight = tree->GenWeight;
 
-    lheweight_muR0p5_muF0p5=tree->lheweight_muR0p5_muF0p5;
+    /*lheweight_muR0p5_muF0p5=tree->lheweight_muR0p5_muF0p5;
     lheweight_muR0p5_muF1=tree->lheweight_muR0p5_muF1;
     lheweight_muR0p5_muF2=tree->lheweight_muR0p5_muF2;
     lheweight_muR1_muF0p5=tree->lheweight_muR1_muF0p5;
@@ -225,7 +227,7 @@ void fillTree(TTree *Run_Tree, HTauTauTree_et *tree, int entry_tree, int recoil,
     PythiaWeight_isr_muR0p25=tree->PythiaWeight_isr_muR0p25;
     PythiaWeight_isr_muR0p5=tree->PythiaWeight_isr_muR0p5;
     PythiaWeight_isr_muR2=tree->PythiaWeight_isr_muR2;
-    PythiaWeight_isr_muR4=tree->PythiaWeight_isr_muR4;
+    PythiaWeight_isr_muR4=tree->PythiaWeight_isr_muR4;*/
 
     matchEmbFilter_Ele24Tau30_1=tree->eMatchEmbeddedFilterEle24Tau30;
     matchEmbFilter_Ele27_1=tree->eMatchEmbeddedFilterEle27;
@@ -692,6 +694,62 @@ void fillTree(TTree *Run_Tree, HTauTauTree_et *tree, int entry_tree, int recoil,
     bm_deepflavour_2=tree->deepflavourb2_m;
     bflavour_deepflavour_2=tree->deepflavourb2_hadronflavour;
     bscore_deepflavour_2=tree->deepflavourb2_btagscore;
+
+    bpt_deepflavour_JERDown_1=tree->deepflavourb1_pt_JERDown;
+    bpt_deepflavour_JERUp_1=tree->deepflavourb1_pt_JERUp;
+    bpt_deepflavour_JetAbsoluteDown_1=tree->deepflavourb1_pt_JetAbsoluteDown;
+    bpt_deepflavour_JetAbsoluteUp_1=tree->deepflavourb1_pt_JetAbsoluteUp;
+    bpt_deepflavour_JetAbsoluteyearDown_1=tree->deepflavourb1_pt_JetAbsoluteyearDown;
+    bpt_deepflavour_JetAbsoluteyearUp_1=tree->deepflavourb1_pt_JetAbsoluteyearUp;
+    bpt_deepflavour_JetBBEC1Down_1=tree->deepflavourb1_pt_JetBBEC1Down;
+    bpt_deepflavour_JetBBEC1Up_1=tree->deepflavourb1_pt_JetBBEC1Up;
+    bpt_deepflavour_JetBBEC1yearDown_1=tree->deepflavourb1_pt_JetBBEC1yearDown;
+    bpt_deepflavour_JetBBEC1yearUp_1=tree->deepflavourb1_pt_JetBBEC1yearUp;
+    bpt_deepflavour_JetEC2Down_1=tree->deepflavourb1_pt_JetEC2Down;
+    bpt_deepflavour_JetEC2Up_1=tree->deepflavourb1_pt_JetEC2Up;
+    bpt_deepflavour_JetEC2yearDown_1=tree->deepflavourb1_pt_JetEC2yearDown;
+    bpt_deepflavour_JetEC2yearUp_1=tree->deepflavourb1_pt_JetEC2yearUp;
+    bpt_deepflavour_JetFlavorQCDDown_1=tree->deepflavourb1_pt_JetFlavorQCDDown;
+    bpt_deepflavour_JetFlavorQCDUp_1=tree->deepflavourb1_pt_JetFlavorQCDUp;
+    bpt_deepflavour_JetHFDown_1=tree->deepflavourb1_pt_JetHFDown;
+    bpt_deepflavour_JetHFUp_1=tree->deepflavourb1_pt_JetHFUp;
+    bpt_deepflavour_JetHFyearDown_1=tree->deepflavourb1_pt_JetHFyearDown;
+    bpt_deepflavour_JetHFyearUp_1=tree->deepflavourb1_pt_JetHFyearUp;
+    bpt_deepflavour_JetRelativeBalDown_1=tree->deepflavourb1_pt_JetRelativeBalDown;
+    bpt_deepflavour_JetRelativeBalUp_1=tree->deepflavourb1_pt_JetRelativeBalUp;
+    bpt_deepflavour_JetRelativeSampleDown_1=tree->deepflavourb1_pt_JetRelativeSampleDown;
+    bpt_deepflavour_JetRelativeSampleUp_1=tree->deepflavourb1_pt_JetRelativeSampleUp;
+    bpt_deepflavour_JetTotalDown_1=tree->deepflavourb1_pt_JetTotalDown;
+    bpt_deepflavour_JetTotalUp_1=tree->deepflavourb1_pt_JetTotalUp;
+
+    bpt_deepflavour_JERDown_2=tree->deepflavourb2_pt_JERDown;
+    bpt_deepflavour_JERUp_2=tree->deepflavourb2_pt_JERUp;
+    bpt_deepflavour_JetAbsoluteDown_2=tree->deepflavourb2_pt_JetAbsoluteDown;
+    bpt_deepflavour_JetAbsoluteUp_2=tree->deepflavourb2_pt_JetAbsoluteUp;
+    bpt_deepflavour_JetAbsoluteyearDown_2=tree->deepflavourb2_pt_JetAbsoluteyearDown;
+    bpt_deepflavour_JetAbsoluteyearUp_2=tree->deepflavourb2_pt_JetAbsoluteyearUp;
+    bpt_deepflavour_JetBBEC1Down_2=tree->deepflavourb2_pt_JetBBEC1Down;
+    bpt_deepflavour_JetBBEC1Up_2=tree->deepflavourb2_pt_JetBBEC1Up;
+    bpt_deepflavour_JetBBEC1yearDown_2=tree->deepflavourb2_pt_JetBBEC1yearDown;
+    bpt_deepflavour_JetBBEC1yearUp_2=tree->deepflavourb2_pt_JetBBEC1yearUp;
+    bpt_deepflavour_JetEC2Down_2=tree->deepflavourb2_pt_JetEC2Down;
+    bpt_deepflavour_JetEC2Up_2=tree->deepflavourb2_pt_JetEC2Up;
+    bpt_deepflavour_JetEC2yearDown_2=tree->deepflavourb2_pt_JetEC2yearDown;
+    bpt_deepflavour_JetEC2yearUp_2=tree->deepflavourb2_pt_JetEC2yearUp;
+    bpt_deepflavour_JetFlavorQCDDown_2=tree->deepflavourb2_pt_JetFlavorQCDDown;
+    bpt_deepflavour_JetFlavorQCDUp_2=tree->deepflavourb2_pt_JetFlavorQCDUp;
+    bpt_deepflavour_JetHFDown_2=tree->deepflavourb2_pt_JetHFDown;
+    bpt_deepflavour_JetHFUp_2=tree->deepflavourb2_pt_JetHFUp;
+    bpt_deepflavour_JetHFyearDown_2=tree->deepflavourb2_pt_JetHFyearDown;
+    bpt_deepflavour_JetHFyearUp_2=tree->deepflavourb2_pt_JetHFyearUp;
+    bpt_deepflavour_JetRelativeBalDown_2=tree->deepflavourb2_pt_JetRelativeBalDown;
+    bpt_deepflavour_JetRelativeBalUp_2=tree->deepflavourb2_pt_JetRelativeBalUp;
+    bpt_deepflavour_JetRelativeSampleDown_2=tree->deepflavourb2_pt_JetRelativeSampleDown;
+    bpt_deepflavour_JetRelativeSampleUp_2=tree->deepflavourb2_pt_JetRelativeSampleUp;
+    bpt_deepflavour_JetTotalDown_2=tree->deepflavourb2_pt_JetTotalDown;
+    bpt_deepflavour_JetTotalUp_2=tree->deepflavourb2_pt_JetTotalUp;
+
+
 
     mjj=tree->vbfMass;
   mjj_JERUp=tree->vbfMass_JERUp;
