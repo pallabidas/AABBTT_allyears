@@ -89,53 +89,32 @@ float matchEmbFilter_Mu20Tau27_1,matchEmbFilter_Mu24_1,matchEmbFilter_Mu27_1,mat
 float matchEmbFilter_Mu19Tau20_1,matchEmbFilter_Mu19Tau20_2;
 float genpt_1, genpt_2, geneta_1, geneta_2;
 
-float tes_dm0_2016=0.991;
-float tes_dm1_2016=0.999;
-float tes_dm10_2016=1.003;
-float tes_dm11_2016=0.998;
+TFile ftes2016("TauES_dm_DeepTau2017v2p1VSjet_2016Legacy.root");
+TH1F* hist_lowpt_2016 = (TH1F*) ftes2016.Get("tes");
+TFile ftes2017("TauES_dm_DeepTau2017v2p1VSjet_2017ReReco.root");
+TH1F* hist_lowpt_2017 = (TH1F*) ftes2017.Get("tes");
+TFile ftes2018("TauES_dm_DeepTau2017v2p1VSjet_2018ReReco.root");
+TH1F* hist_lowpt_2018 = (TH1F*) ftes2018.Get("tes");
 
-float tes_dm0_2017=1.004;
-float tes_dm1_2017=1.002;
-float tes_dm10_2017=1.001;
-float tes_dm11_2017=0.987;
+TFile ffes2016("TauFES_eta-dm_DeepTau2017v2p1VSe_2016Legacy.root");
+TFile ffes2017("TauFES_eta-dm_DeepTau2017v2p1VSe_2017ReReco.root");
+TFile ffes2018("TauFES_eta-dm_DeepTau2017v2p1VSe_2018ReReco.root");
+TGraph* gfes_2016=(TGraph*) ffes2016.Get("tes");
+TGraph* gfes_2017=(TGraph*) ffes2017.Get("tes");
+TGraph* gfes_2018=(TGraph*) ffes2018.Get("tes");
 
-float tes_dm0_2018=0.984;
-float tes_dm1_2018=0.996;
-float tes_dm10_2018=0.988;
-float tes_dm11_2018=0.996;
-
-float tes_dm0_emb_2016=0.998;
-float tes_dm1_emb_2016=0.998;
-float tes_dm10_emb_2016=0.987;
-float tes_dm11_emb_2016=0.987;
-float tes_dm0_emb_2017=0.999;
-float tes_dm1_emb_2017=0.988;
-float tes_dm10_emb_2017=0.992;
-float tes_dm11_emb_2017=0.992;
-float tes_dm0_emb_2018=0.997;
-float tes_dm1_emb_2018=0.994;
-float tes_dm10_emb_2018=0.993;
-float tes_dm11_emb_2018=0.993;
-
-float tes_dm0_fakeele_2016=0.995;
-float tes_dm1_fakeele_2016=1.060;
-float tes_dm0_fakemu_2016=1.000;
-float tes_dm1_fakemu_2016=0.995;
-float tes_dm0_fakeele_2017=1.003;
-float tes_dm1_fakeele_2017=1.036;
-float tes_dm0_fakemu_2017=1.000;
-float tes_dm1_fakemu_2017=1.000;
-float tes_dm0_fakeele_2018=0.968;
-float tes_dm1_fakeele_2018=1.026;
-float tes_dm0_fakemu_2018=0.998;
-float tes_dm1_fakemu_2018=0.990;
-
-float tes_B_fakeele_emb_2016=0.998;
-float tes_E_fakeele_emb_2016=0.993;
-float tes_B_fakeele_emb_2017=0.999;
-float tes_E_fakeele_emb_2017=0.989;
-float tes_B_fakeele_emb_2018=0.997;
-float tes_E_fakeele_emb_2018=0.994;
+float tes_dm0_emb_2016=0.9980;
+float tes_dm1_emb_2016=0.9978;
+float tes_dm10_emb_2016=0.9874;
+float tes_dm11_emb_2016=0.9874;
+float tes_dm0_emb_2017=0.9996;
+float tes_dm1_emb_2017=0.9880;
+float tes_dm10_emb_2017=0.9925;
+float tes_dm11_emb_2017=0.9925;
+float tes_dm0_emb_2018=0.9967;
+float tes_dm1_emb_2018=0.9943;
+float tes_dm10_emb_2018=0.9926;
+float tes_dm11_emb_2018=0.9926;
 
 RecoilCorrector recoilPFMetCorrector("SMH_et_2016/HTT-utilities/RecoilCorrections/data/TypeI-PFMet_Run2018.root");
 MEtSys metSys("SMH_et_2016/HTT-utilities/RecoilCorrections/data/PFMEtSys_2017.root");
@@ -152,54 +131,50 @@ RooWorkspace *wmc2018 = (RooWorkspace*)fwmc2018.Get("w");
 void fillTree(TTree *Run_Tree, HTauTauTree_mt *tree, int entry_tree, int recoil, bool ismc, bool isembedded, int year){
     tree->GetEntry(entry_tree);
 
-    float tes_dm0=tes_dm0_2018;
-    float tes_dm1=tes_dm1_2018;
-    float tes_dm10=tes_dm10_2018;
-    float tes_dm11=tes_dm11_2018;
+    float tes_real=1.0;
+    if (ismc){
+       int bin = hist_lowpt_2016->GetXaxis()->FindBin(tree->tDecayMode);
+       if (year==2016) tes_real = hist_lowpt_2016->GetBinContent(bin);
+       if (year==2017) tes_real = hist_lowpt_2017->GetBinContent(bin);
+       if (year==2018) tes_real = hist_lowpt_2018->GetBinContent(bin);
+    }
+
+    float tes_ele=1.0;
+    if (ismc and year==2016){
+       if (tree->tDecayMode==0 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2016->GetY()[0];
+       if (tree->tDecayMode==1 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2016->GetY()[1];
+       if (tree->tDecayMode==0 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2016->GetY()[2];
+       if (tree->tDecayMode==1 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2016->GetY()[3];
+    }
+    if (ismc and year==2017){
+       if (tree->tDecayMode==0 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2017->GetY()[0];
+       if (tree->tDecayMode==1 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2017->GetY()[1];
+       if (tree->tDecayMode==0 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2017->GetY()[2];
+       if (tree->tDecayMode==1 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2017->GetY()[3];
+    }
+    if (ismc and year==2018){
+       if (tree->tDecayMode==0 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2018->GetY()[0];
+       if (tree->tDecayMode==1 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2018->GetY()[1];
+       if (tree->tDecayMode==0 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2018->GetY()[2];
+       if (tree->tDecayMode==1 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2018->GetY()[3];
+    }
+
     float tes_dm0_emb=tes_dm0_emb_2018;
     float tes_dm1_emb=tes_dm1_emb_2018;
     float tes_dm10_emb=tes_dm10_emb_2018;
     float tes_dm11_emb=tes_dm11_emb_2018;
-    float tes_dm0_fakeele=tes_dm0_fakeele_2018;
-    float tes_dm1_fakeele=tes_dm1_fakeele_2018;
-    float tes_B_fakeele_emb=tes_B_fakeele_emb_2018;
-    float tes_E_fakeele_emb=tes_E_fakeele_emb_2018;
-    float tes_dm0_fakemu=tes_dm0_fakemu_2018;
-    float tes_dm1_fakemu=tes_dm1_fakemu_2018;
-
-    if (year==2017){
-       tes_dm0=tes_dm0_2017;
-       tes_dm1=tes_dm1_2017;
-       tes_dm10=tes_dm10_2017;
-       tes_dm11=tes_dm11_2017;
+    if (isembedded and year==2017){
        tes_dm0_emb=tes_dm0_emb_2017;
        tes_dm1_emb=tes_dm1_emb_2017;
        tes_dm10_emb=tes_dm10_emb_2017;
        tes_dm11_emb=tes_dm11_emb_2017;
-       tes_dm0_fakeele=tes_dm0_fakeele_2017;
-       tes_dm1_fakeele=tes_dm1_fakeele_2017;
-       tes_B_fakeele_emb=tes_B_fakeele_emb_2017;
-       tes_E_fakeele_emb=tes_E_fakeele_emb_2017;
-       tes_dm0_fakemu=tes_dm0_fakemu_2017;
-       tes_dm1_fakemu=tes_dm1_fakemu_2017;
     }
-    if (year==2016){
-       tes_dm0=tes_dm0_2016;
-       tes_dm1=tes_dm1_2016;
-       tes_dm10=tes_dm10_2016;
-       tes_dm11=tes_dm11_2016;
+    if (isembedded and year==2016){
        tes_dm0_emb=tes_dm0_emb_2016;
        tes_dm1_emb=tes_dm1_emb_2016;
        tes_dm10_emb=tes_dm10_emb_2016;
        tes_dm11_emb=tes_dm11_emb_2016;
-       tes_dm0_fakeele=tes_dm0_fakeele_2016;
-       tes_dm1_fakeele=tes_dm1_fakeele_2016;
-       tes_B_fakeele_emb=tes_B_fakeele_emb_2016;
-       tes_E_fakeele_emb=tes_E_fakeele_emb_2016;
-       tes_dm0_fakemu=tes_dm0_fakemu_2016;
-       tes_dm1_fakemu=tes_dm1_fakemu_2016;
     }
-
 
     gen_mu_pt=tree->dressedMuon_pt;
     gen_mu_eta=tree->mGenEta;
@@ -433,22 +408,13 @@ void fillTree(TTree *Run_Tree, HTauTauTree_mt *tree, int entry_tree, int recoil,
 
 
     for (int j=0; j<27; ++j){
-       if (ismc && tree->tZTTGenMatching==5 && tree->tDecayMode==0) mymetvector[j]=mymetvector[j]+tau2-tes_dm0*tau2;
-       else if (ismc && tree->tZTTGenMatching==5 && tree->tDecayMode==1) mymetvector[j]=mymetvector[j]+tau2-tes_dm1*tau2;
-       else if (ismc && tree->tZTTGenMatching==5 && tree->tDecayMode==10) mymetvector[j]=mymetvector[j]+tau2-tes_dm10*tau2;
-       else if (ismc && tree->tZTTGenMatching==5 && tree->tDecayMode==11) mymetvector[j]=mymetvector[j]+tau2-tes_dm11*tau2;
-       else if (ismc && (tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3) && tree->tDecayMode==0) mymetvector[j]=mymetvector[j]+tau2-tes_dm0_fakeele*tau2;
-       else if (ismc && (tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3) && tree->tDecayMode==1) mymetvector[j]=mymetvector[j]+tau2-tes_dm1_fakeele*tau2;
-       else if (ismc && (tree->tZTTGenMatching==2 or tree->tZTTGenMatching==4) && tree->tDecayMode==0) mymetvector[j]=mymetvector[j]+tau2-tes_dm0_fakemu*tau2;
-       else if (ismc && (tree->tZTTGenMatching==2 or tree->tZTTGenMatching==4) && tree->tDecayMode==1) mymetvector[j]=mymetvector[j]+tau2-tes_dm1_fakemu*tau2;
+       if (ismc && tree->tZTTGenMatching==5) mymetvector[j]=mymetvector[j]+tau2-tes_real*tau2;
+       else if (ismc && (tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3)) mymetvector[j]=mymetvector[j]+tau2-tes_ele*tau2;
 
        if (isembedded && tree->tZTTGenMatching==5 && tree->tDecayMode==0) mymetvector[j]=mymetvector[j]+tau2-tes_dm0_emb*tau2;
        else if (isembedded && tree->tZTTGenMatching==5 && tree->tDecayMode==1) mymetvector[j]=mymetvector[j]+tau2-tes_dm1_emb*tau2;
        else if (isembedded && tree->tZTTGenMatching==5 && tree->tDecayMode==10) mymetvector[j]=mymetvector[j]+tau2-tes_dm10_emb*tau2;
        else if (isembedded && tree->tZTTGenMatching==5 && tree->tDecayMode==11) mymetvector[j]=mymetvector[j]+tau2-tes_dm11_emb*tau2;
-       else if (isembedded && (tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3) && fabs(tree->tEta)<1.479) mymetvector[j]=mymetvector[j]+tau2-tes_B_fakeele_emb*tau2;
-       else if (isembedded && (tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3) && fabs(tree->tEta)>1.479) mymetvector[j]=mymetvector[j]+tau2-tes_E_fakeele_emb*tau2;
-
     }
 
     int recoiljets=tree->jetVeto30+1;
@@ -589,22 +555,12 @@ void fillTree(TTree *Run_Tree, HTauTauTree_mt *tree, int entry_tree, int recoil,
     metphi_responseDown=mymet_responseDown.Phi();
     metphi_resolutionDown=mymet_resolutionDown.Phi();
 
-    if (ismc && tree->tZTTGenMatching==5 && tree->tDecayMode==0) tau2=tau2*tes_dm0;
-    else if (ismc && tree->tZTTGenMatching==5 && tree->tDecayMode==1) tau2=tau2*tes_dm1;
-    else if (ismc && tree->tZTTGenMatching==5 && tree->tDecayMode==10) tau2=tau2*tes_dm10;
-    else if (ismc && tree->tZTTGenMatching==5 && tree->tDecayMode==11) tau2=tau2*tes_dm11;
-
+    if (ismc && tree->tZTTGenMatching==5) tau2=tau2*tes_real;
     if (isembedded && tree->tZTTGenMatching==5 && tree->tDecayMode==0) tau2=tau2*tes_dm0_emb;
     else if (isembedded && tree->tZTTGenMatching==5 && tree->tDecayMode==1) tau2=tau2*tes_dm1_emb;
     else if (isembedded && tree->tZTTGenMatching==5 && tree->tDecayMode==10) tau2=tau2*tes_dm10_emb;
     else if (isembedded && tree->tZTTGenMatching==5 && tree->tDecayMode==11) tau2=tau2*tes_dm11_emb;
-    else if (isembedded && (tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3) && fabs(tree->tEta)<1.479) tau2=tau2*tes_B_fakeele_emb;
-    else if (isembedded && (tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3) && fabs(tree->tEta)>1.479) tau2=tau2*tes_E_fakeele_emb;
-
-    if (ismc && (tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3) && tree->tDecayMode==0) tau2=tau2*tes_dm0_fakeele;
-    else if (ismc && (tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3) && tree->tDecayMode==1) tau2=tau2*tes_dm1_fakeele;
-    if (ismc && (tree->tZTTGenMatching==2 or tree->tZTTGenMatching==4) && tree->tDecayMode==0) tau2=tau2*tes_dm0_fakemu;
-    else if (ismc && (tree->tZTTGenMatching==2 or tree->tZTTGenMatching==4) && tree->tDecayMode==1) tau2=tau2*tes_dm1_fakemu;
+    if (ismc && (tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3)) tau2=tau2*tes_ele;
 
     l2_decayMode=tree->tDecayMode;
 
