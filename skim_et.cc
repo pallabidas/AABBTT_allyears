@@ -504,29 +504,31 @@ int main(int argc, char** argv) {
         dau2.SetPtEtaPhiM(tree->tPt,tree->tEta,tree->tPhi,tree->tMass);
 
         float tes_real=1.0;
-        int bin = hist_lowpt_2016->GetXaxis()->FindBin(tree->tDecayMode);
-        if (year==2016) tes_real = hist_lowpt_2016->GetBinContent(bin);
-        if (year==2017) tes_real = hist_lowpt_2017->GetBinContent(bin);
-        if (year==2018) tes_real = hist_lowpt_2018->GetBinContent(bin);
+        if (isMC){
+           int bin = hist_lowpt_2016->GetXaxis()->FindBin(tree->tDecayMode);
+           if (year==2016) tes_real = hist_lowpt_2016->GetBinContent(bin);
+           if (year==2017) tes_real = hist_lowpt_2017->GetBinContent(bin);
+           if (year==2018) tes_real = hist_lowpt_2018->GetBinContent(bin);
+        }
 
         float tes_ele=1.0;
         if (isMC and year==2016){
-           if (tree->tDecayMode==0 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2016->GetY()[0];
-           if (tree->tDecayMode==1 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2016->GetY()[1];
-           if (tree->tDecayMode==0 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2016->GetY()[2];
-           if (tree->tDecayMode==1 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2016->GetY()[3];
+           if (tree->tDecayMode==0 and fabs(tree->tEta)<1.5) tes_ele=gfes_2016->GetY()[0];
+           if (tree->tDecayMode==1 and fabs(tree->tEta)<1.5) tes_ele=gfes_2016->GetY()[1];
+           if (tree->tDecayMode==0 and fabs(tree->tEta)>=1.5) tes_ele=gfes_2016->GetY()[2];
+           if (tree->tDecayMode==1 and fabs(tree->tEta)>=1.5) tes_ele=gfes_2016->GetY()[3];
         }
         if (isMC and year==2017){
-           if (tree->tDecayMode==0 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2017->GetY()[0];
-           if (tree->tDecayMode==1 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2017->GetY()[1];
-           if (tree->tDecayMode==0 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2017->GetY()[2];
-           if (tree->tDecayMode==1 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2017->GetY()[3];
+           if (tree->tDecayMode==0 and fabs(tree->tEta)<1.5) tes_ele=gfes_2017->GetY()[0];
+           if (tree->tDecayMode==1 and fabs(tree->tEta)<1.5) tes_ele=gfes_2017->GetY()[1];
+           if (tree->tDecayMode==0 and fabs(tree->tEta)>=1.5) tes_ele=gfes_2017->GetY()[2];
+           if (tree->tDecayMode==1 and fabs(tree->tEta)>=1.5) tes_ele=gfes_2017->GetY()[3];
         }
         if (isMC and year==2018){
-           if (tree->tDecayMode==0 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2018->GetY()[0];
-           if (tree->tDecayMode==1 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2018->GetY()[1];
-           if (tree->tDecayMode==0 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2018->GetY()[2];
-           if (tree->tDecayMode==1 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2018->GetY()[3];
+           if (tree->tDecayMode==0 and fabs(tree->tEta)<1.5) tes_ele=gfes_2018->GetY()[0];
+           if (tree->tDecayMode==1 and fabs(tree->tEta)<1.5) tes_ele=gfes_2018->GetY()[1];
+           if (tree->tDecayMode==0 and fabs(tree->tEta)>=1.5) tes_ele=gfes_2018->GetY()[2];
+           if (tree->tDecayMode==1 and fabs(tree->tEta)>=1.5) tes_ele=gfes_2018->GetY()[3];
         }
 
         if (isMC){

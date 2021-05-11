@@ -450,7 +450,7 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
     dZ_1 = tree->ePVDZ;
     d0_1 = tree->ePVDXY;
     iso_1 = tree->eRelPFIsoRho;
-    if (tau1.DeltaR(tau2)<0.3 and iso_1*pt_1>=tau2.Pt()) iso_1=(tree->eRelPFIsoRho*pt_1-tau2.Pt())/pt_1; // remove muon from isolation cone
+    if (tau1.DeltaR(tau2)<0.4 and iso_1*pt_1>=tau2.Pt()) iso_1=(tree->eRelPFIsoRho*pt_1-tau2.Pt())/pt_1; // remove muon from isolation cone
     q_1 = tree->eCharge;
 
     m_2 = tau2.M();
@@ -462,7 +462,7 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
     d0_2=tree->mPVDXY;
     iso_2=tree->mRelPFIsoDBDefault;
     q_2 = tree->mCharge;
-    if (tau1.DeltaR(tau2)<0.3 and iso_2*pt_2>=tau1.Pt()) iso_2=(tree->mRelPFIsoDBDefault*pt_2-tau1.Pt())/pt_2; // remove electron from isolation cone
+    if (tau1.DeltaR(tau2)<0.4 and iso_2*pt_2>=tau1.Pt()) iso_2=(tree->mRelPFIsoDBDefault*pt_2-tau1.Pt())/pt_2; // remove electron from isolation cone
 
     jpt_1=tree->j1pt;
     jpt_1_JERUp=tree->j1pt_JERUp;

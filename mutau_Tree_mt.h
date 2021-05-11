@@ -99,9 +99,9 @@ TH1F* hist_lowpt_2018 = (TH1F*) ftes2018.Get("tes");
 TFile ffes2016("TauFES_eta-dm_DeepTau2017v2p1VSe_2016Legacy.root");
 TFile ffes2017("TauFES_eta-dm_DeepTau2017v2p1VSe_2017ReReco.root");
 TFile ffes2018("TauFES_eta-dm_DeepTau2017v2p1VSe_2018ReReco.root");
-TGraph* gfes_2016=(TGraph*) ffes2016.Get("tes");
-TGraph* gfes_2017=(TGraph*) ffes2017.Get("tes");
-TGraph* gfes_2018=(TGraph*) ffes2018.Get("tes");
+TGraph* gfes_2016=(TGraph*) ffes2016.Get("fes");
+TGraph* gfes_2017=(TGraph*) ffes2017.Get("fes");
+TGraph* gfes_2018=(TGraph*) ffes2018.Get("fes");
 
 float tes_dm0_emb_2016=0.9980;
 float tes_dm1_emb_2016=0.9978;
@@ -141,22 +141,22 @@ void fillTree(TTree *Run_Tree, HTauTauTree_mt *tree, int entry_tree, int recoil,
 
     float tes_ele=1.0;
     if (ismc and year==2016){
-       if (tree->tDecayMode==0 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2016->GetY()[0];
-       if (tree->tDecayMode==1 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2016->GetY()[1];
-       if (tree->tDecayMode==0 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2016->GetY()[2];
-       if (tree->tDecayMode==1 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2016->GetY()[3];
+       if (tree->tDecayMode==0 and fabs(tree->tEta)<1.5) tes_ele=gfes_2016->GetY()[0];
+       if (tree->tDecayMode==1 and fabs(tree->tEta)<1.5) tes_ele=gfes_2016->GetY()[1];
+       if (tree->tDecayMode==0 and fabs(tree->tEta)>=1.5) tes_ele=gfes_2016->GetY()[2];
+       if (tree->tDecayMode==1 and fabs(tree->tEta)>=1.5) tes_ele=gfes_2016->GetY()[3];
     }
     if (ismc and year==2017){
-       if (tree->tDecayMode==0 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2017->GetY()[0];
-       if (tree->tDecayMode==1 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2017->GetY()[1];
-       if (tree->tDecayMode==0 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2017->GetY()[2];
-       if (tree->tDecayMode==1 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2017->GetY()[3];
+       if (tree->tDecayMode==0 and fabs(tree->tEta)<1.5) tes_ele=gfes_2017->GetY()[0];
+       if (tree->tDecayMode==1 and fabs(tree->tEta)<1.5) tes_ele=gfes_2017->GetY()[1];
+       if (tree->tDecayMode==0 and fabs(tree->tEta)>=1.5) tes_ele=gfes_2017->GetY()[2];
+       if (tree->tDecayMode==1 and fabs(tree->tEta)>=1.5) tes_ele=gfes_2017->GetY()[3];
     }
     if (ismc and year==2018){
-       if (tree->tDecayMode==0 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2018->GetY()[0];
-       if (tree->tDecayMode==1 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2018->GetY()[1];
-       if (tree->tDecayMode==0 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2018->GetY()[2];
-       if (tree->tDecayMode==1 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2018->GetY()[3];
+       if (tree->tDecayMode==0 and fabs(tree->tEta)<1.5) tes_ele=gfes_2018->GetY()[0];
+       if (tree->tDecayMode==1 and fabs(tree->tEta)<1.5) tes_ele=gfes_2018->GetY()[1];
+       if (tree->tDecayMode==0 and fabs(tree->tEta)>=1.5) tes_ele=gfes_2018->GetY()[2];
+       if (tree->tDecayMode==1 and fabs(tree->tEta)>=1.5) tes_ele=gfes_2018->GetY()[3];
     }
 
     float tes_dm0_emb=tes_dm0_emb_2018;
