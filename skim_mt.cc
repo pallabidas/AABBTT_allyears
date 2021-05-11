@@ -397,6 +397,61 @@ int main(int argc, char** argv) {
     Run_Tree->Branch("bm_deepflavour_2", &bm_deepflavour_2, "bm_deepflavour_2/F");
     Run_Tree->Branch("bscore_deepflavour_2", &bscore_deepflavour_2, "bscore_deepflavour_2/F");
 
+    Run_Tree->Branch("bpt_deepflavour_JERDown_1", &bpt_deepflavour_JERDown_1, "bpt_deepflavour_JERDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JERUp_1", &bpt_deepflavour_JERUp_1, "bpt_deepflavour_JERUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteUp_1", &bpt_deepflavour_JetAbsoluteUp_1, "bpt_deepflavour_JetAbsoluteUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteDown_1", &bpt_deepflavour_JetAbsoluteDown_1, "bpt_deepflavour_JetAbsoluteDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteyearDown_1", &bpt_deepflavour_JetAbsoluteyearDown_1, "bpt_deepflavour_JetAbsoluteyearDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteyearUp_1", &bpt_deepflavour_JetAbsoluteyearUp_1, "bpt_deepflavour_JetAbsoluteyearUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1Down_1", &bpt_deepflavour_JetBBEC1Down_1, "bpt_deepflavour_JetBBEC1Down_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1Up_1", &bpt_deepflavour_JetBBEC1Up_1, "bpt_deepflavour_JetBBEC1Up_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1yearDown_1", &bpt_deepflavour_JetBBEC1yearDown_1, "bpt_deepflavour_JetBBEC1yearDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1yearUp_1", &bpt_deepflavour_JetBBEC1yearUp_1, "bpt_deepflavour_JetBBEC1yearUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2Down_1", &bpt_deepflavour_JetEC2Down_1, "bpt_deepflavour_JetEC2Down_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2Up_1", &bpt_deepflavour_JetEC2Up_1, "bpt_deepflavour_JetEC2Up_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2yearDown_1", &bpt_deepflavour_JetEC2yearDown_1, "bpt_deepflavour_JetEC2yearDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2yearUp_1", &bpt_deepflavour_JetEC2yearUp_1, "bpt_deepflavour_JetEC2yearUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetFlavorQCDDown_1", &bpt_deepflavour_JetFlavorQCDDown_1, "bpt_deepflavour_JetFlavorQCDDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetFlavorQCDUp_1", &bpt_deepflavour_JetFlavorQCDUp_1, "bpt_deepflavour_JetFlavorQCDUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFDown_1", &bpt_deepflavour_JetHFDown_1, "bpt_deepflavour_JetHFDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFUp_1", &bpt_deepflavour_JetHFUp_1, "bpt_deepflavour_JetHFUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFyearDown_1", &bpt_deepflavour_JetHFyearDown_1, "bpt_deepflavour_JetHFyearDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFyearUp_1", &bpt_deepflavour_JetHFyearUp_1, "bpt_deepflavour_JetHFyearUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeBalDown_1", &bpt_deepflavour_JetRelativeBalDown_1, "bpt_deepflavour_JetRelativeBalDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeBalUp_1", &bpt_deepflavour_JetRelativeBalUp_1, "bpt_deepflavour_JetRelativeBalUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeSampleDown_1", &bpt_deepflavour_JetRelativeSampleDown_1, "bpt_deepflavour_JetRelativeSampleDown_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeSampleUp_1", &bpt_deepflavour_JetRelativeSampleUp_1, "bpt_deepflavour_JetRelativeSampleUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetTotalUp_1", &bpt_deepflavour_JetTotalUp_1, "bpt_deepflavour_JetTotalUp_1/F");
+    Run_Tree->Branch("bpt_deepflavour_JetTotalDown_1", &bpt_deepflavour_JetTotalDown_1, "bpt_deepflavour_JetTotalDown_1/F");
+
+    Run_Tree->Branch("bpt_deepflavour_JERDown_2", &bpt_deepflavour_JERDown_2, "bpt_deepflavour_JERDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JERUp_2", &bpt_deepflavour_JERUp_2, "bpt_deepflavour_JERUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteUp_2", &bpt_deepflavour_JetAbsoluteUp_2, "bpt_deepflavour_JetAbsoluteUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteDown_2", &bpt_deepflavour_JetAbsoluteDown_2, "bpt_deepflavour_JetAbsoluteDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteyearDown_2", &bpt_deepflavour_JetAbsoluteyearDown_2, "bpt_deepflavour_JetAbsoluteyearDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetAbsoluteyearUp_2", &bpt_deepflavour_JetAbsoluteyearUp_2, "bpt_deepflavour_JetAbsoluteyearUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1Down_2", &bpt_deepflavour_JetBBEC1Down_2, "bpt_deepflavour_JetBBEC1Down_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1Up_2", &bpt_deepflavour_JetBBEC1Up_2, "bpt_deepflavour_JetBBEC1Up_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1yearDown_2", &bpt_deepflavour_JetBBEC1yearDown_2, "bpt_deepflavour_JetBBEC1yearDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetBBEC1yearUp_2", &bpt_deepflavour_JetBBEC1yearUp_2, "bpt_deepflavour_JetBBEC1yearUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2Down_2", &bpt_deepflavour_JetEC2Down_2, "bpt_deepflavour_JetEC2Down_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2Up_2", &bpt_deepflavour_JetEC2Up_2, "bpt_deepflavour_JetEC2Up_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2yearDown_2", &bpt_deepflavour_JetEC2yearDown_2, "bpt_deepflavour_JetEC2yearDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetEC2yearUp_2", &bpt_deepflavour_JetEC2yearUp_2, "bpt_deepflavour_JetEC2yearUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetFlavorQCDDown_2", &bpt_deepflavour_JetFlavorQCDDown_2, "bpt_deepflavour_JetFlavorQCDDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetFlavorQCDUp_2", &bpt_deepflavour_JetFlavorQCDUp_2, "bpt_deepflavour_JetFlavorQCDUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFDown_2", &bpt_deepflavour_JetHFDown_2, "bpt_deepflavour_JetHFDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFUp_2", &bpt_deepflavour_JetHFUp_2, "bpt_deepflavour_JetHFUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFyearDown_2", &bpt_deepflavour_JetHFyearDown_2, "bpt_deepflavour_JetHFyearDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetHFyearUp_2", &bpt_deepflavour_JetHFyearUp_2, "bpt_deepflavour_JetHFyearUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeBalDown_2", &bpt_deepflavour_JetRelativeBalDown_2, "bpt_deepflavour_JetRelativeBalDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeBalUp_2", &bpt_deepflavour_JetRelativeBalUp_2, "bpt_deepflavour_JetRelativeBalUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeSampleDown_2", &bpt_deepflavour_JetRelativeSampleDown_2, "bpt_deepflavour_JetRelativeSampleDown_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetRelativeSampleUp_2", &bpt_deepflavour_JetRelativeSampleUp_2, "bpt_deepflavour_JetRelativeSampleUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetTotalUp_2", &bpt_deepflavour_JetTotalUp_2, "bpt_deepflavour_JetTotalUp_2/F");
+    Run_Tree->Branch("bpt_deepflavour_JetTotalDown_2", &bpt_deepflavour_JetTotalDown_2, "bpt_deepflavour_JetTotalDown_2/F");
+
+
     Run_Tree->Branch("pt_top1", &pt_top1, "pt_top1/F");
     Run_Tree->Branch("pt_top2", &pt_top2, "pt_top2/F");
     Run_Tree->Branch("genweight", &genweight, "genweight/F");
@@ -426,52 +481,21 @@ int main(int argc, char** argv) {
        threshold_deepcsv_M=0.4184;
     }
 
-    float tes_dm0=tes_dm0_2018;
-    float tes_dm1=tes_dm1_2018;
-    float tes_dm10=tes_dm10_2018;
-    float tes_dm11=tes_dm11_2018;
     float tes_dm0_emb=tes_dm0_emb_2018;
     float tes_dm1_emb=tes_dm1_emb_2018;
     float tes_dm10_emb=tes_dm10_emb_2018;
     float tes_dm11_emb=tes_dm11_emb_2018;
-    float tes_dm0_fakeele=tes_dm0_fakeele_2018;
-    float tes_dm1_fakeele=tes_dm1_fakeele_2018;
-    float tes_B_fakeele_emb=tes_B_fakeele_emb_2018;
-    float tes_E_fakeele_emb=tes_E_fakeele_emb_2018;
-    float tes_dm0_fakemu=tes_dm0_fakemu_2018;
-    float tes_dm1_fakemu=tes_dm1_fakemu_2018;
-
     if (year==2017){
-       tes_dm0=tes_dm0_2017;
-       tes_dm1=tes_dm1_2017;
-       tes_dm10=tes_dm10_2017;
-       tes_dm11=tes_dm11_2017;
        tes_dm0_emb=tes_dm0_emb_2017;
        tes_dm1_emb=tes_dm1_emb_2017;
        tes_dm10_emb=tes_dm10_emb_2017;
        tes_dm11_emb=tes_dm11_emb_2017;
-       tes_dm0_fakeele=tes_dm0_fakeele_2017;
-       tes_dm1_fakeele=tes_dm1_fakeele_2017;
-       tes_B_fakeele_emb=tes_B_fakeele_emb_2017;
-       tes_E_fakeele_emb=tes_E_fakeele_emb_2017;
-       tes_dm0_fakemu=tes_dm0_fakemu_2017;
-       tes_dm1_fakemu=tes_dm1_fakemu_2017;
     }
     if (year==2016){
-       tes_dm0=tes_dm0_2016;
-       tes_dm1=tes_dm1_2016;
-       tes_dm10=tes_dm10_2016;
-       tes_dm11=tes_dm11_2016;
        tes_dm0_emb=tes_dm0_emb_2016;
        tes_dm1_emb=tes_dm1_emb_2016;
        tes_dm10_emb=tes_dm10_emb_2016;
        tes_dm11_emb=tes_dm11_emb_2016;
-       tes_dm0_fakeele=tes_dm0_fakeele_2016;
-       tes_dm1_fakeele=tes_dm1_fakeele_2016;
-       tes_B_fakeele_emb=tes_B_fakeele_emb_2016;
-       tes_E_fakeele_emb=tes_E_fakeele_emb_2016;
-       tes_dm0_fakemu=tes_dm0_fakemu_2016;
-       tes_dm1_fakemu=tes_dm1_fakemu_2016;
     }
 
     int bestEntry=-1;
@@ -494,24 +518,42 @@ int main(int argc, char** argv) {
         dau1.SetPtEtaPhiM(tree->mPt,tree->mEta,tree->mPhi,tree->mMass);
         dau2.SetPtEtaPhiM(tree->tPt,tree->tEta,tree->tPhi,tree->tMass);
 
-	if (isMC){
-           if (tree->tZTTGenMatching==5 && tree->tDecayMode==0) dau2=dau2*tes_dm0;
-           else if (tree->tZTTGenMatching==5 && tree->tDecayMode==1) dau2=dau2*tes_dm1;
-           else if (tree->tZTTGenMatching==5 && tree->tDecayMode==10) dau2=dau2*tes_dm10;
-           else if (tree->tZTTGenMatching==5 && tree->tDecayMode==11) dau2=dau2*tes_dm11;
-           else if ((tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3) && tree->tDecayMode==0) dau2=dau2*tes_dm0_fakeele;
-           else if ((tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3) && tree->tDecayMode==1) dau2=dau2*tes_dm1_fakeele;
-           else if ((tree->tZTTGenMatching==2 or tree->tZTTGenMatching==4) && tree->tDecayMode==0) dau2=dau2*tes_dm0_fakemu;
-           else if ((tree->tZTTGenMatching==2 or tree->tZTTGenMatching==4) && tree->tDecayMode==1) dau2=dau2*tes_dm1_fakemu;
-	}
-	else if (isEmbedded){
-	   if(tree->tZTTGenMatching==5 && tree->tDecayMode==0) dau2=dau2*tes_dm0_emb;
+        float tes_real=1.0;
+        int bin = hist_lowpt_2016->GetXaxis()->FindBin(tree->tDecayMode);
+        if (year==2016) tes_real = hist_lowpt_2016->GetBinContent(bin);
+        if (year==2017) tes_real = hist_lowpt_2017->GetBinContent(bin);
+        if (year==2018) tes_real = hist_lowpt_2018->GetBinContent(bin);
+
+        float tes_ele=1.0;
+        if (isMC and year==2016){
+           if (tree->tDecayMode==0 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2016->GetY()[0];
+           if (tree->tDecayMode==1 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2016->GetY()[1];
+           if (tree->tDecayMode==0 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2016->GetY()[2];
+           if (tree->tDecayMode==1 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2016->GetY()[3];
+        }
+        if (isMC and year==2017){
+           if (tree->tDecayMode==0 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2017->GetY()[0];
+           if (tree->tDecayMode==1 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2017->GetY()[1];
+           if (tree->tDecayMode==0 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2017->GetY()[2];
+           if (tree->tDecayMode==1 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2017->GetY()[3];
+        }
+        if (isMC and year==2018){
+           if (tree->tDecayMode==0 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2018->GetY()[0];
+           if (tree->tDecayMode==1 and fabs(tree->tDecayMode)<1.5) tes_ele=gfes_2018->GetY()[1];
+           if (tree->tDecayMode==0 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2018->GetY()[2];
+           if (tree->tDecayMode==1 and fabs(tree->tDecayMode)>=1.5) tes_ele=gfes_2018->GetY()[3];
+        }
+
+        if (isMC){
+           if (tree->tZTTGenMatching==5) dau2=dau2*tes_real;
+           else if ((tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3)) dau2=dau2*tes_ele;
+        }
+        else if (isEmbedded){
+           if(tree->tZTTGenMatching==5 && tree->tDecayMode==0) dau2=dau2*tes_dm0_emb;
            else if (tree->tZTTGenMatching==5 && tree->tDecayMode==1) dau2=dau2*tes_dm1_emb;
            else if (tree->tZTTGenMatching==5 && tree->tDecayMode==10) dau2=dau2*tes_dm10_emb;
            else if (tree->tZTTGenMatching==5 && tree->tDecayMode==11) dau2=dau2*tes_dm11_emb;
-           else if ((tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3) && fabs(tree->tEta)>1.5) dau2=dau2*tes_E_fakeele_emb;
-           else if ((tree->tZTTGenMatching==1 or tree->tZTTGenMatching==3) && fabs(tree->tEta)<1.5) dau2=dau2*tes_B_fakeele_emb;
-	}
+        }
 
         if (dau1.DeltaR(dau2)<0.3) continue;
 	if (fabs(tree->mPVDXY)>0.045) continue;

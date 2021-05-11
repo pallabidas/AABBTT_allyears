@@ -18,7 +18,7 @@ if __name__ == "__main__":
     # 2018 data 
     ###################################################
     if args.year=="2018" and args.sample=="data" and args.channel=="mt":
-       place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
+       place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2018_data/"
        datatype="data"
        name=[
 "data_SingleMuon_Run2018A-17Sep2018","DataA","0","2018",
@@ -27,7 +27,7 @@ if __name__ == "__main__":
 "data_SingleMuon_Run2018D-PromptReco","DataD","0","2018"
 ]
     if args.year=="2018" and args.sample=="data" and args.channel=="et":
-       place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
+       place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2018_data/"
        datatype="data"
        name=[
 "data_EGamma_Run2018A-17Sep2018","SingleEleA","0","2018",
@@ -36,7 +36,7 @@ if __name__ == "__main__":
 "data_EGamma_Run2018D-PromptReco","SingleEleD","0","2018"
 ]
     if args.year=="2018" and args.sample=="data" and args.channel=="em":
-       place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
+       place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2018_data/"
        datatype="data"
        name=[
 "data_MuonEG_Run2018A-17Sep2018","DataA","0","2018",
@@ -45,7 +45,7 @@ if __name__ == "__main__":
 "data_MuonEG_Run2018D-PromptReco","DataD","0","2018"
 ]
     if args.year=="2018" and args.sample=="data" and args.channel=="tt":
-       place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
+       place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2018_data/"
        datatype="data"
        name=[
 "data_Tau_Run2018A-17Sep2018","DataA","0","2018",
@@ -112,7 +112,7 @@ if __name__ == "__main__":
     # 2018 Embedded
     ##############################################################
     if args.sample=="embedded" and args.year=="2018" and args.channel=="em":
-       place="/hdfs/store/user/caillol/SMHTT_2018_27jul_embedded/"
+       place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2018_embedded/"
        datatype="embedded"
        name=[
 "embedded_EmbeddingRun2018A_ElMuFinalState","EmbeddedA","0","2018",
@@ -122,7 +122,7 @@ if __name__ == "__main__":
 ]
 
     if args.sample=="embedded" and args.year=="2018" and args.channel=="et":
-       place="/hdfs/store/user/caillol/SMHTT_2018_27jul_embedded/"
+       place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2018_embedded/"
        datatype="embedded"
        name=[
 "embedded_EmbeddingRun2018A_ElTauFinalState","EmbeddedA","0","2018",
@@ -132,7 +132,7 @@ if __name__ == "__main__":
 ]
 
     if args.sample=="embedded" and args.year=="2018" and args.channel=="mt":
-       place="/hdfs/store/user/caillol/SMHTT_2018_27jul_embedded/"
+       place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2018_embedded/"
        datatype="embedded"
        name=[
 "embedded_EmbeddingRun2018A_MuTauFinalState","EmbeddedA","0","2018",
@@ -142,7 +142,7 @@ if __name__ == "__main__":
 ]
 
     if args.sample=="embedded" and args.year=="2018" and args.channel=="tt":
-       place="/hdfs/store/user/caillol/SMHTT_2018_27jul_embedded/"
+       place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2018_embedded/"
        datatype="embedded"
        name=[
 "embedded_EmbeddingRun2018A_TauTauFinalState","EmbeddedA","0","2018",
@@ -234,9 +234,11 @@ if __name__ == "__main__":
 
 
     if args.year=="2018" and args.sample=="mc" and (args.channel=="em" or args.channel=="et" or args.channel=="mt" or args.channel=="tt"):
-       place="/hdfs/store/user/caillol/SMHTT_2018_27jul_data/"
+       place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2018/"
        datatype="mc"
        name=[
+"DYJetsToLL_M-10to50_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v2","DYlow_v1","Z","2018",
+"DYJetsToLL_M-10to50_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15_ext1-v1","DYlow_v2","Z","2018",
 "DY1JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v1","DY1_v1","Z","2018",
 "DY1JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v2","DY1_v2","Z","2018",
 "DY2JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v1","DY2_v1","Z","2018",
@@ -245,7 +247,12 @@ if __name__ == "__main__":
 "DY3JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v2","DY3_v2","Z","2018",
 "DY4JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v1","DY4_v1","Z","2018",
 "DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v1","DY_v1","Z","2018",
-"GluGluHToTauTau_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15-v2","GGHTT","Z","2018",
+"GluGluHToTauTau_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15-v2","GGHTT","0","2018",
+"GluGluHToWWTo2L2Nu_M125_13TeV_powheg2_JHUGenV714_pythia8_-102X_upgrade2018_realistic_v15-v1","GGHWW","0","2018",
+"GluGluZH_HToWW_M125_13TeV_powheg_pythia8_TuneCP5_PSweights_-102X_upgrade2018_realistic_v15-v1","ZHWW","0","2018",
+"HWminusJ_HToWW_M125_13TeV_powheg_jhugen724_pythia8_TuneCP5_-102X_upgrade2018_realistic_v15-v1","WminusHWW","0","2018",
+"HWplusJ_HToWW_M125_13TeV_powheg_jhugen724_pythia8_TuneCP5_-102X_upgrade2018_realistic_v15-v1","WplusHWW","0","2018",
+"HZJ_HToWW_M125_13TeV_powheg_jhugen714_pythia8_TuneCP5_-102X_upgrade2018_realistic_v15-v1","ZHWW","0","2018",
 "ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8_-102X_upgrade2018_realistic_v15-v1","ST_t_antitop","0","2018",
 "ST_t-channel_top_5f_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15-v1","ST_t_top","0","2018",
 "ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15_ext1-v1","ST_tW_antitop","0","2018",
@@ -253,9 +260,12 @@ if __name__ == "__main__":
 "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15-v1","TTTo2L2Nu","0","2018",
 "TTToHadronic_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15-v1","TTToHadronic_v1","0","2018",
 "TTToHadronic_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15_ext2-v2","TTToHadronic_v2","0","2018",
+"TTToHadronic_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15_ext2-v3","TTToHadronic_v3","0","2018",
 "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15-v1","TTToSemiLeptonic_v1","0","2018",
 "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15_ext3-v2","TTToSemiLeptonic_v2","0","2018",
-"VBFHToTauTau_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15_ext1-v1","VBFHTT","Z","2018",
+"TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15_ext3-v3","TTToSemiLeptonic_v3","0","2018",
+"VBFHToTauTau_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15_ext1-v1","VBFHTT","0","2018",
+"VBFHToWWTo2L2Nu_M125_13TeV_powheg2_JHUGenV714_pythia8_-102X_upgrade2018_realistic_v15-v1","VBFHWW","0","2018",
 "VVTo2L2Nu_13TeV_amcatnloFXFX_madspin_pythia8_-102X_upgrade2018_realistic_v15-v1","VV2L2Nu","0","2018",
 "W1JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v2","W1_v1","W","2018",
 "W2JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8_-102X_upgrade2018_realistic_v15-v1","W2_v1","W","2018",
@@ -277,12 +287,8 @@ if __name__ == "__main__":
 "ggZH_HToTauTau_ZToNuNu_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15-v1","GGZHNNTT","0","2018",
 "ggZH_HToTauTau_ZToQQ_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15-v1","GGZHQQTT","0","2018",
 "ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15-v2","ttHnonbb","0","2018",
-"GluGluHToWWTo2L2Nu_M125_13TeV_powheg2_JHUGenV714_pythia8_-102X_upgrade2018_realistic_v15-v1","GGHWW","Z","2018",
-"GluGluZH_HToWW_M125_13TeV_powheg_pythia8_TuneCP5_PSweights_-102X_upgrade2018_realistic_v15-v1","GGZHWW","0","2018",
-"HWminusJ_HToWW_M125_13TeV_powheg_jhugen724_pythia8_TuneCP5_-102X_upgrade2018_realistic_v15-v1","WminusHWW","0","2018",
-"HWplusJ_HToWW_M125_13TeV_powheg_jhugen724_pythia8_TuneCP5_-102X_upgrade2018_realistic_v15-v1","WplusHWW","0","2018",
-"HZJ_HToWW_M125_13TeV_powheg_jhugen714_pythia8_TuneCP5_-102X_upgrade2018_realistic_v15-v1","ZHWW","0","2018",
-"VBFHToWWTo2L2Nu_M125_13TeV_powheg2_JHUGenV714_pythia8_-102X_upgrade2018_realistic_v15-v1","VBFHWW","Z","2018",
+"ttHTobb_M125_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15-v2","ttHbb_v1","0","2018",
+"ttHTobb_M125_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15-v3","ttHbb_v2","0","2018",
 "SUSYGluGluToHToAA_AToBB_AToTauTau_M-40_FilterTauTauTrigger_TuneCP5_13TeV_madgraph_pythia8","ggH_bbtt40","Z","2018",
 "SUSYVBFToHToAA_AToBB_AToTauTau_M-40_FilterTauTauTrigger_TuneCP5_13TeV_madgraph_pythia8","vbf_bbtt40","Z","2018",
 "SUSYGluGluToHToAA_AToBB_AToTauTau_M-12_FilterTauTauTrigger_TuneCP5_13TeV_madgraph_pythia8","ggH_bbtt12","Z","2018",
@@ -303,7 +309,7 @@ if __name__ == "__main__":
     # 2017 Data 
     #####################################################################
     if args.sample=="data" and args.year=="2017" and args.channel=="em":
-      place="/hdfs/store/user/caillol/SMHTT_2017_27jul_data/"
+      place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2017_data/"
       datatype="data"
       name=[
 "data_MuonEG_Run2017B-31Mar2018","DataB","0","2017",
@@ -314,7 +320,7 @@ if __name__ == "__main__":
 ]
 
     if args.sample=="data" and args.year=="2017" and args.channel=="et":
-      place="/hdfs/store/user/caillol/SMHTT_2017_27jul_data/"
+      place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2017_data/"
       datatype="data"
       name=[
 "data_SingleElectron_Run2017B-31Mar2018","DataB","0","2017",
@@ -325,7 +331,7 @@ if __name__ == "__main__":
 ]
 
     if args.sample=="data" and args.year=="2017" and args.channel=="mt":
-      place="/hdfs/store/user/caillol/SMHTT_2017_27jul_data/"
+      place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2017_data/"
       datatype="data"
       name=[
 "data_SingleMuon_Run2017B-31Mar2018","DataB","0","2017",
@@ -336,7 +342,7 @@ if __name__ == "__main__":
 ]
 
     if args.sample=="data" and args.year=="2017" and args.channel=="tt":
-      place="/hdfs/store/user/caillol/SMHTT_2017_27jul_data/"
+      place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2017_data/"
       datatype="data"
       name=[
 "data_Tau_Run2017B-31Mar2018","DataB","0","2017",
@@ -351,7 +357,7 @@ if __name__ == "__main__":
     #####################################################################
 
     if args.sample=="embedded" and args.year=="2017" and args.channel=="em":
-      place="/hdfs/store/user/caillol/SMHTT_2017_27jul_embedded/"
+      place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2017_embedded/"
       datatype="embedded"
       name=[
 "embedded_EmbeddingRun2017B_ElMuFinalState","embeddedB","0","2017",
@@ -362,7 +368,7 @@ if __name__ == "__main__":
 ]
 
     if args.sample=="embedded" and args.year=="2017" and args.channel=="et":
-      place="/hdfs/store/user/caillol/SMHTT_2017_27jul_embedded/"
+      place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2017_embedded/"
       datatype="embedded"
       name=[
 "embedded_EmbeddingRun2017B_ElTauFinalState","embeddedB","0","2017",
@@ -373,7 +379,7 @@ if __name__ == "__main__":
 ]
 
     if args.sample=="embedded" and args.year=="2017" and args.channel=="mt":
-      place="/hdfs/store/user/caillol/SMHTT_2017_27jul_embedded/"
+      place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2017_embedded/"
       datatype="embedded"
       name=[
 "embedded_EmbeddingRun2017B_MuTauFinalState","embeddedB","0","2017",
@@ -384,7 +390,7 @@ if __name__ == "__main__":
 ]
 
     if args.sample=="embedded" and args.year=="2017" and args.channel=="tt":
-      place="/hdfs/store/user/caillol/SMHTT_2017_27jul_embedded/"
+      place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2017_embedded/"
       datatype="embedded"
       name=[
 "embedded_EmbeddingRun2017B_TauTauFinalState","embeddedB","0","2017",
@@ -398,7 +404,7 @@ if __name__ == "__main__":
     # 2017 MC 
     #####################################################################
     if args.sample=="mc" and args.year=="2017" and (args.channel=="em" or args.channel=="et" or args.channel=="mt" or args.channel=="tt"):
-      place="/hdfs/store/user/caillol/SMHTT_2017_27jul_mc/"
+      place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2017/"
       datatype="mc"
       name=[
 "DY1JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_v2-PU2017_12Apr2018_new_pmx_94X_mc2017_realistic_v14-v1","DY1","Z","2017",
@@ -588,7 +594,7 @@ if __name__ == "__main__":
     #######################################################################
 
     if args.sample=="signal" and args.year=="2016" and (args.channel=="em" or args.channel=="et" or args.channel=="mt" or args.channel=="tt"):
-      place="/hdfs/store/user/caillol/SMHTT_2016_27jul_mc/"
+      place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2016/"
       datatype="mc"
       name=[
 "SUSYGluGluToHToAA_AToBB_AToTauTau_M-15_FilterTauTauTrigger16_TuneCP5_13TeV_madgraph_pythia8","ggH_bbtt15","Z","2016",
@@ -614,9 +620,14 @@ if __name__ == "__main__":
 ]
 
     if args.sample=="mc" and args.year=="2016" and (args.channel=="em" or args.channel=="et" or args.channel=="mt" or args.channel=="tt"):
-      place="/hdfs/store/user/aloeliger/SMHTT_2016_7_Jul_2020/"
+      place="/hdfs/store/user/caillol/HAABBTT_rerunBtag_2016/"
       datatype="mc"
       name=[
+"DY1JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","DY1low","Z","2016",
+"DY2JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","DY2low","Z","2016",
+"DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","DY3low","Z","2016",
+"DY4JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","DY4low","Z","2016",
+"DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","DYlow","Z","2016",
 "DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v1","DY1_v1","Z","2016",
 "DY2JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","DY2_v1","Z","2016",
 "DY3JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","DY3","Z","2016",
@@ -632,12 +643,13 @@ if __name__ == "__main__":
 "W4JetsToLNu_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext1-v2","W4_v2","W","2016",
 "W4JetsToLNu_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext2-v1","W4_v3","W","2016",
 "WJetsToLNu_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","W_v1","W","2016",
-"WJetsToLNu_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext2-v2","W_v2","W","2016",
 "ST_t-channel_antitop_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v1","ST_t_antitop","0","2016",
 "ST_t-channel_top_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v1","ST_t_top","0","2016",
 "ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1_v3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext1-v1","ST_tW_antitop","0","2016",
 "ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1_v3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext1-v1","ST_tW_top","0","2016",
-"TT_TuneCUETP8M2T4_13TeV-powheg-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v1","TT","0","2016",
+"TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v1","TTTo2L2Nu","0","2016",
+"TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v1","TTToHadronic","0","2016",
+"TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v1","TTToSemiLeptonic","0","2016",
 "VVTo2L2Nu_13TeV_amcatnloFXFX_madspin_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext1-v2","VV2L2Nu_v1","0","2016",
 "VVTo2L2Nu_13TeV_amcatnloFXFX_madspin_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","VV2L2Nu_v2","0","2016",
 "WWTo1L1Nu2Q_13TeV_amcatnloFXFX_madspin_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","WW1L1Nu2Q","0","2016",
@@ -662,7 +674,8 @@ if __name__ == "__main__":
 "ggZH_HToTauTau_ZToLL_M125_13TeV_powheg_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v1","GGZHLLTT","0","2016",
 "ggZH_HToTauTau_ZToNuNu_M125_13TeV_powheg_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v1","GGZHNNTT","0","2016",
 "ggZH_HToTauTau_ZToQQ_M125_13TeV_powheg_pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v1","GGZHQQTT","0","2016",
-"ttHToNonbb_M125_TuneCUETP8M2_ttHtranche3_13TeV-powheg-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","ttHnonbb","0","2016"
+"ttHToNonbb_M125_TuneCUETP8M2_ttHtranche3_13TeV-powheg-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2","ttHnonbb","0","2016",
+"ttHTobb_M125_TuneCP5_13TeV-powheg-pythia8_v3-PUMoriond17_94X_mcRun2_asymptotic_v3-v1","ttHbb","0","2016"
 ]
 
     datadir="/nfs_scratch/caillol/haabbtt_"+args.channel+args.year+"_7sep/"

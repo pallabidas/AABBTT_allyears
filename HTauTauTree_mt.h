@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Mon Aug  3 03:31:16 2020 by ROOT version 6.10/09
+// Thu May  6 04:57:57 2021 by ROOT version 6.12/07
 // from TTree Ntuple/Expression Ntuple
-// found on file: /hdfs/store/user/caillol/SMHTT_2018_27jul_data/GluGluHToTauTau_M125_13TeV_powheg_pythia8_-102X_upgrade2018_realistic_v15-v2/make_ntuples_cfg-EA616C34-3E55-3041-87B1-E1A03E113147.root
+// found on file: /hdfs/store/user/caillol/HAABBTT_rerunBtag_2018/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_-102X_upgrade2018_realistic_v15-v1/make_ntuples_cfg-5E5AE109-621E-7E41-81EF-2E8E90ABC900.root
 //////////////////////////////////////////////////////////
 
 #ifndef HTauTauTree_mt_h
@@ -71,14 +71,6 @@ public :
    Float_t         Mu20LooseTau27TightIDPass;
    Float_t         Mu50Pass;
    Float_t         NUP;
-   Float_t         PythiaWeight_fsr_muR0p25;
-   Float_t         PythiaWeight_fsr_muR0p5;
-   Float_t         PythiaWeight_fsr_muR2;
-   Float_t         PythiaWeight_fsr_muR4;
-   Float_t         PythiaWeight_isr_muR0p25;
-   Float_t         PythiaWeight_isr_muR0p5;
-   Float_t         PythiaWeight_isr_muR2;
-   Float_t         PythiaWeight_isr_muR4;
    Float_t         Rivet_VEta;
    Float_t         Rivet_VPt;
    Float_t         Rivet_errorCode;
@@ -107,10 +99,7 @@ public :
    Float_t         Rivet_stage1_cat_pTjet30GeV;
    Float_t         VBFDoubleLooseHPSTau20Pass;
    Float_t         VBFDoubleLooseTau20Pass;
-   Float_t         VBFDoubleMediumHPSTau20Pass;
-   Float_t         VBFDoubleMediumTau20Pass;
-   Float_t         VBFDoubleTightHPSTau20Pass;
-   Float_t         VBFDoubleTightTau20Pass;
+   Float_t         VBFDoubleLooseTau20RegPass;
    Float_t         bjetDeepCSVVeto20Loose_2016_DR0p5;
    Float_t         bjetDeepCSVVeto20Loose_2017_DR0p5;
    Float_t         bjetDeepCSVVeto20Loose_2018_DR0p5;
@@ -129,76 +118,76 @@ public :
    Float_t         deepcsvb1_m;
    Float_t         deepcsvb1_phi;
    Float_t         deepcsvb1_pt;
-   Float_t         deepcsvb1_pt_JERDown;
-   Float_t         deepcsvb1_pt_JERUp;
-   Float_t         deepcsvb1_pt_JetAbsoluteDown;
-   Float_t         deepcsvb1_pt_JetAbsoluteUp;
-   Float_t         deepcsvb1_pt_JetAbsoluteyearDown;
-   Float_t         deepcsvb1_pt_JetAbsoluteyearUp;
-   Float_t         deepcsvb1_pt_JetBBEC1Down;
-   Float_t         deepcsvb1_pt_JetBBEC1Up;
-   Float_t         deepcsvb1_pt_JetBBEC1yearDown;
-   Float_t         deepcsvb1_pt_JetBBEC1yearUp;
-   Float_t         deepcsvb1_pt_JetEC2Down;
-   Float_t         deepcsvb1_pt_JetEC2Up;
-   Float_t         deepcsvb1_pt_JetEC2yearDown;
-   Float_t         deepcsvb1_pt_JetEC2yearUp;
-   Float_t         deepcsvb1_pt_JetFlavorQCDDown;
-   Float_t         deepcsvb1_pt_JetFlavorQCDUp;
-   Float_t         deepcsvb1_pt_JetHFDown;
-   Float_t         deepcsvb1_pt_JetHFUp;
-   Float_t         deepcsvb1_pt_JetHFyearDown;
-   Float_t         deepcsvb1_pt_JetHFyearUp;
-   Float_t         deepcsvb1_pt_JetRelativeBalDown;
-   Float_t         deepcsvb1_pt_JetRelativeBalUp;
-   Float_t         deepcsvb1_pt_JetRelativeSampleDown;
-   Float_t         deepcsvb1_pt_JetRelativeSampleUp;
-   Float_t         deepcsvb1_pt_JetTotalDown;
-   Float_t         deepcsvb1_pt_JetTotalUp;
    Float_t         deepcsvb2_btagscore;
    Float_t         deepcsvb2_eta;
    Float_t         deepcsvb2_hadronflavour;
    Float_t         deepcsvb2_m;
    Float_t         deepcsvb2_phi;
    Float_t         deepcsvb2_pt;
-   Float_t         deepcsvb2_pt_JERDown;
-   Float_t         deepcsvb2_pt_JERUp;
-   Float_t         deepcsvb2_pt_JetAbsoluteDown;
-   Float_t         deepcsvb2_pt_JetAbsoluteUp;
-   Float_t         deepcsvb2_pt_JetAbsoluteyearDown;
-   Float_t         deepcsvb2_pt_JetAbsoluteyearUp;
-   Float_t         deepcsvb2_pt_JetBBEC1Down;
-   Float_t         deepcsvb2_pt_JetBBEC1Up;
-   Float_t         deepcsvb2_pt_JetBBEC1yearDown;
-   Float_t         deepcsvb2_pt_JetBBEC1yearUp;
-   Float_t         deepcsvb2_pt_JetEC2Down;
-   Float_t         deepcsvb2_pt_JetEC2Up;
-   Float_t         deepcsvb2_pt_JetEC2yearDown;
-   Float_t         deepcsvb2_pt_JetEC2yearUp;
-   Float_t         deepcsvb2_pt_JetFlavorQCDDown;
-   Float_t         deepcsvb2_pt_JetFlavorQCDUp;
-   Float_t         deepcsvb2_pt_JetHFDown;
-   Float_t         deepcsvb2_pt_JetHFUp;
-   Float_t         deepcsvb2_pt_JetHFyearDown;
-   Float_t         deepcsvb2_pt_JetHFyearUp;
-   Float_t         deepcsvb2_pt_JetRelativeBalDown;
-   Float_t         deepcsvb2_pt_JetRelativeBalUp;
-   Float_t         deepcsvb2_pt_JetRelativeSampleDown;
-   Float_t         deepcsvb2_pt_JetRelativeSampleUp;
-   Float_t         deepcsvb2_pt_JetTotalDown;
-   Float_t         deepcsvb2_pt_JetTotalUp;
    Float_t         deepflavourb1_btagscore;
    Float_t         deepflavourb1_eta;
    Float_t         deepflavourb1_hadronflavour;
    Float_t         deepflavourb1_m;
    Float_t         deepflavourb1_phi;
    Float_t         deepflavourb1_pt;
+   Float_t         deepflavourb1_pt_JERDown;
+   Float_t         deepflavourb1_pt_JERUp;
+   Float_t         deepflavourb1_pt_JetAbsoluteDown;
+   Float_t         deepflavourb1_pt_JetAbsoluteUp;
+   Float_t         deepflavourb1_pt_JetAbsoluteyearDown;
+   Float_t         deepflavourb1_pt_JetAbsoluteyearUp;
+   Float_t         deepflavourb1_pt_JetBBEC1Down;
+   Float_t         deepflavourb1_pt_JetBBEC1Up;
+   Float_t         deepflavourb1_pt_JetBBEC1yearDown;
+   Float_t         deepflavourb1_pt_JetBBEC1yearUp;
+   Float_t         deepflavourb1_pt_JetEC2Down;
+   Float_t         deepflavourb1_pt_JetEC2Up;
+   Float_t         deepflavourb1_pt_JetEC2yearDown;
+   Float_t         deepflavourb1_pt_JetEC2yearUp;
+   Float_t         deepflavourb1_pt_JetFlavorQCDDown;
+   Float_t         deepflavourb1_pt_JetFlavorQCDUp;
+   Float_t         deepflavourb1_pt_JetHFDown;
+   Float_t         deepflavourb1_pt_JetHFUp;
+   Float_t         deepflavourb1_pt_JetHFyearDown;
+   Float_t         deepflavourb1_pt_JetHFyearUp;
+   Float_t         deepflavourb1_pt_JetRelativeBalDown;
+   Float_t         deepflavourb1_pt_JetRelativeBalUp;
+   Float_t         deepflavourb1_pt_JetRelativeSampleDown;
+   Float_t         deepflavourb1_pt_JetRelativeSampleUp;
+   Float_t         deepflavourb1_pt_JetTotalDown;
+   Float_t         deepflavourb1_pt_JetTotalUp;
    Float_t         deepflavourb2_btagscore;
    Float_t         deepflavourb2_eta;
    Float_t         deepflavourb2_hadronflavour;
    Float_t         deepflavourb2_m;
    Float_t         deepflavourb2_phi;
    Float_t         deepflavourb2_pt;
+   Float_t         deepflavourb2_pt_JERDown;
+   Float_t         deepflavourb2_pt_JERUp;
+   Float_t         deepflavourb2_pt_JetAbsoluteDown;
+   Float_t         deepflavourb2_pt_JetAbsoluteUp;
+   Float_t         deepflavourb2_pt_JetAbsoluteyearDown;
+   Float_t         deepflavourb2_pt_JetAbsoluteyearUp;
+   Float_t         deepflavourb2_pt_JetBBEC1Down;
+   Float_t         deepflavourb2_pt_JetBBEC1Up;
+   Float_t         deepflavourb2_pt_JetBBEC1yearDown;
+   Float_t         deepflavourb2_pt_JetBBEC1yearUp;
+   Float_t         deepflavourb2_pt_JetEC2Down;
+   Float_t         deepflavourb2_pt_JetEC2Up;
+   Float_t         deepflavourb2_pt_JetEC2yearDown;
+   Float_t         deepflavourb2_pt_JetEC2yearUp;
+   Float_t         deepflavourb2_pt_JetFlavorQCDDown;
+   Float_t         deepflavourb2_pt_JetFlavorQCDUp;
+   Float_t         deepflavourb2_pt_JetHFDown;
+   Float_t         deepflavourb2_pt_JetHFUp;
+   Float_t         deepflavourb2_pt_JetHFyearDown;
+   Float_t         deepflavourb2_pt_JetHFyearUp;
+   Float_t         deepflavourb2_pt_JetRelativeBalDown;
+   Float_t         deepflavourb2_pt_JetRelativeBalUp;
+   Float_t         deepflavourb2_pt_JetRelativeSampleDown;
+   Float_t         deepflavourb2_pt_JetRelativeSampleUp;
+   Float_t         deepflavourb2_pt_JetTotalDown;
+   Float_t         deepflavourb2_pt_JetTotalUp;
    Float_t         dielectronVeto;
    Float_t         dimuonVeto;
    Float_t         doubleE_23_12DZPass;
@@ -233,6 +222,9 @@ public :
    Float_t         gentau2_pt;
    Int_t           isdata;
    Int_t           isembed;
+   Float_t         j1_deepcsvscore;
+   Float_t         j1_deepflavourscore;
+   Float_t         j1_hadronflavour;
    Float_t         j1eta;
    Float_t         j1phi;
    Float_t         j1pt;
@@ -260,6 +252,9 @@ public :
    Float_t         j1pt_JetRelativeBalUp;
    Float_t         j1pt_JetRelativeSampleDown;
    Float_t         j1pt_JetRelativeSampleUp;
+   Float_t         j2_deepcsvscore;
+   Float_t         j2_deepflavourscore;
+   Float_t         j2_hadronflavour;
    Float_t         j2eta;
    Float_t         j2phi;
    Float_t         j2pt;
@@ -317,19 +312,11 @@ public :
    Float_t         jetVeto30_JetRelativeSampleUp;
    Float_t         jetVeto30_JetTotalDown;
    Float_t         jetVeto30_JetTotalUp;
-   Float_t         lheweight_muR0p5_muF0p5;
-   Float_t         lheweight_muR0p5_muF1;
-   Float_t         lheweight_muR0p5_muF2;
-   Float_t         lheweight_muR1_muF0p5;
-   Float_t         lheweight_muR1_muF2;
-   Float_t         lheweight_muR2_muF0p5;
-   Float_t         lheweight_muR2_muF1;
-   Float_t         lheweight_muR2_muF2;
-   Float_t         lheweight_nominal;
    Int_t           lumi;
    Float_t         mBestTrackType;
    Float_t         mCharge;
    Float_t         mChi2LocalPosition;
+   Float_t         mClosestJetDeepFlavor;
    Float_t         mCutBasedIdGlobalHighPt;
    Float_t         mCutBasedIdLoose;
    Float_t         mCutBasedIdMedium;
@@ -354,6 +341,9 @@ public :
    Float_t         mGenTauDecay;
    Float_t         mGenVZ;
    Float_t         mHcalIsoDR03;
+   Float_t         mIP3D;
+   Float_t         mIP3DS;
+   Float_t         mIPDXY;
    Float_t         mIsGlobal;
    Float_t         mIsPFMuon;
    Float_t         mIsTracker;
@@ -410,6 +400,7 @@ public :
    Float_t         mMatchesdoubleMuTkMu8DZPath;
    Float_t         mMatchesdoubleMuTkMu8Filter;
    Float_t         mMatchesdoubleMuTkMu8Path;
+   Float_t         mMiniIso;
    Float_t         mMiniIsoLoose;
    Float_t         mMiniIsoMedium;
    Float_t         mMiniIsoTight;
@@ -418,6 +409,7 @@ public :
    Float_t         mMvaLoose;
    Float_t         mMvaMedium;
    Float_t         mMvaTight;
+   Float_t         mMvaTopId;
    Float_t         mNormTrkChi2;
    Float_t         mNormalizedChi2;
    Float_t         mPFChargedHadronIsoR04;
@@ -441,6 +433,7 @@ public :
    Float_t         mPhi;
    Float_t         mPixHits;
    Float_t         mPt;
+   Float_t         mPtRatio;
    Float_t         mRelPFIsoDBDefault;
    Float_t         mRelPFIsoDBDefaultR04;
    Float_t         mSegmentCompatibility;
@@ -622,6 +615,12 @@ public :
    Float_t         tMatchesIsoMu20HPSTau27Path;
    Float_t         tMatchesIsoMu20Tau27Filter;
    Float_t         tMatchesIsoMu20Tau27Path;
+   Float_t         tMatchesVBFDoubleHPSTau20Filter;
+   Float_t         tMatchesVBFDoubleHPSTau20Path;
+   Float_t         tMatchesVBFDoubleTau20Filter;
+   Float_t         tMatchesVBFDoubleTau20Path;
+   Float_t         tMatchesVBFDoubleTau20RegFilter;
+   Float_t         tMatchesVBFDoubleTau20RegPath;
    Float_t         tMediumDeepTau2017v2p1VSe;
    Float_t         tMediumDeepTau2017v2p1VSjet;
    Float_t         tMediumDeepTau2017v2p1VSmu;
@@ -811,14 +810,6 @@ public :
    TBranch        *b_Mu20LooseTau27TightIDPass;   //!
    TBranch        *b_Mu50Pass;   //!
    TBranch        *b_NUP;   //!
-   TBranch        *b_PythiaWeight_fsr_muR0p25;   //!
-   TBranch        *b_PythiaWeight_fsr_muR0p5;   //!
-   TBranch        *b_PythiaWeight_fsr_muR2;   //!
-   TBranch        *b_PythiaWeight_fsr_muR4;   //!
-   TBranch        *b_PythiaWeight_isr_muR0p25;   //!
-   TBranch        *b_PythiaWeight_isr_muR0p5;   //!
-   TBranch        *b_PythiaWeight_isr_muR2;   //!
-   TBranch        *b_PythiaWeight_isr_muR4;   //!
    TBranch        *b_Rivet_VEta;   //!
    TBranch        *b_Rivet_VPt;   //!
    TBranch        *b_Rivet_errorCode;   //!
@@ -847,10 +838,7 @@ public :
    TBranch        *b_Rivet_stage1_cat_pTjet30GeV;   //!
    TBranch        *b_VBFDoubleLooseHPSTau20Pass;   //!
    TBranch        *b_VBFDoubleLooseTau20Pass;   //!
-   TBranch        *b_VBFDoubleMediumHPSTau20Pass;   //!
-   TBranch        *b_VBFDoubleMediumTau20Pass;   //!
-   TBranch        *b_VBFDoubleTightHPSTau20Pass;   //!
-   TBranch        *b_VBFDoubleTightTau20Pass;   //!
+   TBranch        *b_VBFDoubleLooseTau20RegPass;   //!
    TBranch        *b_bjetDeepCSVVeto20Loose_2016_DR0p5;   //!
    TBranch        *b_bjetDeepCSVVeto20Loose_2017_DR0p5;   //!
    TBranch        *b_bjetDeepCSVVeto20Loose_2018_DR0p5;   //!
@@ -869,76 +857,76 @@ public :
    TBranch        *b_deepcsvb1_m;   //!
    TBranch        *b_deepcsvb1_phi;   //!
    TBranch        *b_deepcsvb1_pt;   //!
-   TBranch        *b_deepcsvb1_pt_JERDown;   //!
-   TBranch        *b_deepcsvb1_pt_JERUp;   //!
-   TBranch        *b_deepcsvb1_pt_JetAbsoluteDown;   //!
-   TBranch        *b_deepcsvb1_pt_JetAbsoluteUp;   //!
-   TBranch        *b_deepcsvb1_pt_JetAbsoluteyearDown;   //!
-   TBranch        *b_deepcsvb1_pt_JetAbsoluteyearUp;   //!
-   TBranch        *b_deepcsvb1_pt_JetBBEC1Down;   //!
-   TBranch        *b_deepcsvb1_pt_JetBBEC1Up;   //!
-   TBranch        *b_deepcsvb1_pt_JetBBEC1yearDown;   //!
-   TBranch        *b_deepcsvb1_pt_JetBBEC1yearUp;   //!
-   TBranch        *b_deepcsvb1_pt_JetEC2Down;   //!
-   TBranch        *b_deepcsvb1_pt_JetEC2Up;   //!
-   TBranch        *b_deepcsvb1_pt_JetEC2yearDown;   //!
-   TBranch        *b_deepcsvb1_pt_JetEC2yearUp;   //!
-   TBranch        *b_deepcsvb1_pt_JetFlavorQCDDown;   //!
-   TBranch        *b_deepcsvb1_pt_JetFlavorQCDUp;   //!
-   TBranch        *b_deepcsvb1_pt_JetHFDown;   //!
-   TBranch        *b_deepcsvb1_pt_JetHFUp;   //!
-   TBranch        *b_deepcsvb1_pt_JetHFyearDown;   //!
-   TBranch        *b_deepcsvb1_pt_JetHFyearUp;   //!
-   TBranch        *b_deepcsvb1_pt_JetRelativeBalDown;   //!
-   TBranch        *b_deepcsvb1_pt_JetRelativeBalUp;   //!
-   TBranch        *b_deepcsvb1_pt_JetRelativeSampleDown;   //!
-   TBranch        *b_deepcsvb1_pt_JetRelativeSampleUp;   //!
-   TBranch        *b_deepcsvb1_pt_JetTotalDown;   //!
-   TBranch        *b_deepcsvb1_pt_JetTotalUp;   //!
    TBranch        *b_deepcsvb2_btagscore;   //!
    TBranch        *b_deepcsvb2_eta;   //!
    TBranch        *b_deepcsvb2_hadronflavour;   //!
    TBranch        *b_deepcsvb2_m;   //!
    TBranch        *b_deepcsvb2_phi;   //!
    TBranch        *b_deepcsvb2_pt;   //!
-   TBranch        *b_deepcsvb2_pt_JERDown;   //!
-   TBranch        *b_deepcsvb2_pt_JERUp;   //!
-   TBranch        *b_deepcsvb2_pt_JetAbsoluteDown;   //!
-   TBranch        *b_deepcsvb2_pt_JetAbsoluteUp;   //!
-   TBranch        *b_deepcsvb2_pt_JetAbsoluteyearDown;   //!
-   TBranch        *b_deepcsvb2_pt_JetAbsoluteyearUp;   //!
-   TBranch        *b_deepcsvb2_pt_JetBBEC1Down;   //!
-   TBranch        *b_deepcsvb2_pt_JetBBEC1Up;   //!
-   TBranch        *b_deepcsvb2_pt_JetBBEC1yearDown;   //!
-   TBranch        *b_deepcsvb2_pt_JetBBEC1yearUp;   //!
-   TBranch        *b_deepcsvb2_pt_JetEC2Down;   //!
-   TBranch        *b_deepcsvb2_pt_JetEC2Up;   //!
-   TBranch        *b_deepcsvb2_pt_JetEC2yearDown;   //!
-   TBranch        *b_deepcsvb2_pt_JetEC2yearUp;   //!
-   TBranch        *b_deepcsvb2_pt_JetFlavorQCDDown;   //!
-   TBranch        *b_deepcsvb2_pt_JetFlavorQCDUp;   //!
-   TBranch        *b_deepcsvb2_pt_JetHFDown;   //!
-   TBranch        *b_deepcsvb2_pt_JetHFUp;   //!
-   TBranch        *b_deepcsvb2_pt_JetHFyearDown;   //!
-   TBranch        *b_deepcsvb2_pt_JetHFyearUp;   //!
-   TBranch        *b_deepcsvb2_pt_JetRelativeBalDown;   //!
-   TBranch        *b_deepcsvb2_pt_JetRelativeBalUp;   //!
-   TBranch        *b_deepcsvb2_pt_JetRelativeSampleDown;   //!
-   TBranch        *b_deepcsvb2_pt_JetRelativeSampleUp;   //!
-   TBranch        *b_deepcsvb2_pt_JetTotalDown;   //!
-   TBranch        *b_deepcsvb2_pt_JetTotalUp;   //!
    TBranch        *b_deepflavourb1_btagscore;   //!
    TBranch        *b_deepflavourb1_eta;   //!
    TBranch        *b_deepflavourb1_hadronflavour;   //!
    TBranch        *b_deepflavourb1_m;   //!
    TBranch        *b_deepflavourb1_phi;   //!
    TBranch        *b_deepflavourb1_pt;   //!
+   TBranch        *b_deepflavourb1_pt_JERDown;   //!
+   TBranch        *b_deepflavourb1_pt_JERUp;   //!
+   TBranch        *b_deepflavourb1_pt_JetAbsoluteDown;   //!
+   TBranch        *b_deepflavourb1_pt_JetAbsoluteUp;   //!
+   TBranch        *b_deepflavourb1_pt_JetAbsoluteyearDown;   //!
+   TBranch        *b_deepflavourb1_pt_JetAbsoluteyearUp;   //!
+   TBranch        *b_deepflavourb1_pt_JetBBEC1Down;   //!
+   TBranch        *b_deepflavourb1_pt_JetBBEC1Up;   //!
+   TBranch        *b_deepflavourb1_pt_JetBBEC1yearDown;   //!
+   TBranch        *b_deepflavourb1_pt_JetBBEC1yearUp;   //!
+   TBranch        *b_deepflavourb1_pt_JetEC2Down;   //!
+   TBranch        *b_deepflavourb1_pt_JetEC2Up;   //!
+   TBranch        *b_deepflavourb1_pt_JetEC2yearDown;   //!
+   TBranch        *b_deepflavourb1_pt_JetEC2yearUp;   //!
+   TBranch        *b_deepflavourb1_pt_JetFlavorQCDDown;   //!
+   TBranch        *b_deepflavourb1_pt_JetFlavorQCDUp;   //!
+   TBranch        *b_deepflavourb1_pt_JetHFDown;   //!
+   TBranch        *b_deepflavourb1_pt_JetHFUp;   //!
+   TBranch        *b_deepflavourb1_pt_JetHFyearDown;   //!
+   TBranch        *b_deepflavourb1_pt_JetHFyearUp;   //!
+   TBranch        *b_deepflavourb1_pt_JetRelativeBalDown;   //!
+   TBranch        *b_deepflavourb1_pt_JetRelativeBalUp;   //!
+   TBranch        *b_deepflavourb1_pt_JetRelativeSampleDown;   //!
+   TBranch        *b_deepflavourb1_pt_JetRelativeSampleUp;   //!
+   TBranch        *b_deepflavourb1_pt_JetTotalDown;   //!
+   TBranch        *b_deepflavourb1_pt_JetTotalUp;   //!
    TBranch        *b_deepflavourb2_btagscore;   //!
    TBranch        *b_deepflavourb2_eta;   //!
    TBranch        *b_deepflavourb2_hadronflavour;   //!
    TBranch        *b_deepflavourb2_m;   //!
    TBranch        *b_deepflavourb2_phi;   //!
    TBranch        *b_deepflavourb2_pt;   //!
+   TBranch        *b_deepflavourb2_pt_JERDown;   //!
+   TBranch        *b_deepflavourb2_pt_JERUp;   //!
+   TBranch        *b_deepflavourb2_pt_JetAbsoluteDown;   //!
+   TBranch        *b_deepflavourb2_pt_JetAbsoluteUp;   //!
+   TBranch        *b_deepflavourb2_pt_JetAbsoluteyearDown;   //!
+   TBranch        *b_deepflavourb2_pt_JetAbsoluteyearUp;   //!
+   TBranch        *b_deepflavourb2_pt_JetBBEC1Down;   //!
+   TBranch        *b_deepflavourb2_pt_JetBBEC1Up;   //!
+   TBranch        *b_deepflavourb2_pt_JetBBEC1yearDown;   //!
+   TBranch        *b_deepflavourb2_pt_JetBBEC1yearUp;   //!
+   TBranch        *b_deepflavourb2_pt_JetEC2Down;   //!
+   TBranch        *b_deepflavourb2_pt_JetEC2Up;   //!
+   TBranch        *b_deepflavourb2_pt_JetEC2yearDown;   //!
+   TBranch        *b_deepflavourb2_pt_JetEC2yearUp;   //!
+   TBranch        *b_deepflavourb2_pt_JetFlavorQCDDown;   //!
+   TBranch        *b_deepflavourb2_pt_JetFlavorQCDUp;   //!
+   TBranch        *b_deepflavourb2_pt_JetHFDown;   //!
+   TBranch        *b_deepflavourb2_pt_JetHFUp;   //!
+   TBranch        *b_deepflavourb2_pt_JetHFyearDown;   //!
+   TBranch        *b_deepflavourb2_pt_JetHFyearUp;   //!
+   TBranch        *b_deepflavourb2_pt_JetRelativeBalDown;   //!
+   TBranch        *b_deepflavourb2_pt_JetRelativeBalUp;   //!
+   TBranch        *b_deepflavourb2_pt_JetRelativeSampleDown;   //!
+   TBranch        *b_deepflavourb2_pt_JetRelativeSampleUp;   //!
+   TBranch        *b_deepflavourb2_pt_JetTotalDown;   //!
+   TBranch        *b_deepflavourb2_pt_JetTotalUp;   //!
    TBranch        *b_dielectronVeto;   //!
    TBranch        *b_dimuonVeto;   //!
    TBranch        *b_doubleE_23_12DZPass;   //!
@@ -973,6 +961,9 @@ public :
    TBranch        *b_gentau2_pt;   //!
    TBranch        *b_isdata;   //!
    TBranch        *b_isembed;   //!
+   TBranch        *b_j1_deepcsvscore;   //!
+   TBranch        *b_j1_deepflavourscore;   //!
+   TBranch        *b_j1_hadronflavour;   //!
    TBranch        *b_j1eta;   //!
    TBranch        *b_j1phi;   //!
    TBranch        *b_j1pt;   //!
@@ -1000,6 +991,9 @@ public :
    TBranch        *b_j1pt_JetRelativeBalUp;   //!
    TBranch        *b_j1pt_JetRelativeSampleDown;   //!
    TBranch        *b_j1pt_JetRelativeSampleUp;   //!
+   TBranch        *b_j2_deepcsvscore;   //!
+   TBranch        *b_j2_deepflavourscore;   //!
+   TBranch        *b_j2_hadronflavour;   //!
    TBranch        *b_j2eta;   //!
    TBranch        *b_j2phi;   //!
    TBranch        *b_j2pt;   //!
@@ -1057,19 +1051,11 @@ public :
    TBranch        *b_jetVeto30_JetRelativeSampleUp;   //!
    TBranch        *b_jetVeto30_JetTotalDown;   //!
    TBranch        *b_jetVeto30_JetTotalUp;   //!
-   TBranch        *b_lheweight_muR0p5_muF0p5;   //!
-   TBranch        *b_lheweight_muR0p5_muF1;   //!
-   TBranch        *b_lheweight_muR0p5_muF2;   //!
-   TBranch        *b_lheweight_muR1_muF0p5;   //!
-   TBranch        *b_lheweight_muR1_muF2;   //!
-   TBranch        *b_lheweight_muR2_muF0p5;   //!
-   TBranch        *b_lheweight_muR2_muF1;   //!
-   TBranch        *b_lheweight_muR2_muF2;   //!
-   TBranch        *b_lheweight_nominal;   //!
    TBranch        *b_lumi;   //!
    TBranch        *b_mBestTrackType;   //!
    TBranch        *b_mCharge;   //!
    TBranch        *b_mChi2LocalPosition;   //!
+   TBranch        *b_mClosestJetDeepFlavor;   //!
    TBranch        *b_mCutBasedIdGlobalHighPt;   //!
    TBranch        *b_mCutBasedIdLoose;   //!
    TBranch        *b_mCutBasedIdMedium;   //!
@@ -1094,6 +1080,9 @@ public :
    TBranch        *b_mGenTauDecay;   //!
    TBranch        *b_mGenVZ;   //!
    TBranch        *b_mHcalIsoDR03;   //!
+   TBranch        *b_mIP3D;   //!
+   TBranch        *b_mIP3DS;   //!
+   TBranch        *b_mIPDXY;   //!
    TBranch        *b_mIsGlobal;   //!
    TBranch        *b_mIsPFMuon;   //!
    TBranch        *b_mIsTracker;   //!
@@ -1150,6 +1139,7 @@ public :
    TBranch        *b_mMatchesdoubleMuTkMu8DZPath;   //!
    TBranch        *b_mMatchesdoubleMuTkMu8Filter;   //!
    TBranch        *b_mMatchesdoubleMuTkMu8Path;   //!
+   TBranch        *b_mMiniIso;   //!
    TBranch        *b_mMiniIsoLoose;   //!
    TBranch        *b_mMiniIsoMedium;   //!
    TBranch        *b_mMiniIsoTight;   //!
@@ -1158,6 +1148,7 @@ public :
    TBranch        *b_mMvaLoose;   //!
    TBranch        *b_mMvaMedium;   //!
    TBranch        *b_mMvaTight;   //!
+   TBranch        *b_mMvaTopId;   //!
    TBranch        *b_mNormTrkChi2;   //!
    TBranch        *b_mNormalizedChi2;   //!
    TBranch        *b_mPFChargedHadronIsoR04;   //!
@@ -1181,6 +1172,7 @@ public :
    TBranch        *b_mPhi;   //!
    TBranch        *b_mPixHits;   //!
    TBranch        *b_mPt;   //!
+   TBranch        *b_mPtRatio;   //!
    TBranch        *b_mRelPFIsoDBDefault;   //!
    TBranch        *b_mRelPFIsoDBDefaultR04;   //!
    TBranch        *b_mSegmentCompatibility;   //!
@@ -1362,6 +1354,12 @@ public :
    TBranch        *b_tMatchesIsoMu20HPSTau27Path;   //!
    TBranch        *b_tMatchesIsoMu20Tau27Filter;   //!
    TBranch        *b_tMatchesIsoMu20Tau27Path;   //!
+   TBranch        *b_tMatchesVBFDoubleHPSTau20Filter;   //!
+   TBranch        *b_tMatchesVBFDoubleHPSTau20Path;   //!
+   TBranch        *b_tMatchesVBFDoubleTau20Filter;   //!
+   TBranch        *b_tMatchesVBFDoubleTau20Path;   //!
+   TBranch        *b_tMatchesVBFDoubleTau20RegFilter;   //!
+   TBranch        *b_tMatchesVBFDoubleTau20RegPath;   //!
    TBranch        *b_tMediumDeepTau2017v2p1VSe;   //!
    TBranch        *b_tMediumDeepTau2017v2p1VSjet;   //!
    TBranch        *b_tMediumDeepTau2017v2p1VSmu;   //!
@@ -1501,7 +1499,6 @@ public :
    TBranch        *b_vispY;   //!
    TBranch        *b_idx;   //!
 
-
    // methods
    HTauTauTree_mt (TTree* tree); //ctor
    ~HTauTauTree_mt();
@@ -1576,14 +1573,6 @@ void HTauTauTree_mt::Init(TTree* tree)
    _tree->SetBranchAddress("Mu20LooseTau27TightIDPass", &Mu20LooseTau27TightIDPass, &b_Mu20LooseTau27TightIDPass);
    _tree->SetBranchAddress("Mu50Pass", &Mu50Pass, &b_Mu50Pass);
    _tree->SetBranchAddress("NUP", &NUP, &b_NUP);
-   _tree->SetBranchAddress("PythiaWeight_fsr_muR0p25", &PythiaWeight_fsr_muR0p25, &b_PythiaWeight_fsr_muR0p25);
-   _tree->SetBranchAddress("PythiaWeight_fsr_muR0p5", &PythiaWeight_fsr_muR0p5, &b_PythiaWeight_fsr_muR0p5);
-   _tree->SetBranchAddress("PythiaWeight_fsr_muR2", &PythiaWeight_fsr_muR2, &b_PythiaWeight_fsr_muR2);
-   _tree->SetBranchAddress("PythiaWeight_fsr_muR4", &PythiaWeight_fsr_muR4, &b_PythiaWeight_fsr_muR4);
-   _tree->SetBranchAddress("PythiaWeight_isr_muR0p25", &PythiaWeight_isr_muR0p25, &b_PythiaWeight_isr_muR0p25);
-   _tree->SetBranchAddress("PythiaWeight_isr_muR0p5", &PythiaWeight_isr_muR0p5, &b_PythiaWeight_isr_muR0p5);
-   _tree->SetBranchAddress("PythiaWeight_isr_muR2", &PythiaWeight_isr_muR2, &b_PythiaWeight_isr_muR2);
-   _tree->SetBranchAddress("PythiaWeight_isr_muR4", &PythiaWeight_isr_muR4, &b_PythiaWeight_isr_muR4);
    _tree->SetBranchAddress("Rivet_VEta", &Rivet_VEta, &b_Rivet_VEta);
    _tree->SetBranchAddress("Rivet_VPt", &Rivet_VPt, &b_Rivet_VPt);
    _tree->SetBranchAddress("Rivet_errorCode", &Rivet_errorCode, &b_Rivet_errorCode);
@@ -1612,10 +1601,7 @@ void HTauTauTree_mt::Init(TTree* tree)
    _tree->SetBranchAddress("Rivet_stage1_cat_pTjet30GeV", &Rivet_stage1_cat_pTjet30GeV, &b_Rivet_stage1_cat_pTjet30GeV);
    _tree->SetBranchAddress("VBFDoubleLooseHPSTau20Pass", &VBFDoubleLooseHPSTau20Pass, &b_VBFDoubleLooseHPSTau20Pass);
    _tree->SetBranchAddress("VBFDoubleLooseTau20Pass", &VBFDoubleLooseTau20Pass, &b_VBFDoubleLooseTau20Pass);
-   _tree->SetBranchAddress("VBFDoubleMediumHPSTau20Pass", &VBFDoubleMediumHPSTau20Pass, &b_VBFDoubleMediumHPSTau20Pass);
-   _tree->SetBranchAddress("VBFDoubleMediumTau20Pass", &VBFDoubleMediumTau20Pass, &b_VBFDoubleMediumTau20Pass);
-   _tree->SetBranchAddress("VBFDoubleTightHPSTau20Pass", &VBFDoubleTightHPSTau20Pass, &b_VBFDoubleTightHPSTau20Pass);
-   _tree->SetBranchAddress("VBFDoubleTightTau20Pass", &VBFDoubleTightTau20Pass, &b_VBFDoubleTightTau20Pass);
+   _tree->SetBranchAddress("VBFDoubleLooseTau20RegPass", &VBFDoubleLooseTau20RegPass, &b_VBFDoubleLooseTau20RegPass);
    _tree->SetBranchAddress("bjetDeepCSVVeto20Loose_2016_DR0p5", &bjetDeepCSVVeto20Loose_2016_DR0p5, &b_bjetDeepCSVVeto20Loose_2016_DR0p5);
    _tree->SetBranchAddress("bjetDeepCSVVeto20Loose_2017_DR0p5", &bjetDeepCSVVeto20Loose_2017_DR0p5, &b_bjetDeepCSVVeto20Loose_2017_DR0p5);
    _tree->SetBranchAddress("bjetDeepCSVVeto20Loose_2018_DR0p5", &bjetDeepCSVVeto20Loose_2018_DR0p5, &b_bjetDeepCSVVeto20Loose_2018_DR0p5);
@@ -1634,76 +1620,76 @@ void HTauTauTree_mt::Init(TTree* tree)
    _tree->SetBranchAddress("deepcsvb1_m", &deepcsvb1_m, &b_deepcsvb1_m);
    _tree->SetBranchAddress("deepcsvb1_phi", &deepcsvb1_phi, &b_deepcsvb1_phi);
    _tree->SetBranchAddress("deepcsvb1_pt", &deepcsvb1_pt, &b_deepcsvb1_pt);
-   _tree->SetBranchAddress("deepcsvb1_pt_JERDown", &deepcsvb1_pt_JERDown, &b_deepcsvb1_pt_JERDown);
-   _tree->SetBranchAddress("deepcsvb1_pt_JERUp", &deepcsvb1_pt_JERUp, &b_deepcsvb1_pt_JERUp);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetAbsoluteDown", &deepcsvb1_pt_JetAbsoluteDown, &b_deepcsvb1_pt_JetAbsoluteDown);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetAbsoluteUp", &deepcsvb1_pt_JetAbsoluteUp, &b_deepcsvb1_pt_JetAbsoluteUp);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetAbsoluteyearDown", &deepcsvb1_pt_JetAbsoluteyearDown, &b_deepcsvb1_pt_JetAbsoluteyearDown);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetAbsoluteyearUp", &deepcsvb1_pt_JetAbsoluteyearUp, &b_deepcsvb1_pt_JetAbsoluteyearUp);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetBBEC1Down", &deepcsvb1_pt_JetBBEC1Down, &b_deepcsvb1_pt_JetBBEC1Down);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetBBEC1Up", &deepcsvb1_pt_JetBBEC1Up, &b_deepcsvb1_pt_JetBBEC1Up);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetBBEC1yearDown", &deepcsvb1_pt_JetBBEC1yearDown, &b_deepcsvb1_pt_JetBBEC1yearDown);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetBBEC1yearUp", &deepcsvb1_pt_JetBBEC1yearUp, &b_deepcsvb1_pt_JetBBEC1yearUp);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetEC2Down", &deepcsvb1_pt_JetEC2Down, &b_deepcsvb1_pt_JetEC2Down);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetEC2Up", &deepcsvb1_pt_JetEC2Up, &b_deepcsvb1_pt_JetEC2Up);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetEC2yearDown", &deepcsvb1_pt_JetEC2yearDown, &b_deepcsvb1_pt_JetEC2yearDown);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetEC2yearUp", &deepcsvb1_pt_JetEC2yearUp, &b_deepcsvb1_pt_JetEC2yearUp);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetFlavorQCDDown", &deepcsvb1_pt_JetFlavorQCDDown, &b_deepcsvb1_pt_JetFlavorQCDDown);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetFlavorQCDUp", &deepcsvb1_pt_JetFlavorQCDUp, &b_deepcsvb1_pt_JetFlavorQCDUp);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetHFDown", &deepcsvb1_pt_JetHFDown, &b_deepcsvb1_pt_JetHFDown);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetHFUp", &deepcsvb1_pt_JetHFUp, &b_deepcsvb1_pt_JetHFUp);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetHFyearDown", &deepcsvb1_pt_JetHFyearDown, &b_deepcsvb1_pt_JetHFyearDown);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetHFyearUp", &deepcsvb1_pt_JetHFyearUp, &b_deepcsvb1_pt_JetHFyearUp);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetRelativeBalDown", &deepcsvb1_pt_JetRelativeBalDown, &b_deepcsvb1_pt_JetRelativeBalDown);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetRelativeBalUp", &deepcsvb1_pt_JetRelativeBalUp, &b_deepcsvb1_pt_JetRelativeBalUp);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetRelativeSampleDown", &deepcsvb1_pt_JetRelativeSampleDown, &b_deepcsvb1_pt_JetRelativeSampleDown);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetRelativeSampleUp", &deepcsvb1_pt_JetRelativeSampleUp, &b_deepcsvb1_pt_JetRelativeSampleUp);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetTotalDown", &deepcsvb1_pt_JetTotalDown, &b_deepcsvb1_pt_JetTotalDown);
-   _tree->SetBranchAddress("deepcsvb1_pt_JetTotalUp", &deepcsvb1_pt_JetTotalUp, &b_deepcsvb1_pt_JetTotalUp);
    _tree->SetBranchAddress("deepcsvb2_btagscore", &deepcsvb2_btagscore, &b_deepcsvb2_btagscore);
    _tree->SetBranchAddress("deepcsvb2_eta", &deepcsvb2_eta, &b_deepcsvb2_eta);
    _tree->SetBranchAddress("deepcsvb2_hadronflavour", &deepcsvb2_hadronflavour, &b_deepcsvb2_hadronflavour);
    _tree->SetBranchAddress("deepcsvb2_m", &deepcsvb2_m, &b_deepcsvb2_m);
    _tree->SetBranchAddress("deepcsvb2_phi", &deepcsvb2_phi, &b_deepcsvb2_phi);
    _tree->SetBranchAddress("deepcsvb2_pt", &deepcsvb2_pt, &b_deepcsvb2_pt);
-   _tree->SetBranchAddress("deepcsvb2_pt_JERDown", &deepcsvb2_pt_JERDown, &b_deepcsvb2_pt_JERDown);
-   _tree->SetBranchAddress("deepcsvb2_pt_JERUp", &deepcsvb2_pt_JERUp, &b_deepcsvb2_pt_JERUp);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetAbsoluteDown", &deepcsvb2_pt_JetAbsoluteDown, &b_deepcsvb2_pt_JetAbsoluteDown);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetAbsoluteUp", &deepcsvb2_pt_JetAbsoluteUp, &b_deepcsvb2_pt_JetAbsoluteUp);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetAbsoluteyearDown", &deepcsvb2_pt_JetAbsoluteyearDown, &b_deepcsvb2_pt_JetAbsoluteyearDown);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetAbsoluteyearUp", &deepcsvb2_pt_JetAbsoluteyearUp, &b_deepcsvb2_pt_JetAbsoluteyearUp);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetBBEC1Down", &deepcsvb2_pt_JetBBEC1Down, &b_deepcsvb2_pt_JetBBEC1Down);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetBBEC1Up", &deepcsvb2_pt_JetBBEC1Up, &b_deepcsvb2_pt_JetBBEC1Up);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetBBEC1yearDown", &deepcsvb2_pt_JetBBEC1yearDown, &b_deepcsvb2_pt_JetBBEC1yearDown);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetBBEC1yearUp", &deepcsvb2_pt_JetBBEC1yearUp, &b_deepcsvb2_pt_JetBBEC1yearUp);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetEC2Down", &deepcsvb2_pt_JetEC2Down, &b_deepcsvb2_pt_JetEC2Down);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetEC2Up", &deepcsvb2_pt_JetEC2Up, &b_deepcsvb2_pt_JetEC2Up);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetEC2yearDown", &deepcsvb2_pt_JetEC2yearDown, &b_deepcsvb2_pt_JetEC2yearDown);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetEC2yearUp", &deepcsvb2_pt_JetEC2yearUp, &b_deepcsvb2_pt_JetEC2yearUp);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetFlavorQCDDown", &deepcsvb2_pt_JetFlavorQCDDown, &b_deepcsvb2_pt_JetFlavorQCDDown);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetFlavorQCDUp", &deepcsvb2_pt_JetFlavorQCDUp, &b_deepcsvb2_pt_JetFlavorQCDUp);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetHFDown", &deepcsvb2_pt_JetHFDown, &b_deepcsvb2_pt_JetHFDown);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetHFUp", &deepcsvb2_pt_JetHFUp, &b_deepcsvb2_pt_JetHFUp);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetHFyearDown", &deepcsvb2_pt_JetHFyearDown, &b_deepcsvb2_pt_JetHFyearDown);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetHFyearUp", &deepcsvb2_pt_JetHFyearUp, &b_deepcsvb2_pt_JetHFyearUp);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetRelativeBalDown", &deepcsvb2_pt_JetRelativeBalDown, &b_deepcsvb2_pt_JetRelativeBalDown);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetRelativeBalUp", &deepcsvb2_pt_JetRelativeBalUp, &b_deepcsvb2_pt_JetRelativeBalUp);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetRelativeSampleDown", &deepcsvb2_pt_JetRelativeSampleDown, &b_deepcsvb2_pt_JetRelativeSampleDown);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetRelativeSampleUp", &deepcsvb2_pt_JetRelativeSampleUp, &b_deepcsvb2_pt_JetRelativeSampleUp);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetTotalDown", &deepcsvb2_pt_JetTotalDown, &b_deepcsvb2_pt_JetTotalDown);
-   _tree->SetBranchAddress("deepcsvb2_pt_JetTotalUp", &deepcsvb2_pt_JetTotalUp, &b_deepcsvb2_pt_JetTotalUp);
    _tree->SetBranchAddress("deepflavourb1_btagscore", &deepflavourb1_btagscore, &b_deepflavourb1_btagscore);
    _tree->SetBranchAddress("deepflavourb1_eta", &deepflavourb1_eta, &b_deepflavourb1_eta);
    _tree->SetBranchAddress("deepflavourb1_hadronflavour", &deepflavourb1_hadronflavour, &b_deepflavourb1_hadronflavour);
    _tree->SetBranchAddress("deepflavourb1_m", &deepflavourb1_m, &b_deepflavourb1_m);
    _tree->SetBranchAddress("deepflavourb1_phi", &deepflavourb1_phi, &b_deepflavourb1_phi);
    _tree->SetBranchAddress("deepflavourb1_pt", &deepflavourb1_pt, &b_deepflavourb1_pt);
+   _tree->SetBranchAddress("deepflavourb1_pt_JERDown", &deepflavourb1_pt_JERDown, &b_deepflavourb1_pt_JERDown);
+   _tree->SetBranchAddress("deepflavourb1_pt_JERUp", &deepflavourb1_pt_JERUp, &b_deepflavourb1_pt_JERUp);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetAbsoluteDown", &deepflavourb1_pt_JetAbsoluteDown, &b_deepflavourb1_pt_JetAbsoluteDown);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetAbsoluteUp", &deepflavourb1_pt_JetAbsoluteUp, &b_deepflavourb1_pt_JetAbsoluteUp);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetAbsoluteyearDown", &deepflavourb1_pt_JetAbsoluteyearDown, &b_deepflavourb1_pt_JetAbsoluteyearDown);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetAbsoluteyearUp", &deepflavourb1_pt_JetAbsoluteyearUp, &b_deepflavourb1_pt_JetAbsoluteyearUp);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetBBEC1Down", &deepflavourb1_pt_JetBBEC1Down, &b_deepflavourb1_pt_JetBBEC1Down);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetBBEC1Up", &deepflavourb1_pt_JetBBEC1Up, &b_deepflavourb1_pt_JetBBEC1Up);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetBBEC1yearDown", &deepflavourb1_pt_JetBBEC1yearDown, &b_deepflavourb1_pt_JetBBEC1yearDown);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetBBEC1yearUp", &deepflavourb1_pt_JetBBEC1yearUp, &b_deepflavourb1_pt_JetBBEC1yearUp);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetEC2Down", &deepflavourb1_pt_JetEC2Down, &b_deepflavourb1_pt_JetEC2Down);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetEC2Up", &deepflavourb1_pt_JetEC2Up, &b_deepflavourb1_pt_JetEC2Up);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetEC2yearDown", &deepflavourb1_pt_JetEC2yearDown, &b_deepflavourb1_pt_JetEC2yearDown);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetEC2yearUp", &deepflavourb1_pt_JetEC2yearUp, &b_deepflavourb1_pt_JetEC2yearUp);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetFlavorQCDDown", &deepflavourb1_pt_JetFlavorQCDDown, &b_deepflavourb1_pt_JetFlavorQCDDown);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetFlavorQCDUp", &deepflavourb1_pt_JetFlavorQCDUp, &b_deepflavourb1_pt_JetFlavorQCDUp);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetHFDown", &deepflavourb1_pt_JetHFDown, &b_deepflavourb1_pt_JetHFDown);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetHFUp", &deepflavourb1_pt_JetHFUp, &b_deepflavourb1_pt_JetHFUp);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetHFyearDown", &deepflavourb1_pt_JetHFyearDown, &b_deepflavourb1_pt_JetHFyearDown);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetHFyearUp", &deepflavourb1_pt_JetHFyearUp, &b_deepflavourb1_pt_JetHFyearUp);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetRelativeBalDown", &deepflavourb1_pt_JetRelativeBalDown, &b_deepflavourb1_pt_JetRelativeBalDown);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetRelativeBalUp", &deepflavourb1_pt_JetRelativeBalUp, &b_deepflavourb1_pt_JetRelativeBalUp);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetRelativeSampleDown", &deepflavourb1_pt_JetRelativeSampleDown, &b_deepflavourb1_pt_JetRelativeSampleDown);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetRelativeSampleUp", &deepflavourb1_pt_JetRelativeSampleUp, &b_deepflavourb1_pt_JetRelativeSampleUp);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetTotalDown", &deepflavourb1_pt_JetTotalDown, &b_deepflavourb1_pt_JetTotalDown);
+   _tree->SetBranchAddress("deepflavourb1_pt_JetTotalUp", &deepflavourb1_pt_JetTotalUp, &b_deepflavourb1_pt_JetTotalUp);
    _tree->SetBranchAddress("deepflavourb2_btagscore", &deepflavourb2_btagscore, &b_deepflavourb2_btagscore);
    _tree->SetBranchAddress("deepflavourb2_eta", &deepflavourb2_eta, &b_deepflavourb2_eta);
    _tree->SetBranchAddress("deepflavourb2_hadronflavour", &deepflavourb2_hadronflavour, &b_deepflavourb2_hadronflavour);
    _tree->SetBranchAddress("deepflavourb2_m", &deepflavourb2_m, &b_deepflavourb2_m);
    _tree->SetBranchAddress("deepflavourb2_phi", &deepflavourb2_phi, &b_deepflavourb2_phi);
    _tree->SetBranchAddress("deepflavourb2_pt", &deepflavourb2_pt, &b_deepflavourb2_pt);
+   _tree->SetBranchAddress("deepflavourb2_pt_JERDown", &deepflavourb2_pt_JERDown, &b_deepflavourb2_pt_JERDown);
+   _tree->SetBranchAddress("deepflavourb2_pt_JERUp", &deepflavourb2_pt_JERUp, &b_deepflavourb2_pt_JERUp);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetAbsoluteDown", &deepflavourb2_pt_JetAbsoluteDown, &b_deepflavourb2_pt_JetAbsoluteDown);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetAbsoluteUp", &deepflavourb2_pt_JetAbsoluteUp, &b_deepflavourb2_pt_JetAbsoluteUp);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetAbsoluteyearDown", &deepflavourb2_pt_JetAbsoluteyearDown, &b_deepflavourb2_pt_JetAbsoluteyearDown);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetAbsoluteyearUp", &deepflavourb2_pt_JetAbsoluteyearUp, &b_deepflavourb2_pt_JetAbsoluteyearUp);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetBBEC1Down", &deepflavourb2_pt_JetBBEC1Down, &b_deepflavourb2_pt_JetBBEC1Down);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetBBEC1Up", &deepflavourb2_pt_JetBBEC1Up, &b_deepflavourb2_pt_JetBBEC1Up);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetBBEC1yearDown", &deepflavourb2_pt_JetBBEC1yearDown, &b_deepflavourb2_pt_JetBBEC1yearDown);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetBBEC1yearUp", &deepflavourb2_pt_JetBBEC1yearUp, &b_deepflavourb2_pt_JetBBEC1yearUp);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetEC2Down", &deepflavourb2_pt_JetEC2Down, &b_deepflavourb2_pt_JetEC2Down);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetEC2Up", &deepflavourb2_pt_JetEC2Up, &b_deepflavourb2_pt_JetEC2Up);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetEC2yearDown", &deepflavourb2_pt_JetEC2yearDown, &b_deepflavourb2_pt_JetEC2yearDown);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetEC2yearUp", &deepflavourb2_pt_JetEC2yearUp, &b_deepflavourb2_pt_JetEC2yearUp);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetFlavorQCDDown", &deepflavourb2_pt_JetFlavorQCDDown, &b_deepflavourb2_pt_JetFlavorQCDDown);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetFlavorQCDUp", &deepflavourb2_pt_JetFlavorQCDUp, &b_deepflavourb2_pt_JetFlavorQCDUp);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetHFDown", &deepflavourb2_pt_JetHFDown, &b_deepflavourb2_pt_JetHFDown);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetHFUp", &deepflavourb2_pt_JetHFUp, &b_deepflavourb2_pt_JetHFUp);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetHFyearDown", &deepflavourb2_pt_JetHFyearDown, &b_deepflavourb2_pt_JetHFyearDown);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetHFyearUp", &deepflavourb2_pt_JetHFyearUp, &b_deepflavourb2_pt_JetHFyearUp);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetRelativeBalDown", &deepflavourb2_pt_JetRelativeBalDown, &b_deepflavourb2_pt_JetRelativeBalDown);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetRelativeBalUp", &deepflavourb2_pt_JetRelativeBalUp, &b_deepflavourb2_pt_JetRelativeBalUp);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetRelativeSampleDown", &deepflavourb2_pt_JetRelativeSampleDown, &b_deepflavourb2_pt_JetRelativeSampleDown);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetRelativeSampleUp", &deepflavourb2_pt_JetRelativeSampleUp, &b_deepflavourb2_pt_JetRelativeSampleUp);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetTotalDown", &deepflavourb2_pt_JetTotalDown, &b_deepflavourb2_pt_JetTotalDown);
+   _tree->SetBranchAddress("deepflavourb2_pt_JetTotalUp", &deepflavourb2_pt_JetTotalUp, &b_deepflavourb2_pt_JetTotalUp);
    _tree->SetBranchAddress("dielectronVeto", &dielectronVeto, &b_dielectronVeto);
    _tree->SetBranchAddress("dimuonVeto", &dimuonVeto, &b_dimuonVeto);
    _tree->SetBranchAddress("doubleE_23_12DZPass", &doubleE_23_12DZPass, &b_doubleE_23_12DZPass);
@@ -1738,6 +1724,9 @@ void HTauTauTree_mt::Init(TTree* tree)
    _tree->SetBranchAddress("gentau2_pt", &gentau2_pt, &b_gentau2_pt);
    _tree->SetBranchAddress("isdata", &isdata, &b_isdata);
    _tree->SetBranchAddress("isembed", &isembed, &b_isembed);
+   _tree->SetBranchAddress("j1_deepcsvscore", &j1_deepcsvscore, &b_j1_deepcsvscore);
+   _tree->SetBranchAddress("j1_deepflavourscore", &j1_deepflavourscore, &b_j1_deepflavourscore);
+   _tree->SetBranchAddress("j1_hadronflavour", &j1_hadronflavour, &b_j1_hadronflavour);
    _tree->SetBranchAddress("j1eta", &j1eta, &b_j1eta);
    _tree->SetBranchAddress("j1phi", &j1phi, &b_j1phi);
    _tree->SetBranchAddress("j1pt", &j1pt, &b_j1pt);
@@ -1765,6 +1754,9 @@ void HTauTauTree_mt::Init(TTree* tree)
    _tree->SetBranchAddress("j1pt_JetRelativeBalUp", &j1pt_JetRelativeBalUp, &b_j1pt_JetRelativeBalUp);
    _tree->SetBranchAddress("j1pt_JetRelativeSampleDown", &j1pt_JetRelativeSampleDown, &b_j1pt_JetRelativeSampleDown);
    _tree->SetBranchAddress("j1pt_JetRelativeSampleUp", &j1pt_JetRelativeSampleUp, &b_j1pt_JetRelativeSampleUp);
+   _tree->SetBranchAddress("j2_deepcsvscore", &j2_deepcsvscore, &b_j2_deepcsvscore);
+   _tree->SetBranchAddress("j2_deepflavourscore", &j2_deepflavourscore, &b_j2_deepflavourscore);
+   _tree->SetBranchAddress("j2_hadronflavour", &j2_hadronflavour, &b_j2_hadronflavour);
    _tree->SetBranchAddress("j2eta", &j2eta, &b_j2eta);
    _tree->SetBranchAddress("j2phi", &j2phi, &b_j2phi);
    _tree->SetBranchAddress("j2pt", &j2pt, &b_j2pt);
@@ -1822,19 +1814,11 @@ void HTauTauTree_mt::Init(TTree* tree)
    _tree->SetBranchAddress("jetVeto30_JetRelativeSampleUp", &jetVeto30_JetRelativeSampleUp, &b_jetVeto30_JetRelativeSampleUp);
    _tree->SetBranchAddress("jetVeto30_JetTotalDown", &jetVeto30_JetTotalDown, &b_jetVeto30_JetTotalDown);
    _tree->SetBranchAddress("jetVeto30_JetTotalUp", &jetVeto30_JetTotalUp, &b_jetVeto30_JetTotalUp);
-   _tree->SetBranchAddress("lheweight_muR0p5_muF0p5", &lheweight_muR0p5_muF0p5, &b_lheweight_muR0p5_muF0p5);
-   _tree->SetBranchAddress("lheweight_muR0p5_muF1", &lheweight_muR0p5_muF1, &b_lheweight_muR0p5_muF1);
-   _tree->SetBranchAddress("lheweight_muR0p5_muF2", &lheweight_muR0p5_muF2, &b_lheweight_muR0p5_muF2);
-   _tree->SetBranchAddress("lheweight_muR1_muF0p5", &lheweight_muR1_muF0p5, &b_lheweight_muR1_muF0p5);
-   _tree->SetBranchAddress("lheweight_muR1_muF2", &lheweight_muR1_muF2, &b_lheweight_muR1_muF2);
-   _tree->SetBranchAddress("lheweight_muR2_muF0p5", &lheweight_muR2_muF0p5, &b_lheweight_muR2_muF0p5);
-   _tree->SetBranchAddress("lheweight_muR2_muF1", &lheweight_muR2_muF1, &b_lheweight_muR2_muF1);
-   _tree->SetBranchAddress("lheweight_muR2_muF2", &lheweight_muR2_muF2, &b_lheweight_muR2_muF2);
-   _tree->SetBranchAddress("lheweight_nominal", &lheweight_nominal, &b_lheweight_nominal);
    _tree->SetBranchAddress("lumi", &lumi, &b_lumi);
    _tree->SetBranchAddress("mBestTrackType", &mBestTrackType, &b_mBestTrackType);
    _tree->SetBranchAddress("mCharge", &mCharge, &b_mCharge);
    _tree->SetBranchAddress("mChi2LocalPosition", &mChi2LocalPosition, &b_mChi2LocalPosition);
+   _tree->SetBranchAddress("mClosestJetDeepFlavor", &mClosestJetDeepFlavor, &b_mClosestJetDeepFlavor);
    _tree->SetBranchAddress("mCutBasedIdGlobalHighPt", &mCutBasedIdGlobalHighPt, &b_mCutBasedIdGlobalHighPt);
    _tree->SetBranchAddress("mCutBasedIdLoose", &mCutBasedIdLoose, &b_mCutBasedIdLoose);
    _tree->SetBranchAddress("mCutBasedIdMedium", &mCutBasedIdMedium, &b_mCutBasedIdMedium);
@@ -1859,6 +1843,9 @@ void HTauTauTree_mt::Init(TTree* tree)
    _tree->SetBranchAddress("mGenTauDecay", &mGenTauDecay, &b_mGenTauDecay);
    _tree->SetBranchAddress("mGenVZ", &mGenVZ, &b_mGenVZ);
    _tree->SetBranchAddress("mHcalIsoDR03", &mHcalIsoDR03, &b_mHcalIsoDR03);
+   _tree->SetBranchAddress("mIP3D", &mIP3D, &b_mIP3D);
+   _tree->SetBranchAddress("mIP3DS", &mIP3DS, &b_mIP3DS);
+   _tree->SetBranchAddress("mIPDXY", &mIPDXY, &b_mIPDXY);
    _tree->SetBranchAddress("mIsGlobal", &mIsGlobal, &b_mIsGlobal);
    _tree->SetBranchAddress("mIsPFMuon", &mIsPFMuon, &b_mIsPFMuon);
    _tree->SetBranchAddress("mIsTracker", &mIsTracker, &b_mIsTracker);
@@ -1915,6 +1902,7 @@ void HTauTauTree_mt::Init(TTree* tree)
    _tree->SetBranchAddress("mMatchesdoubleMuTkMu8DZPath", &mMatchesdoubleMuTkMu8DZPath, &b_mMatchesdoubleMuTkMu8DZPath);
    _tree->SetBranchAddress("mMatchesdoubleMuTkMu8Filter", &mMatchesdoubleMuTkMu8Filter, &b_mMatchesdoubleMuTkMu8Filter);
    _tree->SetBranchAddress("mMatchesdoubleMuTkMu8Path", &mMatchesdoubleMuTkMu8Path, &b_mMatchesdoubleMuTkMu8Path);
+   _tree->SetBranchAddress("mMiniIso", &mMiniIso, &b_mMiniIso);
    _tree->SetBranchAddress("mMiniIsoLoose", &mMiniIsoLoose, &b_mMiniIsoLoose);
    _tree->SetBranchAddress("mMiniIsoMedium", &mMiniIsoMedium, &b_mMiniIsoMedium);
    _tree->SetBranchAddress("mMiniIsoTight", &mMiniIsoTight, &b_mMiniIsoTight);
@@ -1923,6 +1911,7 @@ void HTauTauTree_mt::Init(TTree* tree)
    _tree->SetBranchAddress("mMvaLoose", &mMvaLoose, &b_mMvaLoose);
    _tree->SetBranchAddress("mMvaMedium", &mMvaMedium, &b_mMvaMedium);
    _tree->SetBranchAddress("mMvaTight", &mMvaTight, &b_mMvaTight);
+   _tree->SetBranchAddress("mMvaTopId", &mMvaTopId, &b_mMvaTopId);
    _tree->SetBranchAddress("mNormTrkChi2", &mNormTrkChi2, &b_mNormTrkChi2);
    _tree->SetBranchAddress("mNormalizedChi2", &mNormalizedChi2, &b_mNormalizedChi2);
    _tree->SetBranchAddress("mPFChargedHadronIsoR04", &mPFChargedHadronIsoR04, &b_mPFChargedHadronIsoR04);
@@ -1946,6 +1935,7 @@ void HTauTauTree_mt::Init(TTree* tree)
    _tree->SetBranchAddress("mPhi", &mPhi, &b_mPhi);
    _tree->SetBranchAddress("mPixHits", &mPixHits, &b_mPixHits);
    _tree->SetBranchAddress("mPt", &mPt, &b_mPt);
+   _tree->SetBranchAddress("mPtRatio", &mPtRatio, &b_mPtRatio);
    _tree->SetBranchAddress("mRelPFIsoDBDefault", &mRelPFIsoDBDefault, &b_mRelPFIsoDBDefault);
    _tree->SetBranchAddress("mRelPFIsoDBDefaultR04", &mRelPFIsoDBDefaultR04, &b_mRelPFIsoDBDefaultR04);
    _tree->SetBranchAddress("mSegmentCompatibility", &mSegmentCompatibility, &b_mSegmentCompatibility);
@@ -2127,6 +2117,12 @@ void HTauTauTree_mt::Init(TTree* tree)
    _tree->SetBranchAddress("tMatchesIsoMu20HPSTau27Path", &tMatchesIsoMu20HPSTau27Path, &b_tMatchesIsoMu20HPSTau27Path);
    _tree->SetBranchAddress("tMatchesIsoMu20Tau27Filter", &tMatchesIsoMu20Tau27Filter, &b_tMatchesIsoMu20Tau27Filter);
    _tree->SetBranchAddress("tMatchesIsoMu20Tau27Path", &tMatchesIsoMu20Tau27Path, &b_tMatchesIsoMu20Tau27Path);
+   _tree->SetBranchAddress("tMatchesVBFDoubleHPSTau20Filter", &tMatchesVBFDoubleHPSTau20Filter, &b_tMatchesVBFDoubleHPSTau20Filter);
+   _tree->SetBranchAddress("tMatchesVBFDoubleHPSTau20Path", &tMatchesVBFDoubleHPSTau20Path, &b_tMatchesVBFDoubleHPSTau20Path);
+   _tree->SetBranchAddress("tMatchesVBFDoubleTau20Filter", &tMatchesVBFDoubleTau20Filter, &b_tMatchesVBFDoubleTau20Filter);
+   _tree->SetBranchAddress("tMatchesVBFDoubleTau20Path", &tMatchesVBFDoubleTau20Path, &b_tMatchesVBFDoubleTau20Path);
+   _tree->SetBranchAddress("tMatchesVBFDoubleTau20RegFilter", &tMatchesVBFDoubleTau20RegFilter, &b_tMatchesVBFDoubleTau20RegFilter);
+   _tree->SetBranchAddress("tMatchesVBFDoubleTau20RegPath", &tMatchesVBFDoubleTau20RegPath, &b_tMatchesVBFDoubleTau20RegPath);
    _tree->SetBranchAddress("tMediumDeepTau2017v2p1VSe", &tMediumDeepTau2017v2p1VSe, &b_tMediumDeepTau2017v2p1VSe);
    _tree->SetBranchAddress("tMediumDeepTau2017v2p1VSjet", &tMediumDeepTau2017v2p1VSjet, &b_tMediumDeepTau2017v2p1VSjet);
    _tree->SetBranchAddress("tMediumDeepTau2017v2p1VSmu", &tMediumDeepTau2017v2p1VSmu, &b_tMediumDeepTau2017v2p1VSmu);
