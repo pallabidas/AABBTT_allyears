@@ -509,7 +509,7 @@ int main(int argc, char** argv) {
         float pu=1.0;
         tree->GetEntry(iEntry);
         bool print=false;
-        if (iEntry % 1000 == 0) fprintf(stdout, "\r  Processed events: %8d ", iEntry);
+        if (iEntry % 1000 == 0) fprintf(stdout, "\r  Processed events: %8d \n", iEntry);
         fflush(stdout);
         plotFill("pileup_mc",tree->nTruePU,80,0,80);
 
