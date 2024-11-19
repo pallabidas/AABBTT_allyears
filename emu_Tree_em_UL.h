@@ -83,9 +83,18 @@ float pt_top1, pt_top2, genweight;
 float decayModeFinding_2, againstElectronTightMVA6_2, againstElectronVTightMVA6_2, againstElectronVLooseMVA6_2, againstElectronMediumMVA6_2, againstElectronLooseMVA6_2, againstMuonLoose3_2, againstMuonTight3_2;
 float Flag_BadChargedCandidateFilter, Flag_BadPFMuonFilter, Flag_EcalDeadCellTriggerPrimitiveFilter, Flag_HBHENoiseFilter, Flag_HBHENoiseIsoFilter, Flag_badCloneMuon, Flag_badGlobalMuon, Flag_eeBadScFilter, Flag_globalTightHalo2016Filter, Flag_goodVertices, Flag_globalSuperTightHalo2016Filter, Flag_badMuons, Flag_duplicateMuons, Flag_ecalBadCalibFilter, Flag_ecalBadCalibReducedMINIAODFilter;
 float genpt_1, genpt_2, geneta_1, geneta_2, pt_1_ScaleUp, pt_1_ScaleDown;
+bool preVFP = true;
 
-RecoilCorrector recoilPFMetCorrector("SMH_et_2016/HTT-utilities/RecoilCorrections/data/TypeI-PFMet_Run2018.root");
-MEtSys metSys("SMH_et_2016/HTT-utilities/RecoilCorrections/data/PFMEtSys_2017.root");
+//https://github.com/CMS-HTT/RecoilCorrections
+RecoilCorrector recoilPFMetCorrector2018("HTT-utilities/RecoilCorrections/data/TypeI-PFMet_Run2018.root");
+MEtSys metSys2018("HTT-utilities/RecoilCorrections/data/PFMEtSys_2018.root");
+
+RecoilCorrector recoilPFMetCorrector2017("HTT-utilities/RecoilCorrections/data/TypeI-PFMET_2017.root");
+MEtSys metSys2017("HTT-utilities/RecoilCorrections/data/PFMEtSys_2017.root");
+
+RecoilCorrector recoilPFMetCorrector2016("HTT-utilities/RecoilCorrections/data/TypeI-PFMet_Run2016_legacy.root");
+MEtSys metSys2016("HTT-utilities/RecoilCorrections/data/PFMEtSys_2016.root");
+
 
 TFile fwmc2016("htt_scalefactors_legacy_2016.root");
 RooWorkspace *wmc2016 = (RooWorkspace*)fwmc2016.Get("w");
@@ -299,25 +308,54 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
   if (recoil==2) recoiljets=tree->jetVeto30;
 
   for (int j=0; j<27; ++j){
-     if (recoil>=1){
-       recoilPFMetCorrector.CorrectByMeanResolution(
-       mymetvector[j].Px(), // uncorrected type I pf met px (float)
-       mymetvector[j].Py(), // uncorrected type I pf met py (float)
-       tree->genpX, // generator Z/W/Higgs px (float)
-       tree->genpY, // generator Z/W/Higgs py (float)
-       tree->vispX, // generator visible Z/W/Higgs px (float)
-       tree->vispY, // generator visible Z/W/Higgs py (float)
-       recoiljets,  // number of jets (hadronic jet multiplicity) (int)
-       pfmetcorr_exvector[j], // corrected type I pf met px (float)
-       pfmetcorr_eyvector[j]  // corrected type I pf met py (float)
-       );
-     }
+    if (recoil>=1){
+      if (year == 2018) {
+        recoilPFMetCorrector2018.CorrectByMeanResolution(
+          mymetvector[j].Px(), // uncorrected type I pf met px (float)
+          mymetvector[j].Py(), // uncorrected type I pf met py (float)
+          tree->genpX, // generator Z/W/Higgs px (float)
+          tree->genpY, // generator Z/W/Higgs py (float)
+          tree->vispX, // generator visible Z/W/Higgs px (float)
+          tree->vispY, // generator visible Z/W/Higgs py (float)
+          recoiljets,  // number of jets (hadronic jet multiplicity) (int)
+          pfmetcorr_exvector[j], // corrected type I pf met px (float)
+          pfmetcorr_eyvector[j]  // corrected type I pf met py (float)
+        );
+      }
+      if (year == 2017) {
+        recoilPFMetCorrector2017.CorrectByMeanResolution(
+          mymetvector[j].Px(), // uncorrected type I pf met px (float)
+          mymetvector[j].Py(), // uncorrected type I pf met py (float)
+          tree->genpX, // generator Z/W/Higgs px (float)
+          tree->genpY, // generator Z/W/Higgs py (float)
+          tree->vispX, // generator visible Z/W/Higgs px (float)
+          tree->vispY, // generator visible Z/W/Higgs py (float)
+          recoiljets,  // number of jets (hadronic jet multiplicity) (int)
+          pfmetcorr_exvector[j], // corrected type I pf met px (float)
+          pfmetcorr_eyvector[j]  // corrected type I pf met py (float)
+        );
+      }
+      if (year == 2016) {
+        recoilPFMetCorrector2016.CorrectByMeanResolution(
+          mymetvector[j].Px(), // uncorrected type I pf met px (float)
+          mymetvector[j].Py(), // uncorrected type I pf met py (float)
+          tree->genpX, // generator Z/W/Higgs px (float)
+          tree->genpY, // generator Z/W/Higgs py (float)
+          tree->vispX, // generator visible Z/W/Higgs px (float)
+          tree->vispY, // generator visible Z/W/Higgs py (float)
+          recoiljets,  // number of jets (hadronic jet multiplicity) (int)
+          pfmetcorr_exvector[j], // corrected type I pf met px (float)
+          pfmetcorr_eyvector[j]  // corrected type I pf met py (float)
+        );
+      }
+    }
   }
 
   mymetvector[0].SetPxPyPzE(pfmetcorr_exvector[0],pfmetcorr_eyvector[0],0,sqrt(pfmetcorr_exvector[0]*pfmetcorr_exvector[0]+pfmetcorr_eyvector[0]*pfmetcorr_eyvector[0]));
   int Process= MEtSys::ProcessType::BOSON;
   if (recoil>=1){
-      metSys.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
+    if (year == 2018) {
+      metSys2018.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
                        genpX,genpY,
                        vispX,vispY,
                        recoiljets,
@@ -327,7 +365,7 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
                        pfmetcorr_ex_responseUp,pfmetcorr_ey_responseUp
                        );
 
-      metSys.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
+      metSys2018.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
                        genpX,genpY,
                        vispX,vispY,
                        recoiljets,
@@ -337,7 +375,7 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
                        pfmetcorr_ex_responseDown,pfmetcorr_ey_responseDown
                        );
 
-      metSys.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
+      metSys2018.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
                        genpX,genpY,
                        vispX,vispY,
                        recoiljets,
@@ -346,7 +384,7 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
                        MEtSys::SysShift::Up,
                        pfmetcorr_ex_resolutionUp,pfmetcorr_ey_resolutionUp
                        );
-      metSys.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
+      metSys2018.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
                        genpX,genpY,
                        vispX,vispY,
                        recoiljets,
@@ -355,6 +393,87 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
                        MEtSys::SysShift::Down,
                        pfmetcorr_ex_resolutionDown,pfmetcorr_ey_resolutionDown
                        );
+    }
+    if (year == 2017) {
+      metSys2017.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
+                       genpX,genpY,
+                       vispX,vispY,
+                       recoiljets,
+                       Process,
+                       MEtSys::SysType::Response,
+                       MEtSys::SysShift::Up,
+                       pfmetcorr_ex_responseUp,pfmetcorr_ey_responseUp
+                       );
+
+      metSys2017.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
+                       genpX,genpY,
+                       vispX,vispY,
+                       recoiljets,
+                       Process,
+                       MEtSys::SysType::Response,
+                       MEtSys::SysShift::Down,
+                       pfmetcorr_ex_responseDown,pfmetcorr_ey_responseDown
+                       );
+
+      metSys2017.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
+                       genpX,genpY,
+                       vispX,vispY,
+                       recoiljets,
+                       Process,
+                       MEtSys::SysType::Resolution,
+                       MEtSys::SysShift::Up,
+                       pfmetcorr_ex_resolutionUp,pfmetcorr_ey_resolutionUp
+                       );
+      metSys2017.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
+                       genpX,genpY,
+                       vispX,vispY,
+                       recoiljets,
+                       Process,
+                       MEtSys::SysType::Resolution,
+                       MEtSys::SysShift::Down,
+                       pfmetcorr_ex_resolutionDown,pfmetcorr_ey_resolutionDown
+                       );
+    }
+    if (year == 2016) {
+      metSys2016.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
+                       genpX,genpY,
+                       vispX,vispY,
+                       recoiljets,
+                       Process,
+                       MEtSys::SysType::Response,
+                       MEtSys::SysShift::Up,
+                       pfmetcorr_ex_responseUp,pfmetcorr_ey_responseUp
+                       );
+
+      metSys2016.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
+                       genpX,genpY,
+                       vispX,vispY,
+                       recoiljets,
+                       Process,
+                       MEtSys::SysType::Response,
+                       MEtSys::SysShift::Down,
+                       pfmetcorr_ex_responseDown,pfmetcorr_ey_responseDown
+                       );
+
+      metSys2016.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
+                       genpX,genpY,
+                       vispX,vispY,
+                       recoiljets,
+                       Process,
+                       MEtSys::SysType::Resolution,
+                       MEtSys::SysShift::Up,
+                       pfmetcorr_ex_resolutionUp,pfmetcorr_ey_resolutionUp
+                       );
+      metSys2016.ApplyMEtSys(mymetvector[0].Px(),mymetvector[0].Py(),
+                       genpX,genpY,
+                       vispX,vispY,
+                       recoiljets,
+                       Process,
+                       MEtSys::SysType::Resolution,
+                       MEtSys::SysShift::Down,
+                       pfmetcorr_ex_resolutionDown,pfmetcorr_ey_resolutionDown
+                       );
+    }
   }
 
   for (int j=0; j<27; ++j){
@@ -439,6 +558,9 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
   if (ismc) tau1=tau1*(tree->eCorrectedEt/uncorrectedE);
 
   auto embeddingeleESset = correction::CorrectionSet::from_file("eleES_2018UL.json");
+  if (year==2017) embeddingeleESset = correction::CorrectionSet::from_file("eleES_2017UL.json");
+  if (year==2016 && preVFP) embeddingeleESset = correction::CorrectionSet::from_file("eleES_2016preVFPUL.json");
+  if (year==2016 && !preVFP) embeddingeleESset = correction::CorrectionSet::from_file("eleES_2016postVFPUL.json");
   if (isembedded){
     if (fabs(tau1.Eta())<1.479) tau1=tau1*embeddingeleESset->at("eleES")->evaluate({"barrel", "nom"});
     if (fabs(tau1.Eta())>1.479) tau1=tau1*embeddingeleESset->at("eleES")->evaluate({"endcap", "nom"});
@@ -613,15 +735,72 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
   extramuon_veto=(tree->muVetoZTTp001dxyzR0>1);
   dilepton_veto=(tree->dimuonVeto>0);
 
+  float pt_1_treated = pt_1;
+  float pt_2_treated = pt_2;
+
+  if (pt_1 < 15.) {
+      pt_1_treated = 16.;
+  }
+  if (pt_1 > 120.) {
+      pt_1_treated = 119.;
+  }
+  if (pt_2 < 15.) {
+      pt_2_treated = 16.;
+  }
+  if (pt_2 > 200.) {
+      pt_2_treated = 199.;
+  }
+
+  TFile *f1 = TFile::Open("sf_el_2018_HLTMu8Ele23.root");
+  TFile *f2 = TFile::Open("sf_mu_2018_HLTMu8Ele23.root");
+  TFile *f3 = TFile::Open("sf_el_2018_HLTMu23Ele12.root");
+  TFile *f4 = TFile::Open("sf_mu_2018_HLTMu23Ele12.root");
   auto electronset = correction::CorrectionSet::from_file("electron.json");
   auto muonset = correction::CorrectionSet::from_file("muon_Z.json");
   auto embeddingset = correction::CorrectionSet::from_file("embeddingselection_2018UL.json");
   auto embeddingeleset = correction::CorrectionSet::from_file("electron_2018UL.json"); 
   auto embeddingmuset = correction::CorrectionSet::from_file("muon_2018UL.json");
 
+  if (year==2017) {
+    //f1 = TFile::Open("sf_el_2017_HLTMu8Ele23.root");
+    //f2 = TFile::Open("sf_mu_2017_HLTMu8Ele23.root");
+    //f3 = TFile::Open("sf_el_2017_HLTMu23Ele12.root");
+    //f4 = TFile::Open("sf_mu_2017_HLTMu23Ele12.root");
+    electronset = correction::CorrectionSet::from_file("electron_2017.json");
+    muonset = correction::CorrectionSet::from_file("muon_Z_2017.json");
+    embeddingset = correction::CorrectionSet::from_file("embeddingselection_2017UL.json");
+    embeddingeleset = correction::CorrectionSet::from_file("electron_2017UL.json");
+    embeddingmuset = correction::CorrectionSet::from_file("muon_2017UL.json");
+  }
+
+  if (year==2016 && preVFP) {
+    //f1 = TFile::Open("sf_el_2016_preVFP_HLTMu8Ele23.root");
+    //f2 = TFile::Open("sf_mu_2016_preVFP_HLTMu8Ele23.root");
+    //f3 = TFile::Open("sf_el_2016_preVFP_HLTMu23Ele12.root");
+    //f4 = TFile::Open("sf_mu_2016_preVFP_HLTMu23Ele12.root");
+    electronset = correction::CorrectionSet::from_file("electron_2016preVFP.json");
+    muonset = correction::CorrectionSet::from_file("muon_Z_2016preVFP.json");
+    embeddingset = correction::CorrectionSet::from_file("embeddingselection_2016preVFPUL.json");
+    embeddingeleset = correction::CorrectionSet::from_file("electron_2016preVFPUL.json");
+    embeddingmuset = correction::CorrectionSet::from_file("muon_2016preVFPUL.json");
+  }
+
+  if (year==2016 && !preVFP) {
+    //f1 = TFile::Open("sf_el_2016_postVFP_HLTMu8Ele23.root");
+    //f2 = TFile::Open("sf_mu_2016_postVFP_HLTMu8Ele23.root");
+    //f3 = TFile::Open("sf_el_2016_postVFP_HLTMu23Ele12.root");
+    //f4 = TFile::Open("sf_mu_2016_postVFP_HLTMu23Ele12.root");
+    electronset = correction::CorrectionSet::from_file("electron_2016postVFP.json");
+    muonset = correction::CorrectionSet::from_file("muon_Z_2016postVFP.json");
+    embeddingset = correction::CorrectionSet::from_file("embeddingselection_2016postVFPUL.json");
+    embeddingeleset = correction::CorrectionSet::from_file("electron_2016postVFPUL.json");
+    embeddingmuset = correction::CorrectionSet::from_file("muon_2016postVFPUL.json");
+  }
+
   RooWorkspace *wmc=wmc2018;
   if (year==2017) wmc=wmc2017;
   if (year==2016) wmc=wmc2016;
+
   if (ismc){
     wmc->var("z_gen_mass")->setVal(genM);
     wmc->var("z_gen_pt")->setVal(genpT);
@@ -640,22 +819,60 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
 //     e_trg_23_ic_mc=wmc->function("e_trg_23_ic_mc")->getVal();
 //     m_trg_23_ic_mc=wmc->function("m_trg_23_ic_mc")->getVal();
 //     e_trg_12_ic_mc=wmc->function("e_trg_12_ic_mc")->getVal();
-    m_trg_8_ic_data = 1.;
-    e_trg_23_ic_data = 1.;
-    m_trg_23_ic_data = 1.;
-    e_trg_12_ic_data = 1.;
-    m_trg_8_ic_mc = 1.;
-    e_trg_23_ic_mc = 1.;
-    m_trg_23_ic_mc = 1.;
-    e_trg_12_ic_mc = 1.;
+
+    TH2F *th2f_mc_ele_Mu8Ele23 = (TH2F*)f1->Get("eff_mc");
+    int i_ele_Mu8Ele23 = th2f_mc_ele_Mu8Ele23->FindFixBin(pt_1_treated, eta_1);
+    e_trg_23_ic_mc = th2f_mc_ele_Mu8Ele23->GetBinContent(i_ele_Mu8Ele23);
+
+    TH2F *th2f_mc_muo_Mu8Ele23 = (TH2F*)f2->Get("eff_mc");
+    int i_muo_Mu8Ele23 = th2f_mc_muo_Mu8Ele23->FindFixBin(pt_2_treated, std::abs(eta_2));
+    m_trg_8_ic_mc = th2f_mc_muo_Mu8Ele23->GetBinContent(i_muo_Mu8Ele23);
+
+    TH2F *th2f_mc_ele_Mu23Ele12 = (TH2F*)f3->Get("eff_mc");
+    int i_ele_Mu23Ele12 = th2f_mc_ele_Mu23Ele12->FindFixBin(pt_1_treated, eta_1);
+    e_trg_12_ic_mc = th2f_mc_ele_Mu23Ele12->GetBinContent(i_ele_Mu23Ele12);
+
+    TH2F *th2f_mc_muon_Mu23Ele12 = (TH2F*)f4->Get("eff_mc");
+    int i_muo_Mu23Ele12 = th2f_mc_muon_Mu23Ele12->FindFixBin(pt_2_treated, std::abs(eta_2));
+    m_trg_23_ic_mc = th2f_mc_muon_Mu23Ele12->FindFixBin(i_muo_Mu23Ele12);
+
+    TH2F *th2f_data_ele_Mu8Ele23 = (TH2F*)f1->Get("eff_data");
+    e_trg_23_ic_data = th2f_data_ele_Mu8Ele23->GetBinContent(i_ele_Mu8Ele23);
+
+    TH2F *th2f_data_muo_Mu8Ele23 = (TH2F*)f2->Get("eff_data");
+    m_trg_8_ic_data = th2f_data_muo_Mu8Ele23->GetBinContent(i_muo_Mu8Ele23);
+
+    TH2F *th2f_data_ele_Mu23Ele12 = (TH2F*)f3->Get("eff_data");
+    e_trg_12_ic_data = th2f_data_ele_Mu23Ele12->GetBinContent(i_ele_Mu23Ele12);
+
+    TH2F *th2f_data_muon_Mu23Ele12 = (TH2F*)f4->Get("eff_data");
+    m_trg_23_ic_data = th2f_data_muon_Mu23Ele12->FindFixBin(i_muo_Mu23Ele12);
 
     e_trk_ratio = 1.;
-    e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2018", "sf", "wp90noiso", eta_1, pt_1});
+    if (pt_1 >= 10.) e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2018", "sf", "wp90noiso", eta_1, pt_1});
+    else e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2018", "sf", "wp90noiso", eta_1, 10.});
+
+    if (year==2017) {
+      if (pt_1 >= 10.) e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2017", "sf", "wp90noiso", eta_1, pt_1});
+      else e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2017", "sf", "wp90noiso", eta_1, 10.});
+    }
+
+    if (year==2016 && preVFP) {
+      if (pt_1 >= 10.) e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2016preVFP", "sf", "wp90noiso", eta_1, pt_1});
+      else e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2016preVFP", "sf", "wp90noiso", eta_1, 10.});
+    }
+
+    if (year==2016 && !preVFP) {
+      if (pt_1 >= 10.) e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2016postVFP", "sf", "wp90noiso", eta_1, pt_1});
+      else e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2016postVFP", "sf", "wp90noiso", eta_1, 10.});
+    }
+
     m_trk_ratio = 1.;
-    if(pt_2 >= 15) m_idiso_ic_ratio = muonset->at("NUM_MediumID_DEN_genTracks")->evaluate({eta_2, pt_2, "nominal"}) * muonset->at("NUM_TightRelIso_DEN_MediumID")->evaluate({eta_2, pt_2, "nominal"});
-    else m_idiso_ic_ratio = 1.;
+    if(pt_2 >= 15.) m_idiso_ic_ratio = muonset->at("NUM_MediumID_DEN_genTracks")->evaluate({eta_2, pt_2, "nominal"}) * muonset->at("NUM_TightRelIso_DEN_MediumID")->evaluate({eta_2, pt_2, "nominal"});
+    else m_idiso_ic_ratio = muonset->at("NUM_MediumID_DEN_genTracks")->evaluate({eta_2, 15., "nominal"}) * muonset->at("NUM_TightRelIso_DEN_MediumID")->evaluate({eta_2, 15., "nominal"});
 
   }
+
   if (isembedded){
 //     wmc->var("m_pt")->setVal(pt_2);
 //     wmc->var("m_eta")->setVal(eta_2);
@@ -671,25 +888,51 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
 //     e_trg_23_ic_embed=wmc->function("e_trg_23_ic_embed")->getVal();
 //     m_trg_23_ic_embed=wmc->function("m_trg_23_ic_embed")->getVal();
 //     e_trg_12_ic_embed=wmc->function("e_trg_12_ic_embed")->getVal();
-    m_trg_8_ic_data = 1.;
-    e_trg_23_ic_data = 1.;
-    m_trg_23_ic_data = 1.;
-    e_trg_12_ic_data = 1.;
-    m_trg_8_ic_embed = 1.;
-    e_trg_23_ic_embed = 1.;
-    m_trg_23_ic_embed = 1.;
-    e_trg_12_ic_embed = 1.;
+
+    TH2F *th2f_embed_ele_Mu8Ele23 = (TH2F*)f1->Get("eff_embedded");
+    int i_ele_Mu8Ele23 = th2f_embed_ele_Mu8Ele23->FindFixBin(pt_1_treated, eta_1);
+    e_trg_23_ic_embed = th2f_embed_ele_Mu8Ele23->GetBinContent(i_ele_Mu8Ele23);
+
+    TH2F *th2f_embed_muo_Mu8Ele23 = (TH2F*)f2->Get("eff_embedded");
+    int i_muo_Mu8Ele23 = th2f_embed_muo_Mu8Ele23->FindFixBin(pt_2_treated, std::abs(eta_2));
+    m_trg_8_ic_embed = th2f_embed_muo_Mu8Ele23->GetBinContent(i_muo_Mu8Ele23);
+
+    TH2F *th2f_embed_ele_Mu23Ele12 = (TH2F*)f3->Get("eff_embedded");
+    int i_ele_Mu23Ele12 = th2f_embed_ele_Mu23Ele12->FindFixBin(pt_1_treated, eta_1);
+    e_trg_12_ic_embed = th2f_embed_ele_Mu23Ele12->GetBinContent(i_ele_Mu23Ele12);
+
+    TH2F *th2f_embed_muon_Mu23Ele12 = (TH2F*)f4->Get("eff_embedded");
+    int i_muo_Mu23Ele12 = th2f_embed_muon_Mu23Ele12->FindFixBin(pt_2_treated, std::abs(eta_2));
+    m_trg_23_ic_embed = th2f_embed_muon_Mu23Ele12->FindFixBin(i_muo_Mu23Ele12);
+
+    TH2F *th2f_data_ele_Mu8Ele23 = (TH2F*)f1->Get("eff_data");
+    e_trg_23_ic_data = th2f_data_ele_Mu8Ele23->GetBinContent(i_ele_Mu8Ele23);
+
+    TH2F *th2f_data_muo_Mu8Ele23 = (TH2F*)f2->Get("eff_data");
+    m_trg_8_ic_data = th2f_data_muo_Mu8Ele23->GetBinContent(i_muo_Mu8Ele23);
+
+    TH2F *th2f_data_ele_Mu23Ele12 = (TH2F*)f3->Get("eff_data");
+    e_trg_12_ic_data = th2f_data_ele_Mu23Ele12->GetBinContent(i_ele_Mu23Ele12);
+
+    TH2F *th2f_data_muon_Mu23Ele12 = (TH2F*)f4->Get("eff_data");
+    m_trg_23_ic_data = th2f_data_muon_Mu23Ele12->FindFixBin(i_muo_Mu23Ele12);
 
     e_trk_embed_ratio = 1.;
-    e_idiso_ic_embed_ratio = embeddingeleset->at("ID90_pt_bins_inc_eta")->evaluate({pt_1, fabs(eta_1), "emb"})*embeddingeleset->at("Iso_pt_eta_bins")->evaluate({pt_1, fabs(eta_1), "emb"});
+    if (pt_1 >= 10.) e_idiso_ic_embed_ratio = embeddingeleset->at("ID90_pt_bins_inc_eta")->evaluate({pt_1, fabs(eta_1), "emb"})*embeddingeleset->at("Iso_pt_eta_bins")->evaluate({pt_1, fabs(eta_1), "emb"});
+    else e_idiso_ic_embed_ratio = embeddingeleset->at("ID90_pt_bins_inc_eta")->evaluate({10., fabs(eta_1), "emb"})*embeddingeleset->at("Iso_pt_eta_bins")->evaluate({10., fabs(eta_1), "emb"});
     m_trk_ratio = 1.; 
-    m_idiso_ic_embed_ratio = embeddingmuset->at("ID_pt_eta_bins")->evaluate({pt_2, fabs(eta_2), "emb"})*embeddingmuset->at("Iso_pt_eta_bins")->evaluate({pt_2, fabs(eta_2), "emb"});
-    m_sel_trg_ic_ratio = embeddingset->at("m_sel_trg_kit_ratio")->evaluate({genpt_1, fabs(geneta_1), genpt_2, fabs(geneta_2)});
-    m_sel_id_ic_ratio_1 = embeddingset->at("EmbID_pt_eta_bins")->evaluate({genpt_1, fabs(geneta_1)});
-    m_sel_id_ic_ratio_2 = embeddingset->at("EmbID_pt_eta_bins")->evaluate({genpt_2, fabs(geneta_2)});
+    if (pt_2 >= 10.) m_idiso_ic_embed_ratio = embeddingmuset->at("ID_pt_eta_bins")->evaluate({pt_2, fabs(eta_2), "emb"})*embeddingmuset->at("Iso_pt_eta_bins")->evaluate({pt_2, fabs(eta_2), "emb"});
+    else m_idiso_ic_embed_ratio = embeddingmuset->at("ID_pt_eta_bins")->evaluate({10., fabs(eta_2), "emb"})*embeddingmuset->at("Iso_pt_eta_bins")->evaluate({10., fabs(eta_2), "emb"});
+    if (pt_1 >= 10. && pt_2 >= 10.) m_sel_trg_ic_ratio = embeddingset->at("m_sel_trg_kit_ratio")->evaluate({pt_1, fabs(eta_1), pt_2, fabs(eta_2)});
+    else m_sel_trg_ic_ratio = m_sel_trg_ic_ratio = embeddingset->at("m_sel_trg_kit_ratio")->evaluate({10., fabs(eta_1), 10., fabs(eta_2)});
+    if (pt_1 >= 10.) m_sel_id_ic_ratio_1 = embeddingset->at("EmbID_pt_eta_bins")->evaluate({pt_1, fabs(eta_1)});
+    else m_sel_id_ic_ratio_1 = embeddingset->at("EmbID_pt_eta_bins")->evaluate({10., fabs(eta_1)});
+    if (pt_2 >= 10.) m_sel_id_ic_ratio_2 = embeddingset->at("EmbID_pt_eta_bins")->evaluate({pt_2, fabs(eta_2)});
+    else m_sel_id_ic_ratio_2 = embeddingset->at("EmbID_pt_eta_bins")->evaluate({10., fabs(eta_2)});
   }
 
   Run_Tree->Fill();
+  f1->Close(); f2->Close(); f3->Close(); f4->Close();
 }
 
 #endif
