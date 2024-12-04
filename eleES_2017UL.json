@@ -1,0 +1,75 @@
+{
+    "schema_version": 2,
+    "corrections": [
+        {
+            "name": "eleES",
+            "description": "Scale factor for the embedding electron energy scale",
+            "version": 0,
+            "inputs": [
+                {
+                    "name": "eta",
+                    "type": "string",
+                    "description": "eta region: barrel or endcap"
+                },
+                {
+                    "name": "type",
+                    "type": "string",
+                    "description": "Variation: nom, up, down"
+                }
+            ],
+            "output": {
+                "name": "sf",
+                "type": "real",
+                "description": "eta-dependent scale factor"
+            },
+            "data": {
+                "nodetype": "category",
+                "input": "eta",
+                "content": [
+                    {
+                        "key": "barrel",
+                        "value": {
+                            "nodetype": "category",
+                            "input": "type",
+                            "content": [
+                                {
+                                    "key": "nom",
+                                    "value": 1.0
+                                },
+                                {
+                                    "key": "up",
+                                    "value": 1.0
+                                },
+                                {
+                                    "key": "down",
+                                    "value": 1.0
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "endcap",
+                        "value": {
+                            "nodetype": "category",
+                            "input": "type",
+                            "content": [
+                                {
+                                    "key": "nom",
+                                    "value": 1.0
+                                },
+                                {
+                                    "key": "up",
+                                    "value": 1.0
+                                },
+                                {
+                                    "key": "down",
+                                    "value": 1.0
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
