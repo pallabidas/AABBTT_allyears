@@ -751,51 +751,61 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
       pt_2_treated = 199.;
   }
 
-  TFile *f1 = TFile::Open("sf_el_2018_HLTMu8Ele23.root");
-  TFile *f2 = TFile::Open("sf_mu_2018_HLTMu8Ele23.root");
-  TFile *f3 = TFile::Open("sf_el_2018_HLTMu23Ele12.root");
-  TFile *f4 = TFile::Open("sf_mu_2018_HLTMu23Ele12.root");
-  auto electronset = correction::CorrectionSet::from_file("electron.json");
-  auto muonset = correction::CorrectionSet::from_file("muon_Z.json");
-  auto embeddingset = correction::CorrectionSet::from_file("embeddingselection_2018UL.json");
-  auto embeddingeleset = correction::CorrectionSet::from_file("electron_2018UL.json"); 
-  auto embeddingmuset = correction::CorrectionSet::from_file("muon_2018UL.json");
+  std::string sf_el_HLTMu8Ele23("sf_el_2018_HLTMu8Ele23.root");
+  std::string sf_mu_HLTMu8Ele23("sf_mu_2018_HLTMu8Ele23.root");
+  std::string sf_el_HLTMu23Ele12("sf_el_2018_HLTMu23Ele12.root");
+  std::string sf_mu_HLTMu23Ele12("sf_mu_2018_HLTMu23Ele12.root");
+  std::string electronset_json("electron.json");
+  std::string muonset_json("muon_Z.json");
+  std::string embeddingset_json("embeddingselection_2018UL.json");
+  std::string embeddingeleset_json("electron_2018UL.json");
+  std::string embeddingmuset_json("muon_2018UL.json");
 
   if (year==2017) {
-    //f1 = TFile::Open("sf_el_2017_HLTMu8Ele23.root");
-    //f2 = TFile::Open("sf_mu_2017_HLTMu8Ele23.root");
-    //f3 = TFile::Open("sf_el_2017_HLTMu23Ele12.root");
-    //f4 = TFile::Open("sf_mu_2017_HLTMu23Ele12.root");
-    electronset = correction::CorrectionSet::from_file("electron_2017.json");
-    muonset = correction::CorrectionSet::from_file("muon_Z_2017.json");
-    embeddingset = correction::CorrectionSet::from_file("embeddingselection_2017UL.json");
-    embeddingeleset = correction::CorrectionSet::from_file("electron_2017UL.json");
-    embeddingmuset = correction::CorrectionSet::from_file("muon_2017UL.json");
+    sf_el_HLTMu8Ele23 = "sf_el_2017_HLTMu8Ele23.root";
+    sf_mu_HLTMu8Ele23 = "sf_mu_2017_HLTMu8Ele23.root";
+    sf_el_HLTMu23Ele12 = "sf_el_2017_HLTMu23Ele12.root";
+    sf_mu_HLTMu23Ele12 = "sf_mu_2017_HLTMu23Ele12.root";
+    electronset_json = "electron_2017.json";
+    muonset_json = "muon_Z_2017.json";
+    embeddingset_json = "embeddingselection_2017UL.json";
+    embeddingeleset_json = "electron_2017UL.json";
+    embeddingmuset_json = "muon_2017UL.json";
   }
 
   if (year==2016 && preVFP) {
-    //f1 = TFile::Open("sf_el_2016_preVFP_HLTMu8Ele23.root");
-    //f2 = TFile::Open("sf_mu_2016_preVFP_HLTMu8Ele23.root");
-    //f3 = TFile::Open("sf_el_2016_preVFP_HLTMu23Ele12.root");
-    //f4 = TFile::Open("sf_mu_2016_preVFP_HLTMu23Ele12.root");
-    electronset = correction::CorrectionSet::from_file("electron_2016preVFP.json");
-    muonset = correction::CorrectionSet::from_file("muon_Z_2016preVFP.json");
-    embeddingset = correction::CorrectionSet::from_file("embeddingselection_2016preVFPUL.json");
-    embeddingeleset = correction::CorrectionSet::from_file("electron_2016preVFPUL.json");
-    embeddingmuset = correction::CorrectionSet::from_file("muon_2016preVFPUL.json");
+    sf_el_HLTMu8Ele23 = "sf_el_2016_preVFP_HLTMu8Ele23.root";
+    sf_mu_HLTMu8Ele23 = "sf_mu_2016_preVFP_HLTMu8Ele23.root";
+    sf_el_HLTMu23Ele12 = "sf_el_2016_preVFP_HLTMu23Ele12.root";
+    sf_mu_HLTMu23Ele12 = "sf_mu_2016_preVFP_HLTMu23Ele12.root";
+    electronset_json = "electron_2016preVFP.json";
+    muonset_json = "muon_Z_2016preVFP.json";
+    embeddingset_json = "embeddingselection_2016preVFPUL.json";
+    embeddingeleset_json = "electron_2016preVFPUL.json";
+    embeddingmuset_json = "muon_2016preVFPUL.json";
   }
 
   if (year==2016 && !preVFP) {
-    //f1 = TFile::Open("sf_el_2016_postVFP_HLTMu8Ele23.root");
-    //f2 = TFile::Open("sf_mu_2016_postVFP_HLTMu8Ele23.root");
-    //f3 = TFile::Open("sf_el_2016_postVFP_HLTMu23Ele12.root");
-    //f4 = TFile::Open("sf_mu_2016_postVFP_HLTMu23Ele12.root");
-    electronset = correction::CorrectionSet::from_file("electron_2016postVFP.json");
-    muonset = correction::CorrectionSet::from_file("muon_Z_2016postVFP.json");
-    embeddingset = correction::CorrectionSet::from_file("embeddingselection_2016postVFPUL.json");
-    embeddingeleset = correction::CorrectionSet::from_file("electron_2016postVFPUL.json");
-    embeddingmuset = correction::CorrectionSet::from_file("muon_2016postVFPUL.json");
+    sf_el_HLTMu8Ele23 = "sf_el_2016_postVFP_HLTMu8Ele23.root";
+    sf_mu_HLTMu8Ele23 = "sf_mu_2016_postVFP_HLTMu8Ele23.root";
+    sf_el_HLTMu23Ele12 = "sf_el_2016_postVFP_HLTMu23Ele12.root";
+    sf_mu_HLTMu23Ele12 = "sf_mu_2016_postVFP_HLTMu23Ele12.root";
+    electronset_json = "electron_2016postVFP.json";
+    muonset_json = "muon_Z_2016postVFP.json";
+    embeddingset_json = "embeddingselection_2016postVFPUL.json";
+    embeddingeleset_json = "electron_2016postVFPUL.json";
+    embeddingmuset_json = "muon_2016postVFPUL.json";
   }
+
+  TFile *f1 = TFile::Open(sf_el_HLTMu8Ele23.c_str());
+  TFile *f2 = TFile::Open(sf_mu_HLTMu8Ele23.c_str());
+  TFile *f3 = TFile::Open(sf_el_HLTMu23Ele12.c_str());
+  TFile *f4 = TFile::Open(sf_mu_HLTMu23Ele12.c_str());
+  auto electronset = correction::CorrectionSet::from_file(electronset_json.c_str());
+  auto muonset = correction::CorrectionSet::from_file(muonset_json.c_str());
+  auto embeddingset = correction::CorrectionSet::from_file(embeddingset_json.c_str());
+  auto embeddingeleset = correction::CorrectionSet::from_file(embeddingeleset_json.c_str());
+  auto embeddingmuset = correction::CorrectionSet::from_file(embeddingmuset_json.c_str());
 
   RooWorkspace *wmc=wmc2018;
   if (year==2017) wmc=wmc2017;
@@ -805,20 +815,6 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
     wmc->var("z_gen_mass")->setVal(genM);
     wmc->var("z_gen_pt")->setVal(genpT);
     zptmass_weight_nom=wmc->function("zptmass_weight_nom")->getVal();
-//     wmc->var("m_pt")->setVal(pt_2);
-//     wmc->var("m_eta")->setVal(eta_2);
-//     wmc->var("m_iso")->setVal(iso_2);
-//     wmc->var("e_pt")->setVal(pt_1);
-//     wmc->var("e_eta")->setVal(eta_1);
-//     wmc->var("e_iso")->setVal(iso_1);
-//     m_trg_8_ic_data=wmc->function("m_trg_8_ic_data")->getVal();
-//     e_trg_23_ic_data=wmc->function("e_trg_23_ic_data")->getVal();
-//     m_trg_23_ic_data=wmc->function("m_trg_23_ic_data")->getVal();
-//     e_trg_12_ic_data=wmc->function("e_trg_12_ic_data")->getVal();
-//     m_trg_8_ic_mc=wmc->function("m_trg_8_ic_mc")->getVal();
-//     e_trg_23_ic_mc=wmc->function("e_trg_23_ic_mc")->getVal();
-//     m_trg_23_ic_mc=wmc->function("m_trg_23_ic_mc")->getVal();
-//     e_trg_12_ic_mc=wmc->function("e_trg_12_ic_mc")->getVal();
 
     TH2F *th2f_mc_ele_Mu8Ele23 = (TH2F*)f1->Get("eff_mc");
     int i_ele_Mu8Ele23 = th2f_mc_ele_Mu8Ele23->FindFixBin(pt_1_treated, eta_1);
@@ -849,8 +845,10 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
     m_trg_23_ic_data = th2f_data_muon_Mu23Ele12->FindFixBin(i_muo_Mu23Ele12);
 
     e_trk_ratio = 1.;
-    if (pt_1 >= 10.) e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2018", "sf", "wp90noiso", eta_1, pt_1});
-    else e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2018", "sf", "wp90noiso", eta_1, 10.});
+    if (year==2018) {
+      if (pt_1 >= 10.) e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2018", "sf", "wp90noiso", eta_1, pt_1});
+      else e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2018", "sf", "wp90noiso", eta_1, 10.});
+    }
 
     if (year==2017) {
       if (pt_1 >= 10.) e_idiso_ic_ratio = electronset->at("UL-Electron-ID-SF")->evaluate({"2017", "sf", "wp90noiso", eta_1, pt_1});
@@ -874,21 +872,6 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
   }
 
   if (isembedded){
-//     wmc->var("m_pt")->setVal(pt_2);
-//     wmc->var("m_eta")->setVal(eta_2);
-//     wmc->var("m_iso")->setVal(iso_2);
-//     wmc->var("e_pt")->setVal(pt_1);
-//     wmc->var("e_eta")->setVal(eta_1);
-//     wmc->var("e_iso")->setVal(iso_1);
-//     m_trg_8_ic_data=wmc->function("m_trg_8_ic_data")->getVal();
-//     e_trg_23_ic_data=wmc->function("e_trg_23_ic_data")->getVal();
-//     m_trg_23_ic_data=wmc->function("m_trg_23_ic_data")->getVal();
-//     e_trg_12_ic_data=wmc->function("e_trg_12_ic_data")->getVal();
-//     m_trg_8_ic_embed=wmc->function("m_trg_8_ic_embed")->getVal();
-//     e_trg_23_ic_embed=wmc->function("e_trg_23_ic_embed")->getVal();
-//     m_trg_23_ic_embed=wmc->function("m_trg_23_ic_embed")->getVal();
-//     e_trg_12_ic_embed=wmc->function("e_trg_12_ic_embed")->getVal();
-
     TH2F *th2f_embed_ele_Mu8Ele23 = (TH2F*)f1->Get("eff_embedded");
     int i_ele_Mu8Ele23 = th2f_embed_ele_Mu8Ele23->FindFixBin(pt_1_treated, eta_1);
     e_trg_23_ic_embed = th2f_embed_ele_Mu8Ele23->GetBinContent(i_ele_Mu8Ele23);
