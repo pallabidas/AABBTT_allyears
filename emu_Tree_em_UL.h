@@ -774,10 +774,10 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
   }
 
   if (year==2016 && preVFP) {
-    sf_el_HLTMu8Ele23 = "sf_el_2016_preVFP_HLTMu8Ele23.root";
-    sf_mu_HLTMu8Ele23 = "sf_mu_2016_preVFP_HLTMu8Ele23.root";
-    sf_el_HLTMu23Ele12 = "sf_el_2016_preVFP_HLTMu23Ele12.root";
-    sf_mu_HLTMu23Ele12 = "sf_mu_2016_preVFP_HLTMu23Ele12.root";
+    sf_el_HLTMu8Ele23 = "sf_el_2016pre_HLTMu8Ele23.root";
+    sf_mu_HLTMu8Ele23 = "sf_mu_2016pre_HLTMu8Ele23.root";
+    sf_el_HLTMu23Ele12 = "sf_el_2016pre_HLTMu23Ele12.root";
+    sf_mu_HLTMu23Ele12 = "sf_mu_2016pre_HLTMu23Ele12.root";
     electronset_json = "electron_2016preVFP.json";
     muonset_json = "muon_Z_2016preVFP.json";
     embeddingset_json = "embeddingselection_2016preVFPUL.json";
@@ -786,10 +786,10 @@ void fillTree(TTree *Run_Tree, HTauTauTree_em *tree, int entry_tree, int recoil,
   }
 
   if (year==2016 && !preVFP) {
-    sf_el_HLTMu8Ele23 = "sf_el_2016_postVFP_HLTMu8Ele23.root";
-    sf_mu_HLTMu8Ele23 = "sf_mu_2016_postVFP_HLTMu8Ele23.root";
-    sf_el_HLTMu23Ele12 = "sf_el_2016_postVFP_HLTMu23Ele12.root";
-    sf_mu_HLTMu23Ele12 = "sf_mu_2016_postVFP_HLTMu23Ele12.root";
+    sf_el_HLTMu8Ele23 = "sf_el_2016post_HLTMu8Ele23.root";
+    sf_mu_HLTMu8Ele23 = "sf_mu_2016post_HLTMu8Ele23.root";
+    sf_el_HLTMu23Ele12 = "sf_el_2016post_HLTMu23Ele12.root";
+    sf_mu_HLTMu23Ele12 = "sf_mu_2016post_HLTMu23Ele12.root";
     electronset_json = "electron_2016postVFP.json";
     muonset_json = "muon_Z_2016postVFP.json";
     embeddingset_json = "embeddingselection_2016postVFPUL.json";
